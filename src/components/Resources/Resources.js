@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { I18n } from 'react-redux-i18n'
-import './Resources.scss'
+import ContactForm from '../ContactForm/ContactForm'
+import './Resources.scss' 
 
 export default class Resources extends Component {
   state = {}
@@ -43,6 +44,7 @@ export default class Resources extends Component {
           </div>
         </div>
         <div className="all-article-btn">{I18n.t('resource.articles')}</div>
+        <ContactForm />
       </div>
     )
   }

@@ -1,6 +1,8 @@
 .resource-wrapper {
   margin-top: 80px;
   text-align: center;
+  height: 1234px;
+  background-image: linear-gradient(to bottom, #ffffff, #e5f1ff);
   h2 {
     text-align: center;
     font-size: 50px;
@@ -69,5 +71,9 @@
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1.1px;
+    cursor: pointer;
+    margin: 0 auto;
   }
 }
+
+.form-footer { display: flex; justify-content: center;}

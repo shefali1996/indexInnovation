@@ -3,6 +3,7 @@ import { I18n } from 'react-redux-i18n'
 import apertumImg from '../../assets/images/customer_logos/apertum.png'
 import sportyImg from '../../assets/images/customer_logos/sporty.png'
 import opennetImg from '../../assets/images/customer_logos/opennet.svg'
+import quoteImg from '../../assets/images/icons/quote.svg'
 import './TrustBy.scss'
 
 export default class TrustBy extends Component {
@@ -38,7 +39,7 @@ export default class TrustBy extends Component {
             <span>Ben James, Position</span>
             <label>OpenNet</label>
           </div>
-          <label className="feedback-quote"><i class="fas fa-quote-right"></i></label>
+          <label className="feedback-quote"><img src={quoteImg} /></label>
         </div>
       </div>
     )

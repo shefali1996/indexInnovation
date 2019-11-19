@@ -65,6 +65,15 @@ const translationObject = {
       learn: 'Learn more on how to successfully manage innovation at your organization.',
       by: 'By',
       articles: 'See all articles'
+    },
+    contact: {
+      keepTouch: 'Keep in touch',
+      connect: 'Connect with an innovation management specialist. ',
+      name: 'Name',
+      company: 'Company',
+      workEmail: 'Work email',
+      message: 'Message',
+      submit: 'Submit',
     }
   },
   zh_CN: {
@@ -116,6 +125,15 @@ const translationObject = {
       learn: '通过我们的博客，进一步了解如何在企业内有效地管理创新。',
       by: '作者',
       articles: '查看所有博客'
+    },
+    contact: {
+      keepTouch: '与我们联系',
+      connect: '与我们的创新专家联系，获取更多创新管理资源。',
+      name: '姓名',
+      company: '公司名称',
+      workEmail: '工作邮箱',
+      message: '信息',
+      submit: '提交',
     }
   },
   HK: {
@@ -167,6 +185,15 @@ const translationObject = {
       learn: '通過我們的部落格，進一步了解如何在企業內有效地管理創新。',
       by: '作者',
       articles: '查看所有文章'
+    },
+    contact: {
+      keepTouch: '與我們聯絡',
+      connect: '與我們的創新專家聯繫，獲取更多創新管理資源。',
+      name: '姓名',
+      company: '公司名稱',
+      workEmail: '工作電郵',
+      message: '訊息',
+      submit: '提交',
     }
   }
 }
