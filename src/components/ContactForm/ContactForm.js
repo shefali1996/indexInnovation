@@ -29,7 +29,7 @@ export default class ContactForm extends Component {
           </div>
           <div className="form-group">
             <label>{I18n.t('contact.message')}</label>
-            <textarea className="form-control"></textarea>
+            <textarea className="form-control contact-textarea"></textarea>
           </div>
           <div className="form-group form-footer">
             <div className="submit-btn">{I18n.t('contact.submit')}</div>

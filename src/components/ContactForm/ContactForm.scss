@@ -24,6 +24,7 @@
     padding: 40px 127px;
     margin: 0 auto;
     text-align: left;
+    background: white;
     label {
       font-size: 12px;
       font-weight: normal;
@@ -36,6 +37,9 @@
     input {
       width: 100%;
     }
+  }
+  .form-footer {
+    margin-top: 20px;
   }
   .submit-btn {
     width: 200px;
@@ -56,5 +60,8 @@
     position: absolute;
     width: 100%;
     height: 508px;
+  }
+  .contact-textarea {
+    height: 98px;
   }
 }

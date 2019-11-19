@@ -10,6 +10,7 @@ import evaluateZH from '../../assets/images/img/simplchinese/3_simch.svg'
 import ideateTR from '../../assets/images/img/tradchinese/1_trch.svg'
 import engageTR from '../../assets/images/img/tradchinese/2_trch.svg'
 import evaluateTR from '../../assets/images/img/tradchinese/3_trch.svg'
+import voteImg from '../../assets/images/icons/like.svg'
 import './howworks.scss'
 
 export default class Howworks extends Component {
@@ -32,6 +33,7 @@ export default class Howworks extends Component {
           </div>
         </div>
         <div className="howworks-item align-right item-engage">
+          <img src={voteImg} className="vote-up-img" />
           <div className="howworks-text-wrapper">
             <img src={checkIcon} />
             <div className="howwork-item-textgroup">

@@ -54,7 +54,7 @@
   .howworks-item.align-left {
     margin-left: 10%;
     .sample-img-wrapper {
-      margin-left: 22px;
+      float: right;
     }
   }
   .howworks-item.align-right {
@@ -68,9 +68,22 @@
     margin-top: 64px;
   }
   .item-engage {
-    margin-top: 250px;
+    margin-top: 500px;
+    position: relative;
+    .vote-up-img {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      top: -75px;
+      left: 150px;
+      z-index: -1;
+    }
   }
   .item-evaluate {
     margin-top: 160px;
   }
+}
+
+@media (max-width: 1500px) {
+  
 }
