@@ -5,8 +5,9 @@ import sportyImg from '../../assets/images/customer_logos/sporty.png'
 import opennetImg from '../../assets/images/customer_logos/opennet.svg'
 import quoteImg from '../../assets/images/icons/quote.svg'
 import './TrustBy.scss'
+import {connect} from 'react-redux';
 
-export default class TrustBy extends Component {
+class TrustBy extends Component {
   state = {}
 
   render() {
@@ -15,13 +16,13 @@ export default class TrustBy extends Component {
         <h2>{I18n.t('trusty.title')}</h2>
         <div className="trusty-brand">
           <div className="trusty-brand-item apertum-img">
-            <img src={apertumImg} />
+            <img src={apertumImg} alt="Apertum" />
           </div>
           <div className="trusty-brand-item opennet-img">
-            <img src={opennetImg} />
+            <img src={opennetImg} alt="Open Net"/>
           </div>
           <div className="trusty-brand-item sporty-img">
-            <img src={sportyImg} />
+            <img src={sportyImg} alt="Sporty"/>
           </div>
         </div>
         <div className="trusty-feedback">
@@ -45,3 +46,10 @@ export default class TrustBy extends Component {
     )
   }
 }
+
+function mapStateToProps(state){
+  return {
+    i18n : state.i18n
+  }
+}
+export default connect(mapStateToProps)(TrustBy);

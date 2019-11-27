@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import { I18n, setLocale } from 'react-redux-i18n'
+import { I18n } from 'react-redux-i18n'
 import logoImage from '../../assets/images/footer/logo.png'
 
 import './footer.scss'
+import {connect} from 'react-redux'
 
-export default class Footer extends Component {
+class Footer extends Component {
   state = {
 
   }
-
   render() {
     return (
       <div className="footer-wrapper">
@@ -20,15 +20,15 @@ export default class Footer extends Component {
             <p>{I18n.t('footer.address2')}</p>
           </div>
           <div className="footer-logo col-md-2 offset-md-1">
-            <img src={logoImage} />
+            <img src={logoImage} alt=" " />
             <p>IDEX</p>
             <a href="/blog" >{I18n.t('footer.blog')}</a>
             <div className="row footer-social">
               <ul align="left">
-                <li><a class="fab fa-facebook-f" href="https://www.facebook.com/idexinnovation" target="_blank"></a></li>
-                <li><a class="fab fa-linkedin-in" href="https://www.linkedin.com/company/idex-innovation" target="_blank"></a></li>
-                <li><a class="fab fa-twitter" href="https://twitter.com/idex_ideas" target="_blank"></a></li>
-                <li><a class="fab fa-weixin" href="https://wechat.com" target="_blank"></a></li>
+                <li><a  href="https://www.facebook.com/idexinnovation" rel="noopener noreferrer" target="_blank"><i className="fab fa-facebook-f"></i></a></li>
+                <li><a  href="https://www.linkedin.com/company/idex-innovation" rel="noopener noreferrer"  target="_blank"><i className="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://twitter.com/idex_ideas" rel="noopener noreferrer"  target="_blank"><i className="fab fa-twitter" ></i></a></li>
+                <li><a href="https://wechat.com" rel="noopener noreferrer"  target="_blank"><i className="fab fa-weixin" ></i></a></li>
               </ul>
             </div>
           </div>
@@ -45,3 +45,12 @@ export default class Footer extends Component {
     )
   }
 }
+
+
+
+function mapStateToProps(state){
+  return {
+    i18n : state.i18n
+  }
+}
+export default connect(mapStateToProps)(Footer);

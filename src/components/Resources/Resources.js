@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { I18n } from 'react-redux-i18n'
 import ContactForm from '../ContactForm/ContactForm'
 import './Resources.scss' 
+import {connect} from 'react-redux'
 
-export default class Resources extends Component {
+class Resources extends Component {
   state = {}
 
   render() {
@@ -49,3 +50,10 @@ export default class Resources extends Component {
     )
   }
 }
+
+function mapStateToProps(state){
+  return {
+    i18n : state.i18n
+  }
+}
+export default connect(mapStateToProps)(Resources);

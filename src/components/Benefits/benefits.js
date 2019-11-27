@@ -4,8 +4,9 @@ import groupIcon from '../../assets/images/icons/group.svg'
 import statIcon from '../../assets/images/icons/stats.svg'
 import profitIcon from '../../assets/images/icons/profit.svg'
 import './benefits.scss'
+import {connect} from 'react-redux';
 
-export default class Benefits extends Component {
+class Benefits extends Component {
   state = {
 
   }
@@ -38,3 +39,11 @@ export default class Benefits extends Component {
     )
   }
 }
+
+
+function mapStateToProps(state){
+  return{
+    i18n: state.i18n
+  }
+}
+export default connect(mapStateToProps)(Benefits);

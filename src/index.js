@@ -16,7 +16,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 let store = null;
 const translationObject = {
-  en: {
+  GB: {
     title: 'IDEX - Innovation Management System',
     header: {
       home: 'Home',
@@ -40,6 +40,7 @@ const translationObject = {
       moveForward: 'Moving innovation forward',
       transform: 'Transform ideas into ground-breaking results.',
       expIDEX: 'Experience IDEX',
+      video:'video_english_normal_speed.mp4'
     },
     benefits: {
       employee: 'Employee Engagement',
@@ -56,7 +57,9 @@ const translationObject = {
       engage: 'Engage & Collaborate',
       easysearch: 'Easy search, dynamic ranking, and powerful filters for all ideas. Leverage your entire organization to vote, comment, and refine estimates. Work together to generate brilliant ideas.',
       evaluate: 'Evaluate & Implement',
-      prioritize: 'Find and prioritize the best ideas to implement. Guide your innovations through the entire innovation pipeline from ideation to launch. Keep your employees updated on the status of their ideas.'
+      prioritize: 'Find and prioritize the best ideas to implement. Guide your innovations through the entire innovation pipeline from ideation to launch. Keep your employees updated on the status of their ideas.',
+      evaluateimage: 'evaluateEN'
+
     },
     trusty: {
       title: 'Trusted by',
@@ -79,11 +82,14 @@ const translationObject = {
       submit: 'Submit',
     }
   },
-  zh_CN: {
+  CN: {
     title: '畅意科技 - 创新管理系统',
     header: {
       home: '首页',
+      howitworks:'How It Works',
+      testimonials:'Testimonials',
       blog: '资源',
+      contactus:'Contact Us',
       pricing: '价格方案',
       tryFree: '免费体验'
     },
@@ -100,6 +106,7 @@ const translationObject = {
       moveForward: '助力企业创新发展',
       transform: '将创新想法转化为突破性成果',
       expIDEX: '即刻免费体验',
+      video:'video_chinese_normal_speed.mp4'
     },
     benefits: {
       employee: '高参与度',
@@ -143,9 +150,12 @@ const translationObject = {
     title: '暢意科技 - 創新管理系統',
     header: {
       home: '首頁',
+      howitworks:'How It Works',
+      testimonials:'Testimonials',
       blog: '資源',
       pricing: '價格方案',
-      tryFree: '免費體驗'
+      tryFree: '免費體驗',
+      contactus:'Contact Us',
     },
     footer: {
       idex: '暢意科技',
@@ -160,6 +170,7 @@ const translationObject = {
       moveForward: '推動企業創新發展',
       transform: '將創新想法轉化為突破性成果',
       expIDEX: '即刻免費體驗',
+      video:'video_chinese_normal_speed.mp4'
     },
     benefits: {
       employee: '高參與度',
@@ -213,7 +224,7 @@ if(isProduction) {
 
 syncTranslationWithStore(store);
 store.dispatch(loadTranslations(translationObject));
-store.dispatch(setLocale('en'));
+store.dispatch(setLocale('GB'));
 
 
 

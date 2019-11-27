@@ -12,7 +12,7 @@ class Header extends Component {
 
   }
   render() {
-    console.log(this.props.i18n.locale);
+    
     return (
       <div className="header-wrapper">
         <div>
