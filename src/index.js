@@ -20,7 +20,10 @@ const translationObject = {
     title: 'IDEX - Innovation Management System',
     header: {
       home: 'Home',
+      howitworks:'How It Works',
+      testimonials:'Testimonials',
       blog: 'Blog',
+      contactus:'Contact Us',
       pricing: 'Pricing',
       tryFree: 'Try it for free'
     },
@@ -211,6 +214,8 @@ if(isProduction) {
 syncTranslationWithStore(store);
 store.dispatch(loadTranslations(translationObject));
 store.dispatch(setLocale('en'));
+
+
 
 ReactDOM.render(
   <Provider store={store}>
