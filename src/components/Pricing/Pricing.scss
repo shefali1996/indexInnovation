@@ -79,7 +79,7 @@
           line-height: 21px;
           color: rgba(51, 51, 51, 0.6);
           display: flex;
-          justify-content: start;
+          justify-content: flex-start;
           align-items: flex-start;
           margin-bottom: 8px;
         }
@@ -96,20 +96,95 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          background-color: #2d8dfc;
-          color: white;
+          color: #2d8dfc;
+          background-color: white;
           font-size: 12px;
           font-weight: bold;
           letter-spacing: 0.5px;
           cursor: pointer;
           text-transform: uppercase;
           margin-top:35px;
+          border: 1px solid #2D8DFC;
+        }
+        button.inverse{
+          background-color: #2d8dfc;
+          color: white;
         }
       }
     }
     .most-popular{
       box-shadow: 0px 4px 12px rgba(23, 74, 133, 0.25), 0px 0px 12px rgba(23, 74, 133, 0.25);
     }
+    
+  }
+  h3.stay_in_touch{
+    font-size: 38px;
+    padding-top: 100px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 31px;
+    text-align: center;
+    color: rgba(51, 51, 51, 0.87);
+  }
+  button.btn_contact {
+    width: 200px;
+    height: 42px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2d8dfc;
+    background-color: white;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top:35px;
+    border: 1px solid #2D8DFC;
+  }
+  h2.faq_heading{
+    font-size: 38px;
+    padding-top: 100px;
+  }
+  .faq{
+    border:1px solid #C2D1D9;
+    background: white;
+    border-radius: 2px;
+    padding: 1rem;
+    .question{
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 24px;
+      color: #505D68;
+      align-items: baseline;
+      i{
+        color: #2D8DFC;
+      }
+    }
+    .answer{
+      margin-top: 1rem;
+      text-align: justify;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      color: #505D68;
+      padding-right: 2rem;
+      display: none;
+    }
+    
+  }
+  .stay_in_touch_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
   .all-article-btn {
     width: 264px;

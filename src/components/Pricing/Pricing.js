@@ -56,7 +56,7 @@ class Pricing extends Component {
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.single_sign_on')}</li>
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.dedicated_manager')}</li>
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.sla_tech')}</li>
-                  <button>{I18n.t('pricing.try_for_free')}</button>
+                  <button className="inverse">{I18n.t('pricing.try_for_free')}</button>
                 </ul> 
               </div>
             </div>
@@ -108,22 +108,60 @@ class Pricing extends Component {
            
           </div>  
         </div>
+
+        <div className="faq-wrapper">
+          <h2 className="faq_heading">{I18n.t('pricing.faq')}</h2>
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6">
+                <div className="faq">
+                  <div className="question">{I18n.t('pricing.can_i_cancel')}
+                  <i class="fas fa-chevron-down" onClick={ (event)=>{ alert( event.target); } }></i></div>
+                  <div className="answer">{I18n.t('pricing.our_goal')}</div>  
+                </div>
+              </div>
+              <div className="col-md-6">
+                <div className="faq">
+                  <div className="question">{I18n.t('pricing.payment_options')}<i class="fas fa-chevron-down"></i></div>
+                  <div className="answer">{I18n.t('pricing.payments_made_via')}</div>
+                </div>
+              </div>
+            </div>
+            <div className="row mt-3">
+              <div className="col-md-6">
+                <div className="faq">
+                  <div className="question">{I18n.t('pricing.data_protection')}<i class="fas fa-chevron-down"></i></div>
+                  <div className="answer">{I18n.t('pricing.serious_secutiry')}</div>
+                </div>
+              </div>
+              <div className="col-md-6">
+                <div className="faq">
+                  <div className="question">{I18n.t('pricing.more_ides')}<i class="fas fa-chevron-down"></i></div>
+                  <div className="answer">{I18n.t('pricing.dont_worry')}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="stay_in_touch_div">
+                <h3 className="stay_in_touch">{I18n.t('pricing.stay_in_touch')}</h3> 
+                <button className="btn_contact">{I18n.t('pricing.contact_us')}</button>
+              </div>
+            </div>
+          </div>
+        </div>  
       </div>  
     )
   }
 }
 
- 
-// {I18n.t('pricing.faq')},
-// {I18n.t('pricing.can_i_cancel')},
-// {I18n.t('pricing.our_goal')},
-// {I18n.t('pricing.payment_options')},
-// {I18n.t('pricing.payments_made_via')},
-// {I18n.t('pricing.data_protection')},
-// {I18n.t('pricing.serious_secutiry')},
-// {I18n.t('pricing.more_ides')},
-// {I18n.t('pricing.dont_worry')},
-// {I18n.t('pricing.stay_in_touch')},
+// 
+// ,
+// ,
 function mapStateToProps(state){
   return {
     i18n : state.i18n
