@@ -40,7 +40,7 @@ class TrustBy extends Component {
             <span>Ben James, Position</span>
             <label>OpenNet</label>
           </div>
-          <label className="feedback-quote"><img src={quoteImg} /></label>
+          <label className="feedback-quote"><img src={quoteImg} alt="..." /></label>
         </div>
       </div>
     )

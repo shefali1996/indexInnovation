@@ -23,10 +23,10 @@ class Header extends Component {
         <div>
           <div className="menu-group">
             <a href="/" className="menu-item active">{I18n.t('header.home')}</a>
-            <a href="#howitworks" className="menu-item">{I18n.t('header.howitworks')}</a>
-            <a href="#testimonials" className="menu-item">{I18n.t('header.testimonials')}</a>
-            <a href="#blog" className="menu-item">{I18n.t('header.blog')}</a>
-            <a href="#contactus" className="menu-item">{I18n.t('header.contactus')}</a>
+            {/* <a href="#howitworks" className="menu-item">{I18n.t('header.howitworks')}</a> */}
+            {/* <a href="#testimonials" className="menu-item">{I18n.t('header.testimonials')}</a> */}
+            <a href="/blog" className="menu-item">{I18n.t('header.blog')}</a>
+            {/* <a href="#contactus" className="menu-item">{I18n.t('header.contactus')}</a> */}
             <a href="/pricing" className="menu-item">{I18n.t('header.pricing')}</a>
           </div>
         </div>

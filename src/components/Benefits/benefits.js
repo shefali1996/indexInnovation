@@ -16,21 +16,21 @@ class Benefits extends Component {
       <div className="benefits-section">
         <div className="benefits-item">
           <div>
-            <img src={groupIcon} />
+            <img src={groupIcon} alt="..." />
           </div>
           <p>{I18n.t('benefits.employee')}</p>
           <span>{I18n.t('benefits.engage')}</span>
         </div>
         <div className="benefits-item">
           <div>
-            <img src={statIcon} />
+            <img src={statIcon} alt="..." />
           </div>
           <p>{I18n.t('benefits.continuous')}</p>
           <span>{I18n.t('benefits.stakeholder')}</span>
         </div>
         <div className="benefits-item">
           <div>
-            <img src={profitIcon} />
+            <img src={profitIcon} alt="..." />
           </div>
           <p>{I18n.t('benefits.high')}</p>
           <span>{I18n.t('benefits.crowdsource')}</span>

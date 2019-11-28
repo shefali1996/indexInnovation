@@ -1,60 +1,114 @@
 .pricing-wrapper {
-  margin-top: 80px;
+  margin-top: 0px;
   text-align: center;
-  height: 960px;
-  margin-bottom: 220px;
+  height: 1566px;
+  margin-bottom: 0px;
   background-image: linear-gradient(to bottom, #ffffff, #e5f1ff);
   h2 {
+    padding-top:136px;
     text-align: center;
     font-size: 50px;
     line-height: 1.28;
     color: rgba(51, 51, 51, 0.87);
+    margin-bottom: 0px;
   }
   & > p {
+    
     font-size: 16px;
     line-height: 1.5;
     color: rgba(51, 51, 51, 0.6);
   }
-  .trusty-articles {
-    margin-top: 40px;
-    .trusty-articles-item {
-      width: 362px;
-      height: 200px;
-      display: inline-block;
-      vertical-align: middle;
-      border-radius: 2px;
-      border: solid 1px #c2d1d9;
-      background-color: #ffffff;
-      margin-left: 20px;
-      padding: 32px 40px 16px 16px;
-      text-align: left;
-      .article-head {
-        font-size: 14px;
-        line-height: 1.5;
-        color: rgba(51, 51, 51, 0.6);
-        .article-author {
-          font-weight: bold;
-          color: rgba(51, 51, 51, 0.87);
+  .pricing-plans{
+    margin-top:84px;
+    
+    .pricing-card{
+      box-shadow: 0px 0px 4px rgba(205, 216, 229, 0.25), 0px 0px 4px rgba(205, 216, 229, 0.25);
+      background: white;
+      padding: 40px 32px;
+      text-align:left;
+      .pricing-card-title{
+        // font-family: Ubuntu;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        color: #505D68;
+        text-align: left;
+      }
+      .pricing-details, .pricing-details-enterprise{
+        border-bottom: 2px solid #e5f1ff ;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        
+      }
+      .pricing-details-enterprise{
+        background: rgba(45, 141, 252, 0.02);
+        border-radius: 4px;
+        span{
+          span{
+            color:#2D8DFC;
+            font-weight: bold;
+          }
         }
       }
-      .article-title {
-        margin-top: 16px;
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 1.72;
-        color: rgba(51, 51, 51, 0.87);
+      .price{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 38px;
+        line-height: 48px;
+        color: #2D8DFC;
+        padding-right: 8px;
       }
-      .article-content {
+      .pricing-unit{
+        font-style: normal;
+        font-weight: normal;
         font-size: 14px;
-        line-height: 1.5;
+        line-height: 21px;
         color: rgba(51, 51, 51, 0.6);
-        height: 42px;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
       }
+      .plan-features{
+        list-style-type: none;
+        text-align: left;
+        margin: 0px;
+        padding:0px;
+        li{
+          text-align: left;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 21px;
+          color: rgba(51, 51, 51, 0.6);
+          display: flex;
+          justify-content: start;
+          align-items: flex-start;
+          margin-bottom: 8px;
+        }
+        li.feature-na{
+          img{
+            visibility: hidden;
+          }
+          color: rgba(51, 51, 51, 0.2);
+        }
+        button {
+          width: 200px;
+          height: 42px;
+          border-radius: 4px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #2d8dfc;
+          color: white;
+          font-size: 12px;
+          font-weight: bold;
+          letter-spacing: 0.5px;
+          cursor: pointer;
+          text-transform: uppercase;
+          margin-top:35px;
+        }
+      }
+    }
+    .most-popular{
+      box-shadow: 0px 4px 12px rgba(23, 74, 133, 0.25), 0px 0px 12px rgba(23, 74, 133, 0.25);
     }
   }
   .all-article-btn {

@@ -1,5 +1,8 @@
 @import 'variables';
-
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu'), url(./fonts/Ubuntu/Ubuntu-Regular.ttf) format('truetype');
+}
 #root {
   position: relative;
 }
