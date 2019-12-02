@@ -19,16 +19,18 @@ class Blog extends Component {
             <div className="col-md-9">
               <div className="blog-post">
                 <h2>{I18n.t('blog.articles.1.title')}</h2>
-                <img src="../../assets/images/blog/banner-1.jpg" alt="banner" />
-                { ReactHtmlParser(I18n.t('blog.articles.1.content'))}
+                <img src={process.env.PUBLIC_URL + "/assets/images/blog/banner-1.jpg"} alt="banner" />
+                { ReactHtmlParser(I18n.t('blog.articles.1.excerpt'))}
               </div>
               <div className="blog-post">
                 <h2>{I18n.t('blog.articles.2.title')}</h2>
-                { ReactHtmlParser(I18n.t('blog.articles.2.content'))}
+                { ReactHtmlParser(I18n.t('blog.articles.2.excerpt'))}
+                <img src="../../assets/images/blog/banner-1.jpg" alt="banner" />
               </div>
               <div className="blog-post">
                 <h2>{I18n.t('blog.articles.3.title')}</h2>
-                { ReactHtmlParser(I18n.t('blog.articles.3.content'))}
+                { ReactHtmlParser(I18n.t('blog.articles.3.excerpt'))}
+                <img src={"../../assets/images/blog/banner-1.jpg"} alt="banner" />
               </div>
             </div>
             
