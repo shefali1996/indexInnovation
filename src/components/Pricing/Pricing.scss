@@ -1,7 +1,6 @@
 .pricing-wrapper {
   margin-top: 0px;
   text-align: center;
-  height: 1566px;
   margin-bottom: 0px;
   background-image: linear-gradient(to bottom, #ffffff, #e5f1ff);
   h2 {
@@ -90,7 +89,7 @@
           color: rgba(51, 51, 51, 0.2);
         }
         button {
-          width: 200px;
+          width: 100%;
           height: 42px;
           border-radius: 4px;
           display: flex;
@@ -128,7 +127,7 @@
     color: rgba(51, 51, 51, 0.87);
   }
   button.btn_contact {
-    width: 200px;
+    width: 10rem;
     height: 42px;
     border-radius: 4px;
     display: flex;
@@ -142,6 +141,7 @@
     cursor: pointer;
     text-transform: uppercase;
     margin-top:35px;
+    margin-bottom:2rem;
     border: 1px solid #2D8DFC;
   }
   h2.faq_heading{
@@ -153,8 +153,10 @@
     background: white;
     border-radius: 2px;
     padding: 1rem;
-    .question{
-      display: flex;
+    .Collapsible{
+      cursor: pointer;
+      display: block;
+      width:100%;
       justify-content: space-between;
       text-align: left;
       font-style: normal;
@@ -163,8 +165,21 @@
       line-height: 24px;
       color: #505D68;
       align-items: baseline;
+      p{
+        font-weight: normal;
+      }
       i{
         color: #2D8DFC;
+      }
+      span.is-open{
+        display: block;
+        width: 100%;
+        background: url('../../assets/images/icons/chevronr.svg') no-repeat top right;
+      }
+      span.is-closed{
+        display: block;
+        width: 100%;
+        background: url('../../assets/images/icons/chevronb.svg') no-repeat top right;
       }
     }
     .answer{

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="app">
+    <input type="text" v-model="term">
+    <input type="text" v-model="gb_term">
+    <input type="text" v-model="cn_term">
+    <input type="text" v-model="hk_term">
+    <button v-on:click="addTranslation()">Add</button>
+    <br />
+    {
+    <div v-for="tranlation,term in gb">      
+        {{tranlation.term}}:`{{tranlation.translation}}`,
+    </div>
+    }
+    <br />
+    {
+    <div v-for="tranlation,term in cn">      
+        {{tranlation.term}}:`{{tranlation.translation}}`,
+    </div>
+    }
+    <br />
+    {
+    <div v-for="tranlation,term in hk">      
+        {{tranlation.term}}:`{{tranlation.translation}}`,
+    </div>
+    }
+    <br />
+    <div v-for="tranlation,term in terms">      
+        {{tranlation}},
+    </div>
+  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+  <script>
+  var app = new Vue({
+  el: '#app',
+    methods: {
+      addTranslation: function (event) {
+        this.terms.push("{I18n.t('"+this.term+"')}");
+        this.gb.push({term:this.term,translation:this.gb_term});
+        this.cn.push({term:this.term,translation:this.cn_term});
+        this.hk.push({term:this.term,translation:this.hk_term});
+        this.term = '';
+        this.gb_term = '';
+        this.cn_term = '';
+        this.hk_term = '';
+      }
+    },
+  data: {
+      term:'',
+      gb_term:'',
+      cn_term:'',
+      hk_term:'',
+      terms:[],
+      gb: [],
+      cn: [],
+      hk: [], 
+  }
+});
+    </script>
+</body>
+</html>

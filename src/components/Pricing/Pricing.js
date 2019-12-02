@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { I18n } from 'react-redux-i18n'
 import checkIcon from '../../assets/images/icons/check-feature.svg'
+
 import './Pricing.scss' 
 import {connect} from 'react-redux'
+import Collapsible from 'react-collapsible';
 
 class Pricing extends Component {
   state = {}
@@ -108,36 +110,40 @@ class Pricing extends Component {
            
           </div>  
         </div>
-
+        
         <div className="faq-wrapper">
           <h2 className="faq_heading">{I18n.t('pricing.faq')}</h2>
           <div className="container">
             <div className="row">
               <div className="col-md-6">
                 <div className="faq">
-                  <div className="question">{I18n.t('pricing.can_i_cancel')}
-                  <i class="fas fa-chevron-down" onClick={ (event)=>{ alert( event.target); } }></i></div>
-                  <div className="answer">{I18n.t('pricing.our_goal')}</div>  
+                  
+                  <Collapsible trigger={I18n.t('pricing.can_i_cancel')}>
+                    <p>{I18n.t('pricing.our_goal')}</p>  
+                  </Collapsible>
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="faq">
-                  <div className="question">{I18n.t('pricing.payment_options')}<i class="fas fa-chevron-down"></i></div>
-                  <div className="answer">{I18n.t('pricing.payments_made_via')}</div>
+                  <Collapsible trigger={I18n.t('pricing.payment_options')}>
+                    <p>{I18n.t('pricing.payments_made_via')}</p>  
+                  </Collapsible>
                 </div>
               </div>
             </div>
             <div className="row mt-3">
               <div className="col-md-6">
                 <div className="faq">
-                  <div className="question">{I18n.t('pricing.data_protection')}<i class="fas fa-chevron-down"></i></div>
-                  <div className="answer">{I18n.t('pricing.serious_secutiry')}</div>
+                  <Collapsible trigger={I18n.t('pricing.data_protection')}>
+                    <p>{I18n.t('pricing.serious_secutiry')}</p>  
+                  </Collapsible>
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="faq">
-                  <div className="question">{I18n.t('pricing.more_ides')}<i class="fas fa-chevron-down"></i></div>
-                  <div className="answer">{I18n.t('pricing.dont_worry')}</div>
+                  <Collapsible trigger={I18n.t('pricing.more_ides')}>
+                    <p>{I18n.t('pricing.dont_worry')}</p>  
+                  </Collapsible>
                 </div>
               </div>
             </div>
