@@ -1,5 +1,6 @@
 export function blogs(state = {
-  isFetching: false
+  isFetching: false,
+  
 }, action) {
   switch (action.type) {
     default:

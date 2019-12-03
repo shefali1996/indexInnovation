@@ -28,6 +28,17 @@ const translationObject = {
       pricing: 'Pricing',
       tryFree: 'Try it for free'
     },
+    modal:{
+      try:`Try IDEX for free`,
+      totry:`To try IDEX Innovation Management Software for free, enter your details below. We will be in touch shortly with your login details. Rest assured, your data is secure with us. `,
+      fullname:`Full Name`,
+      workemail:`Work Email`,
+      company:`Company`,
+      phone:`Phone number`,
+      optional:`(optional)`,
+      submit:`Submit`,
+      close:`Close`
+    },
     footer: {
       idex: 'IDEX INNOVATION',
       address1: `20th Floor, Central Tower, 28 Queen's Road Central, Central, Hong Kong`,
@@ -41,7 +52,7 @@ const translationObject = {
       moveForward: 'Moving innovation forward',
       transform: 'Transform ideas into ground-breaking results.',
       expIDEX: 'Experience IDEX',
-      video:'video_english_normal_speed.mp4'
+      video:'https://youtu.be/M3WoC6vuspw'
     },
     benefits: {
       employee: 'Employee Engagement',
@@ -141,6 +152,17 @@ const translationObject = {
       pricing: '价格方案',
       tryFree: '免费体验'
     },
+    modal:{
+      try:`免费体验畅意系统`,
+      totry:`填写下方表格，提交后即可免费体验畅意创新管理系统。我们将尽快与您联系为您提供登录信息。请放心，您的信息是绝对安全的。`,
+      fullname:`姓名`,
+      workemail:`工作邮箱`,
+      company:`公司名称`,
+      phone:`联系电话`,
+      optional:`可选`,
+      submit:`提交`,
+      close:`关闭`
+    },
     footer: {
       idex: '畅意科技',
       address1: `香港中环皇后大道中28号中环大厦20楼`,
@@ -154,7 +176,7 @@ const translationObject = {
       moveForward: '助力企业创新发展',
       transform: '将创新想法转化为突破性成果',
       expIDEX: '即刻免费体验',
-      video:'video_chinese_normal_speed.mp4'
+      video:'https://www.youtube.com/watch?v=Jb8lDt6EaxE'
     },
     benefits: {
       employee: '高参与度',
@@ -252,6 +274,17 @@ const translationObject = {
       tryFree: '免費體驗',
       contactus:'Contact Us',
     },
+    modal:{
+      try:`免費體驗暢意系統`,
+      totry:`填寫下方表格，提交後即可免費體驗暢意創新管理系統。我們將盡快與您聯絡為您提供登入信息。請放心，您的信息是絕對安全的。`,
+      fullname:`姓名`,
+      workemail:`工作電郵`,
+      company:`公司名稱`,
+      phone:`聯絡電話`,
+      optional:`可選`,
+      submit:`提交`,
+      close:`關閉`
+    },
     footer: {
       idex: '暢意科技',
       address1: `香港中環皇后大道中28號中環大廈20樓`,
@@ -265,7 +298,7 @@ const translationObject = {
       moveForward: '推動企業創新發展',
       transform: '將創新想法轉化為突破性成果',
       expIDEX: '即刻免費體驗',
-      video:'video_chinese_normal_speed.mp4'
+      video:'https://www.youtube.com/watch?v=Jb8lDt6EaxE'
     },
     benefits: {
       employee: '高參與度',

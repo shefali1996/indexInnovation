@@ -5,12 +5,13 @@ import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from
 
 import './Blog.scss' 
 import {connect} from 'react-redux'
+import Banner1 from '../../assets/images/blog/banner-1.jpg'
+import Banner2 from '../../assets/images/blog/banner-2.jpg'
+import Banner3 from '../../assets/images/blog/banner-3.jpg'
 
 class Blog extends Component {
   state = {}
-  getBlogList(){
-    return 
-  }
+  
   render() {
     return (
       <div className="blog-wrapper">
@@ -19,18 +20,24 @@ class Blog extends Component {
             <div className="col-md-9">
               <div className="blog-post">
                 <h2>{I18n.t('blog.articles.1.title')}</h2>
-                <img src={process.env.PUBLIC_URL + "/assets/images/blog/banner-1.jpg"} alt="banner" />
-                { ReactHtmlParser(I18n.t('blog.articles.1.excerpt'))}
+                <img src={Banner1} alt="banner" />
+                { ReactHtmlParser(I18n.t('blog.articles.1.excerpt'))} <a href="#">{I18n.t('blog.read_more')}</a>
               </div>
               <div className="blog-post">
                 <h2>{I18n.t('blog.articles.2.title')}</h2>
-                { ReactHtmlParser(I18n.t('blog.articles.2.excerpt'))}
-                <img src="../../assets/images/blog/banner-1.jpg" alt="banner" />
+                <img src={Banner2} alt="banner" />
+                <div className="tagsandauthor">
+                  <span className="tags">
+                    <span className="tag">Innovations</span>
+                  </span>
+                  <span className="author"></span>
+                </div>  
+                { ReactHtmlParser(I18n.t('blog.articles.2.excerpt'))} <a href="#">{I18n.t('blog.read_more')}</a>
               </div>
               <div className="blog-post">
                 <h2>{I18n.t('blog.articles.3.title')}</h2>
-                { ReactHtmlParser(I18n.t('blog.articles.3.excerpt'))}
-                <img src={"../../assets/images/blog/banner-1.jpg"} alt="banner" />
+                <img src={Banner3} alt="banner" />
+                { ReactHtmlParser(I18n.t('blog.articles.3.excerpt'))} <a href="#">{I18n.t('blog.read_more')}</a>
               </div>
             </div>
             
@@ -40,7 +47,7 @@ class Blog extends Component {
                 <div class="blog-item">
                   <div class="date"></div>
                   <div class="author"></div>
-                  <div class="post-title"></div>
+                  <div class="post-title">{this.props}</div>
                   <div class="readmore">{I18n.t('blog.read_more')}</div>
                 </div>
               </div>
