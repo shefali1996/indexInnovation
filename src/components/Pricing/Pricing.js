@@ -18,7 +18,7 @@ class Pricing extends Component {
           <div className="row">
             <div className="col-md-3">
               <div className="pricing-card">
-                <h5 className="pricing-card-title">{I18n.t('pricing.starter')}</h5>
+                <h5 className="pricing-card-title">{I18n.t('pricing.STARTER')}</h5>
                 <div  className="pricing-details">
                   <span className="price">${I18n.t('pricing.99')}</span>
                   <span className="pricing-unit">{I18n.t('pricing.usd')} / {I18n.t('pricing.month')}</span>
@@ -41,6 +41,10 @@ class Pricing extends Component {
             </div>
             <div className="col-md-3">
               <div className="pricing-card most-popular">
+              <div className="popular"><span>
+              {I18n.t('pricing.MOST POPULAR')}
+                </span></div>
+
               <h5 className="pricing-card-title">{I18n.t('pricing.professional')}</h5>
                 <div  className="pricing-details">
                   <span className="price">${I18n.t('pricing.499')}</span>
@@ -115,7 +119,7 @@ class Pricing extends Component {
           <h2 className="faq_heading">{I18n.t('pricing.faq')}</h2>
           <div className="container">
             <div className="row">
-              <div className="col-md-6">
+              <div className="col-md-6 col-xs-12">
                 <div className="faq">
                   
                   <Collapsible trigger={I18n.t('pricing.can_i_cancel')}>
