@@ -1,58 +1,109 @@
-import React, { Component } from 'react'
-import ReactFlagsSelect from 'react-flags-select'
-import logoImg from '../../assets/images/logo.png'
-import { I18n , setLocale} from 'react-redux-i18n'
-import './header.scss'
-import 'react-flags-select/css/react-flags-select.css'
-import 'react-flags-select/scss/react-flags-select.scss'
-import {connect} from 'react-redux';
+import React, { Component } from "react";
+import ReactFlagsSelect from "react-flags-select";
+import logoImg from "../../assets/images/logo.png";
+import { I18n, setLocale } from "react-redux-i18n";
+import { Link } from "react-router";
+import "./header.scss";
+import "react-flags-select/css/react-flags-select.css";
+import "react-flags-select/scss/react-flags-select.scss";
+import { connect } from "react-redux";
 // import ModalForm from '../ModalForm/ModalForm'
-
 
 class Header extends Component {
   state = {
-
-  }
-  
+    mobileHeader: false
+  };
+  handleClick = () => {
+    this.setState(prevState => ({
+      mobileHeader: !prevState.mobileHeader
+    }));
+  };
   render() {
-
+    const { mobileHeader } = this.state;
     return (
-      <div className="header-wrapper d-flex">
-        
-        <div className="header-logo-wrapper">
-          <img src={logoImg} alt="IDEX Logo" />
-        </div>
-        <div className="d-flex">
+      <>
+        <div className={(!mobileHeader && "hide-header ") + " header-wrapper"}>
+          <div className="header-logo-wrapper">
+            <i
+              className="fa fa-times-thin fa-2x"
+              aria-hidden="true"
+              onClick={this.handleClick}
+            ></i>
+
+            <img src={logoImg} alt="IDEX Logo" />
+          </div>
+          <div className="menu">
             <div className="menu-group">
-              <a href="/" className="menu-item active">{I18n.t('header.home')}</a>
-              {/* <a href="#howitworks" className="menu-item">{I18n.t('header.howitworks')}</a> */}
-              {/* <a href="#testimonials" className="menu-item">{I18n.t('header.testimonials')}</a> */}
-              <a href="/blog" className="menu-item">{I18n.t('header.blog')}</a>
-              {/* <a href="#contactus" className="menu-item">{I18n.t('header.contactus')}</a> */}
-              <a href="/pricing" className="menu-item">{I18n.t('header.pricing')}</a>
+              <Link
+                to="/"
+                className={
+                  (window.location.pathname === "/" && "active ") + " menu-item"
+                }
+              >
+                {I18n.t("header.home")}
+              </Link>
+              {/* <Link className="menu-item ">
+                {I18n.t("header.how it works")}
+              </Link>
+              <Link className="menu-item ">
+                {I18n.t("header.testomonials")}
+              </Link> */}
+              <Link
+                to="/blog"
+                className={
+                  (window.location.pathname === "/blog" && "active ") +
+                  " menu-item"
+                }
+              >
+                {I18n.t("header.blog")}
+              </Link>
+              {/* <Link className="menu-item ">{I18n.t("header.contact us")}</Link> */}
+              <Link
+                to="/pricing"
+                className={
+                  (window.location.pathname === "/pricing" && "active ") +
+                  " menu-item"
+                }
+              >
+                {I18n.t("header.pricing")}
+              </Link>
             </div>
-          
             <div className="lang-section">
-              <ReactFlagsSelect countries={["GB", "CN", "HK"]}
-              defaultCountry="GB"
-                customLabels={{"GB": "English","CN": "简体中文","HK": "繁體中文"}}
-                onSelect={val => { this.props.dispatch(setLocale(val)) }}
+              <ReactFlagsSelect
+                countries={["GB", "CN", "HK"]}
+                defaultCountry="GB"
+                customLabels={{ GB: "English", CN: "简体中文", HK: "繁體中文" }}
+                onSelect={val => {
+                  this.props.dispatch(setLocale(val));
+                }}
               />
             </div>
-            <div className="trial-btn">
-              {I18n.t('header.tryFree')}
-            </div>
+            <div className="trial-btn">{I18n.t("header.tryFree")}</div>
+          </div>
         </div>
-        
-      </div>
-    )
+          <div
+            className={
+              (mobileHeader && "hide-header ") + " mobile-small-header"
+            }
+          >
+            <div className="header-logo-wrapper">
+              <i
+                class="fa fa-bars"
+                aria-hidden="true"
+                onClick={this.handleClick}
+              ></i>
+              <img src={logoImg} alt="IDEX Logo" />
+            </div>
+            <div className="trial-btn-mobile">{I18n.t("header.tryFree")}</div>
+          </div>
+      </>
+    );
   }
 }
 
-
-function mapStateToProps(state){
+function mapStateToProps(state) {
   return {
-    i18n : state.i18n
-  }
+    i18n: state.i18n
+  };
 }
 export default connect(mapStateToProps)(Header);

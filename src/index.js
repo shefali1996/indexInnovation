@@ -12,6 +12,7 @@ import Routes from './routes';
 import pipelineApp from './reducers/index';
 import * as serviceWorker from './serviceWorker';
 import './fonts/Ubuntu/Ubuntu-Regular.ttf';
+import "./index.scss"
 
 const isProduction = process.env.NODE_ENV === 'production';
 

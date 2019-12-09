@@ -12,7 +12,7 @@ import Banner3 from '../../assets/images/blog/banner-3.jpg'
 class Blog extends Component {
   state = {}
   
-  render() {
+  render() {    
     return (
       <div className="blog-wrapper">
         <div className="container blog">
@@ -43,12 +43,12 @@ class Blog extends Component {
             
             <div className="col-md-3">
               <h3>{I18n.t('blog.recent_articles')}</h3>
-              <div class="sidebar">
-                <div class="blog-item">
-                  <div class="date"></div>
-                  <div class="author"></div>
-                  <div class="post-title">{this.props}</div>
-                  <div class="readmore">{I18n.t('blog.read_more')}</div>
+              <div className="sidebar">
+                <div className="blog-item">
+                  <div className="date"></div>
+                  <div className="author"></div>
+                  {/* <div className="post-title">{this.props}</div> */}
+                  <div className="readmore">{I18n.t('blog.read_more')}</div>
                 </div>
               </div>
             </div>

@@ -7,9 +7,7 @@ import '../assets/css/all.css'
 import Blog from '../components/Blog/Blog'
 
 export default class BlogPage extends Component {
-  state = {
-
-  }
+  
 
   render() {
     return (
