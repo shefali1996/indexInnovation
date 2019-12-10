@@ -1,71 +1,68 @@
-import React, { Component } from 'react'
-import { I18n } from 'react-redux-i18n'
+import React, { Component } from "react";
+import { I18n } from "react-redux-i18n";
 // import checkIcon from '../../assets/images/icons/check-feature.svg'
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
-
-import './Blog.scss' 
-import {connect} from 'react-redux'
-import Banner1 from '../../assets/images/blog/banner-1.jpg'
-import Banner2 from '../../assets/images/blog/banner-2.jpg'
-import Banner3 from '../../assets/images/blog/banner-3.jpg'
-
+import ReactHtmlParser from "react-html-parser";
+import { withRouter } from 'react-router';
+import "./Blog.scss";
+import { connect } from "react-redux";
+import toArray from "lodash/toArray";
+import RecentArticles from "./RecentArticle"
 class Blog extends Component {
-  state = {}
-  
-  render() {    
+  state = {
+    blog: toArray(I18n.t("blog").articles).reverse()
+  };
+
+  handleClick=(title)=>{
+    let route=title.split(' ').join('_')
+    console.log(this.props,'55555555555',route);
+    this.props.router.push(`/blog/${route}`)
+  }
+
+  render() {
+    const { blog } = this.state;
     return (
       <div className="blog-wrapper">
         <div className="container blog">
           <div className="row">
-            <div className="col-md-9">
+            <div className="col-md-7 col-sm-12">
               <div className="blog-post">
-                <h2>{I18n.t('blog.articles.1.title')}</h2>
-                <img src={Banner1} alt="banner" />
-                { ReactHtmlParser(I18n.t('blog.articles.1.excerpt'))} <a href="#">{I18n.t('blog.read_more')}</a>
-              </div>
-              <div className="blog-post">
-                <h2>{I18n.t('blog.articles.2.title')}</h2>
-                <img src={Banner2} alt="banner" />
-                <div className="tagsandauthor">
-                  <span className="tags">
-                    <span className="tag">Innovations</span>
-                  </span>
-                  <span className="author"></span>
-                </div>  
-                { ReactHtmlParser(I18n.t('blog.articles.2.excerpt'))} <a href="#">{I18n.t('blog.read_more')}</a>
-              </div>
-              <div className="blog-post">
-                <h2>{I18n.t('blog.articles.3.title')}</h2>
-                <img src={Banner3} alt="banner" />
-                { ReactHtmlParser(I18n.t('blog.articles.3.excerpt'))} <a href="#">{I18n.t('blog.read_more')}</a>
+                {blog.map(val => {
+                  return (
+                    <div className="blog-content">
+                      <h2>{val.title}</h2>
+                      <img src={val.image} alt="banner" onClick={()=>this.handleClick(val.title)}/>
+                      <div className="tag-user">
+                        {toArray(val.tags).map(tag => (
+                          <div className="tag">{tag}</div>
+                        ))}
+                        <div className="by">
+                          By: <span>{val.by}</span>
+                        </div>
+                      </div>
+                      <div className="content">{ReactHtmlParser(val.excerpt)} <a href="#">{I18n.t("blog.read_more")}</a></div>
+                      
+                    </div>
+                  );
+                })}
               </div>
             </div>
-            
-            <div className="col-md-3">
-              <h3>{I18n.t('blog.recent_articles')}</h3>
-              <div className="sidebar">
-                <div className="blog-item">
-                  <div className="date"></div>
-                  <div className="author"></div>
-                  {/* <div className="post-title">{this.props}</div> */}
-                  <div className="readmore">{I18n.t('blog.read_more')}</div>
-                </div>
-              </div>
-            </div>
+            <div className="col-md-1 col-sm-12"></div>
 
-          </div>  
+            <div className="col-md-4 col-sm-12 recent-article">
+            <h3 className="mb-3">Recent articles</h3>
+
+             {blog.map((val)=><RecentArticles blog={val}/>)}
+            </div>
+          </div>
         </div>
-      </div>  
-    )
+      </div>
+    );
   }
 }
 
-// 
-// ,
-// ,
-function mapStateToProps(state){
+function mapStateToProps(state) {
   return {
-    i18n : state.i18n
-  }
+    i18n: state.i18n
+  };
 }
-export default connect(mapStateToProps)(Blog);
+export default withRouter(connect(mapStateToProps)(Blog));

@@ -25,6 +25,7 @@
       background: white;
       padding: 40px 32px;
       text-align: left;
+      position: relative;
       .pricing-card-title {
         // font-family: Ubuntu;
         font-style: normal;
@@ -109,6 +110,17 @@
           background-color: #2d8dfc;
           color: white;
         }
+      }
+      .popular{
+        position: absolute;
+        top: 12px;
+        right: 5px;
+        font-size: 11px;
+        background: #2d8dfc;
+        color: white;
+        font-weight: bold;
+        padding: 1px 3px;
+        border-radius: 10px;
       }
     }
     .most-popular {
@@ -225,37 +237,75 @@
   display: flex;
   justify-content: center;
 }
+@media only screen and(min-width:768px) and (max-width: 900px) {
+  .pricing-wrapper {
+    .container {
+      padding: 0;
+    }
+    .pricing-plans {
+      .col-md-3 {
+        padding: 0 5px;
+      }
+      .pricing-card {
+        padding: 40px 10px;
+        .price{
+          font-size: 30px
+        }
+        .pricing-details-enterprise{
+          span{
+            font-size:15px
+          }
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .pricing-wrapper {
     h2 {
       font-size: 38px;
       padding-left: 10%;
       padding-right: 10%;
-    };
-    p{
+    }
+    p {
       padding-left: 10%;
       padding-right: 10%;
-    };
-    .faq{
-      margin-top: 10px
+    }
+    .faq {
+      margin-top: 10px;
     }
     .pricing-plans {
       padding: 0 10%;
       margin-top: 50px;
       .pricing-card {
         box-shadow: none;
-        .popular{
+        .popular {
           text-align: right;
-          color:white;
+          color: white;
           font-size: 11px;
-          span{
+          span {
             background-color: #2d8dfc;
             border-radius: 10px;
             padding: 2px 4px;
-            font-weight: bold
+            font-weight: bold;
           }
         }
       }
+    }
+    .faq-wrapper{
+      .mt-3{
+        margin-top:0px !important
+      }
+    }
+    h2.faq_heading{
+      padding: 70px 0px 40px
+    }
+    h3.stay_in_touch{
+      padding-top:70px 
+    }
+    button.btn_contact{
+      margin-top:20px;
     }
   }
 }
