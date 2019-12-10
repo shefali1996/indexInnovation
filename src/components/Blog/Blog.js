@@ -6,12 +6,21 @@ import { withRouter } from 'react-router';
 import "./Blog.scss";
 import { connect } from "react-redux";
 import toArray from "lodash/toArray";
+import isEqual from "lodash/isEqual"
 import RecentArticles from "./RecentArticle"
 class Blog extends Component {
   state = {
     blog: toArray(I18n.t("blog").articles).reverse()
   };
-
+componentDidUpdate(props){
+  console.log(isEqual(this.state.blog,toArray(I18n.t("blog").articles).reverse()),'44444444',toArray(I18n.t("blog").articles).reverse());
+if(!isEqual(this.state.blog,toArray(I18n.t("blog").articles).reverse())){
+  this.setState({
+    blog: toArray(I18n.t("blog").articles).reverse()
+  })
+}
+ 
+}
   handleClick=(title)=>{
     let route=title.split(' ').join('_')
     console.log(this.props,'55555555555',route);
