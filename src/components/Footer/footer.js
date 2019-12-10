@@ -9,6 +9,19 @@ class Footer extends Component {
   state = {
 
   }
+  socialMediaIcon=()=>{
+return <div className="icons">
+<a href="/blog" >{I18n.t('footer.blog')}</a>
+            <div className="row footer-social">
+              <ul align="left">
+                <li><a  href="https://www.facebook.com/idexinnovation" rel="noopener noreferrer" target="_blank"><i className="fab fa-facebook-f"></i></a></li>
+                <li><a  href="https://www.linkedin.com/company/idex-innovation" rel="noopener noreferrer"  target="_blank"><i className="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://twitter.com/idex_ideas" rel="noopener noreferrer"  target="_blank"><i className="fab fa-twitter" ></i></a></li>
+                <li><a href="https://wechat.com" rel="noopener noreferrer"  target="_blank"><i className="fab fa-weixin" ></i></a></li>
+              </ul>
+            </div>
+</div>
+  }
   render() {
     return (
       <div className="footer-wrapper">
@@ -18,19 +31,12 @@ class Footer extends Component {
             <p>info@idexltd.com</p>
             <p>{I18n.t('footer.address1')}</p>
             <p>{I18n.t('footer.address2')}</p>
+            {this.socialMediaIcon()}
           </div>
           <div className="footer-logo col-md-2 offset-md-1">
             <img src={logoImage} alt=" " />
             <p>IDEX</p>
-            <a href="/blog" >{I18n.t('footer.blog')}</a>
-            <div className="row footer-social">
-              <ul align="left">
-                <li><a  href="https://www.facebook.com/idexinnovation" rel="noopener noreferrer" target="_blank"><i className="fab fa-facebook-f"></i></a></li>
-                <li><a  href="https://www.linkedin.com/company/idex-innovation" rel="noopener noreferrer"  target="_blank"><i className="fab fa-linkedin-in"></i></a></li>
-                <li><a href="https://twitter.com/idex_ideas" rel="noopener noreferrer"  target="_blank"><i className="fab fa-twitter" ></i></a></li>
-                <li><a href="https://wechat.com" rel="noopener noreferrer"  target="_blank"><i className="fab fa-weixin" ></i></a></li>
-              </ul>
-            </div>
+            {this.socialMediaIcon()}
           </div>
           <div className="footer-fn col-md-3 offset-md-1">
             <p>{I18n.t('footer.turnIdea')}</p>

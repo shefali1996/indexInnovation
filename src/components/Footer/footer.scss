@@ -10,6 +10,9 @@
       margin-top: 24px;
       width: 264px;
       margin-left: 10%;
+      .icon{
+        display: none
+      }
       p:nth-child(1) {
         font-size: 14px;
         color: rgba(51, 51, 51, 0.87);
@@ -54,34 +57,35 @@
         margin-top: 47px;
         margin-bottom: 20px;
         text-transform: uppercase;
-      }
-      .footer-social {
-        ul {
-          list-style: none;
-          padding-left: 28px;
-          width:100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          li {
-            display: inline-block;
-            padding-left: 40px;
-            font-size: 20px;
-            color: #babec2;
-            a {
-              margin-top: 22px;
-              font-size: 17px;
-              text-transform: none;
-              text-decoration: none;
-              color: #97a0ab;
-            }
-            a:hover {
-              color: #2d8dfc;
-            }
+      };
+    
+    }
+    .footer-social {
+      ul {
+        list-style: none;
+        padding-left: 28px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        li {
+          display: inline-block;
+          padding-left: 40px;
+          font-size: 20px;
+          color: #babec2;
+          a {
+            margin-top: 22px;
+            font-size: 17px;
+            text-transform: none;
+            text-decoration: none;
+            color: #97a0ab;
           }
-          li:nth-child(1) {
-            padding-left: 0;
+          a:hover {
+            color: #2d8dfc;
           }
+        }
+        li:nth-child(1) {
+          padding-left: 0;
         }
       }
     }
@@ -124,5 +128,59 @@
     font-size: 14px;
     line-height: 2.3;
     color: rgba(51, 51, 51, 0.87);
+  }
+}
+@media only screen and(min-width:601px){
+  .footer-address {
+    .icons{
+      display: none
+    }
+  }
+
+}
+@media only screen and(max-width:600px) {
+  .footer-wrapper {
+    flex-direction: column-reverse;
+    .footer-content {
+      height: auto;
+      .footer-logo {
+        order: 1;
+        margin:auto;
+        .footer-social{
+          ul{
+            padding: 0;
+            margin-top: 20px;
+          }
+        }
+        .icons{
+          display: none
+        }
+      }
+      .footer-address {
+        order: 2;
+        margin: 0 10%;
+        width: auto;
+        text-align: center;
+        .footer-social{
+          ul{
+            padding: 0;
+            margin-top: 10px;
+          }
+        }
+      };
+      .footer-fn{
+        order:3;
+        text-align: center;
+        padding: 5% 6%;
+        .footer-start-btn{
+          float: unset;
+          margin: 24px auto;
+        }
+      }
+    };
+    .footer-copyright{
+      float:unset;
+      text-align: center
+    }
   }
 }
