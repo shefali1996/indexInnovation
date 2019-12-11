@@ -2,30 +2,27 @@ import React, { Component } from "react";
 import { I18n } from "react-redux-i18n";
 // import checkIcon from '../../assets/images/icons/check-feature.svg'
 import ReactHtmlParser from "react-html-parser";
-import { withRouter } from 'react-router';
+import { withRouter } from "react-router";
 import "./Blog.scss";
 import { connect } from "react-redux";
 import toArray from "lodash/toArray";
-import isEqual from "lodash/isEqual"
-import RecentArticles from "./RecentArticle"
+import isEqual from "lodash/isEqual";
+import RecentArticles from "./RecentArticle";
 class Blog extends Component {
   state = {
     blog: toArray(I18n.t("blog").articles).reverse()
   };
-componentDidUpdate(props){
-  console.log(isEqual(this.state.blog,toArray(I18n.t("blog").articles).reverse()),'44444444',toArray(I18n.t("blog").articles).reverse());
-if(!isEqual(this.state.blog,toArray(I18n.t("blog").articles).reverse())){
-  this.setState({
-    blog: toArray(I18n.t("blog").articles).reverse()
-  })
-}
- 
-}
-  handleClick=(title)=>{
-    let route=title.split(' ').join('_')
-    console.log(this.props,'55555555555',route);
-    this.props.router.push(`/blog/${route}`)
+  componentDidUpdate(props) {
+    if (!isEqual(this.state.blog, toArray(I18n.t("blog").articles).reverse())) {
+      this.setState({
+        blog: toArray(I18n.t("blog").articles).reverse()
+      });
+    }
   }
+  handleClick = route => {
+    let blogRoute = route.split(" ").join("_");
+    this.props.router.push(`/blog/${blogRoute}`);
+  };
 
   render() {
     const { blog } = this.state;
@@ -39,7 +36,11 @@ if(!isEqual(this.state.blog,toArray(I18n.t("blog").articles).reverse())){
                   return (
                     <div className="blog-content">
                       <h2>{val.title}</h2>
-                      <img src={val.image} alt="banner" onClick={()=>this.handleClick(val.title)}/>
+                      <img
+                        src={val.image}
+                        alt="banner"
+                        onClick={() => this.handleClick(val.route)}
+                      />
                       <div className="tag-user">
                         {toArray(val.tags).map(tag => (
                           <div className="tag">{tag}</div>
@@ -48,8 +49,10 @@ if(!isEqual(this.state.blog,toArray(I18n.t("blog").articles).reverse())){
                           By: <span>{val.by}</span>
                         </div>
                       </div>
-                      <div className="content">{ReactHtmlParser(val.excerpt)} <a href="#">{I18n.t("blog.read_more")}</a></div>
-                      
+                      <div className="content">
+                        {ReactHtmlParser(val.excerpt)}{" "}
+                        <a href="#">{I18n.t("blog.read_more")}</a>
+                      </div>
                     </div>
                   );
                 })}
@@ -58,9 +61,11 @@ if(!isEqual(this.state.blog,toArray(I18n.t("blog").articles).reverse())){
             <div className="col-md-1 col-sm-12"></div>
 
             <div className="col-md-4 col-sm-12 recent-article">
-            <h3 className="mb-3">Recent articles</h3>
+              <h3 className="mb-3">Recent articles</h3>
 
-             {blog.map((val)=><RecentArticles blog={val}/>)}
+              {blog.map(val => (
+                <RecentArticles blog={val} />
+              ))}
             </div>
           </div>
         </div>
