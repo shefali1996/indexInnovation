@@ -18,8 +18,6 @@ import blog_CN from "./blogsContent/blogs_CN"
 import blog_HK from "./blogsContent/blogs_HK"
 
 const isProduction = process.env.NODE_ENV === 'production';
-console.log(blog_GB,'666666666666666');
-
 let store = null;
 const translationObject = {
   GB: {
