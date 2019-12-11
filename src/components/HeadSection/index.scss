@@ -1,5 +1,5 @@
 .head-section {
-  height: 1100px;
+  // height: 1100px;
   display: block;
   position: relative;
   .head-circle-img {
@@ -52,12 +52,15 @@
     text-transform: uppercase;
     margin-top: 32px;
   }
+  .idex-player-container{
+    padding: 0 20%;
+  }
   .idex-player {
     position: relative;
     margin: 0 auto;
     margin-top: 102px;
-    height: 547px;
-    width: 948px;
+    height: 400px;
+    // width: 60%;
     background-color: white;
     box-shadow: #00000033 0px 10px 25px;
     display: flex;

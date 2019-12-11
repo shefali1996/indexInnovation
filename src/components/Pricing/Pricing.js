@@ -9,9 +9,7 @@ import Collapsible from 'react-collapsible';
 class Pricing extends Component {
   state = {}
 
-  render() {
-    console.log(I18n.t('pricing'));
-    
+  render() {    
     return (
       <div className="pricing-wrapper">
         <h2>{I18n.t('pricing.price1.plans_pricing')}</h2>

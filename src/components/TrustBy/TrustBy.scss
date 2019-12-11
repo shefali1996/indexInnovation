@@ -1,5 +1,5 @@
 .trustby-wrapper {
-  margin-top: 500px;
+  margin-top: 100px;
   h2 {
     text-align: center;
     font-size: 50px;
@@ -19,15 +19,19 @@
       }
     }
     .trusty-brand-item {
-      width: 355.6px;
+      width: 30%;
       height: 168px;
-      margin-left: 33px;
+      // margin-left: 10px;
     }
   }
   .trusty-feedback {
     margin-top: 80px;
     padding: 0 auto;
     position: relative;
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: auto auto;
+    padding: 0 8%;
     .feedback-quote {
       color: white;
       font-size: 110px;
@@ -39,20 +43,21 @@
     .trusty-feedback-item {
       display: inline-block;
       vertical-align: middle;
-      width: 558px;
-      height: 339px;
+      // width: 40%;
+      // height: 339px;
       border-radius: 2px;
       background-color: #e6f1ff;
-      padding: 0 32px 32px 47px;
+      padding: 0 20px 32px 20px;
       text-align: center;
       box-shadow: #00000025 0px 20px 15px;
       .feedback-wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 236px;
+        // height: 236px;
+        margin-top: 10%;
         p {
-          font-size: 21px;
+          font-size: 16px;
           font-weight: 400;
           line-height: 1.48;
           color: rgba(51, 51, 51, 0.87);
@@ -72,7 +77,8 @@
       }
     }
     & > div:nth-child(1) {
-      margin-left: calc(50% - 565px);
+      // margin-left: calc(50% - 565px);
+      // margin-left: 10%;
     }
     & > div:nth-child(2) {
       margin-left: 30px;

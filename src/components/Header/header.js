@@ -42,12 +42,7 @@ class Header extends Component {
               >
                 {I18n.t("header.home")}
               </Link>
-              {/* <Link className="menu-item ">
-                {I18n.t("header.how it works")}
-              </Link>
-              <Link className="menu-item ">
-                {I18n.t("header.testomonials")}
-              </Link> */}
+             
               <Link
                 to="/blog"
                 className={
@@ -57,7 +52,6 @@ class Header extends Component {
               >
                 {I18n.t("header.blog")}
               </Link>
-              {/* <Link className="menu-item ">{I18n.t("header.contact us")}</Link> */}
               <Link
                 to="/pricing"
                 className={

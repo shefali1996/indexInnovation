@@ -17,15 +17,20 @@
   }
   .trusty-articles {
     margin-top: 40px;
+    display: grid;
+  grid-column-gap:20px;
+  grid-template-columns: auto auto auto;
+  // background-color: #2196F3;
+  padding: 10px 8%;
     .trusty-articles-item {
-      width: 362px;
-      height: 200px;
+      // width: 362px;
+      // height: 200px;
       display: inline-block;
       vertical-align: middle;
       border-radius: 2px;
       border: solid 1px #c2d1d9;
       background-color: #ffffff;
-      margin-left: 20px;
+      // margin-left: 20px;
       padding: 32px 40px 16px 16px;
       text-align: left;
       .article-head {

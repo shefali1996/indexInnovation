@@ -42,10 +42,12 @@ class Howworks extends Component {
         <h2>{I18n.t('howworks.title')}</h2>
         <div className="howworks-item align-left item-ideate">
           <div className="howworks-text-wrapper">
-            <img src={checkIcon} alt="Right Mark" />
             <div className="howwork-item-textgroup">
+            <div className="description">
+            <img src={checkIcon} alt="Right Mark" />
               <p>{I18n.t('howworks.ideate')}</p>
-              <span>{I18n.t('howworks.harness')}</span>
+              </div>
+              <div className="content">{I18n.t('howworks.harness')}</div>
             </div>
           </div>
           <div className="sample-img-wrapper">
@@ -56,10 +58,12 @@ class Howworks extends Component {
         <div className="howworks-item align-right item-engage">
           <img src={voteImg} className="vote-up-img" alt="Engage" />
           <div className="howworks-text-wrapper">
-            <img src={checkIcon} alt="Right Mark" />
             <div className="howwork-item-textgroup">
+            <div className="description">
+            <img src={checkIcon} alt="Right Mark" />
               <p>{I18n.t('howworks.engage')}</p>
-              <span>{I18n.t('howworks.easysearch')}</span>
+              </div>
+              <div className="content">{I18n.t('howworks.easysearch')}</div>
             </div>
           </div>
           <div className="sample-img-wrapper">
@@ -69,10 +73,12 @@ class Howworks extends Component {
 
         <div className="howworks-item align-left item-evaluate">
           <div className="howworks-text-wrapper">
-            <img src={checkIcon} alt="Right Mark" />
             <div className="howwork-item-textgroup">
+            <div className="description">
+            <img src={checkIcon} alt="Right Mark" />
               <p>{I18n.t('howworks.evaluate')}</p>
-              <span>{I18n.t('howworks.prioritize')}</span>
+              </div>
+              <div className="content">{I18n.t('howworks.prioritize')}</div>
             </div>
           </div>
           <div className="sample-img-wrapper">
