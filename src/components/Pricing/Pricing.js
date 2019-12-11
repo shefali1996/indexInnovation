@@ -10,104 +10,106 @@ class Pricing extends Component {
   state = {}
 
   render() {
+    console.log(I18n.t('pricing'));
+    
     return (
       <div className="pricing-wrapper">
-        <h2>{I18n.t('pricing.plans_pricing')}</h2>
-        <p>{I18n.t('pricing.choose_plan')}</p>
+        <h2>{I18n.t('pricing.price1.plans_pricing')}</h2>
+        <p>{I18n.t('pricing.price1.choose_plan')}</p>
         <div className="container pricing-plans">
           <div className="row">
             <div className="col-md-3">
               <div className="pricing-card">
-                <h5 className="pricing-card-title">{I18n.t('pricing.STARTER')}</h5>
+                <h5 className="pricing-card-title">{I18n.t('pricing.price1.STARTER')}</h5>
                 <div  className="pricing-details">
-                  <span className="price">${I18n.t('pricing.99')}</span>
-                  <span className="pricing-unit">{I18n.t('pricing.usd')} / {I18n.t('pricing.month')}</span>
+                  <span className="price">${I18n.t('pricing.price1.99')}</span>
+                  <span className="pricing-unit">{I18n.t('pricing.price1.usd')} / {I18n.t('pricing.price1.month')}</span>
                 </div>
                 <ul className="plan-features">
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.unlimited_members')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.upto_xxx')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.xx_teams')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.your_own_workspace')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.collect_analyse')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.performance_analytics')}</li>
-                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.advanced_audience')}</li>
-                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.custom_branding')}</li>
-                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.single_sign_on')}</li>
-                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.dedicated_manager')}</li>
-                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.sla_tech')}</li>
-                  <button>{I18n.t('pricing.try_for_free')}</button>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price1.unlimited_members')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price1.upto_xxx')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price1.xx_teams')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price1.your_own_workspace')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price1.collect_analyse')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price1.performance_analytics')}</li>
+                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price1.advanced_audience')}</li>
+                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price1.custom_branding')}</li>
+                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price1.single_sign_on')}</li>
+                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price1.dedicated_manager')}</li>
+                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price1.sla_tech')}</li>
+                  <button>{I18n.t('pricing.price1.try_for_free')}</button>
                 </ul>  
               </div>  
             </div>
             <div className="col-md-3">
               <div className="pricing-card most-popular">
               <div className="popular"><span>
-              {I18n.t('pricing.MOST POPULAR')}
+              {I18n.t('pricing.price2.MOST POPULAR')}
                 </span></div>
 
-              <h5 className="pricing-card-title">{I18n.t('pricing.professional')}</h5>
+              <h5 className="pricing-card-title">{I18n.t('pricing.price2.professional')}</h5>
                 <div  className="pricing-details">
-                  <span className="price">${I18n.t('pricing.499')}</span>
-                  <span className="pricing-unit">{I18n.t('pricing.usd')} / {I18n.t('pricing.month')}</span>
+                  <span className="price">${I18n.t('pricing.price2.499')}</span>
+                  <span className="pricing-unit">{I18n.t('pricing.price2.usd')} / {I18n.t('pricing.price2.month')}</span>
                 </div>
                 <ul className="plan-features">
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.unlimited_members')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.upto_xxx')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.xx_teams')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.your_own_workspace')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.collect_analyse')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.performance_analytics')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.advanced_audience')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.custom_branding')}</li>
-                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.single_sign_on')}</li>
-                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.dedicated_manager')}</li>
-                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.sla_tech')}</li>
-                  <button className="inverse">{I18n.t('pricing.try_for_free')}</button>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price2.unlimited_members')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price2.upto_xxx')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price2.xx_teams')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price2.your_own_workspace')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price2.collect_analyse')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price2.performance_analytics')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price2.advanced_audience')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price2.custom_branding')}</li>
+                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price2.single_sign_on')}</li>
+                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price2.dedicated_manager')}</li>
+                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price2.sla_tech')}</li>
+                  <button className="inverse">{I18n.t('pricing.price2.try_for_free')}</button>
                 </ul> 
               </div>
             </div>
             <div className="col-md-3">
               <div className="pricing-card">
-                <h5 className="pricing-card-title">{I18n.t('pricing.business')}</h5>
+                <h5 className="pricing-card-title">{I18n.t('pricing.price3.business')}</h5>
                 <div  className="pricing-details">
-                  <span className="price">${I18n.t('pricing.999')}</span>
-                  <span className="pricing-unit">{I18n.t('pricing.usd')} / {I18n.t('pricing.month')}</span>
+                  <span className="price">${I18n.t('pricing.price3.999')}</span>
+                  <span className="pricing-unit">{I18n.t('pricing.price3.usd')} / {I18n.t('pricing.price3.month')}</span>
                 </div>
                 <ul className="plan-features">
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.unlimited_members')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.upto_xxx')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.xx_teams')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.your_own_workspace')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.collect_analyse')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.performance_analytics')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.advanced_audience')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.custom_branding')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.single_sign_on')}</li>
-                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.dedicated_manager')}</li>
-                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.sla_tech')}</li>
-                  <button>{I18n.t('pricing.try_for_free')}</button>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price3.unlimited_members')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price3.upto_xxx')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price3.xx_teams')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price3.your_own_workspace')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price3.collect_analyse')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price3.performance_analytics')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price3.advanced_audience')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price3.custom_branding')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price3.single_sign_on')}</li>
+                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price3.dedicated_manager')}</li>
+                  <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price3.sla_tech')}</li>
+                  <button>{I18n.t('pricing.price3.try_for_free')}</button>
                 </ul>  
               </div>  
             </div>
             <div className="col-md-3">
               <div className="pricing-card">
-                <h5 className="pricing-card-title">{I18n.t('pricing.enterprise')}</h5>
+                <h5 className="pricing-card-title">{I18n.t('pricing.price4.enterprise')}</h5>
                 <div  className="pricing-details-enterprise">
-                  <span>{I18n.t('pricing.for_custom')} <span>{I18n.t('pricing.contact_us')}</span></span>
+                  <span>{I18n.t('pricing.price4.for_custom')} <span>{I18n.t('pricing.price4.contact_us')}</span></span>
                 </div>
                 <ul className="plan-features">
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.unlimited_members')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.upto_xxx')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.xx_teams')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.your_own_workspace')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.collect_analyse')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.performance_analytics')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.advanced_audience')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.custom_branding')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.single_sign_on')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.dedicated_manager')}</li>
-                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.sla_tech')}</li>
-                  <button>{I18n.t('pricing.try_for_free')}</button>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price4.unlimited_members')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price4.upto_xxx')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price4.xx_teams')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price4.your_own_workspace')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price4.collect_analyse')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price4.performance_analytics')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price4.advanced_audience')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price4.custom_branding')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price4.single_sign_on')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price4.dedicated_manager')}</li>
+                  <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price4.sla_tech')}</li>
+                  <button>{I18n.t('pricing.price4.try_for_free')}</button>
                 </ul>  
               </div>  
             </div>
@@ -116,21 +118,21 @@ class Pricing extends Component {
         </div>
         
         <div className="faq-wrapper">
-          <h2 className="faq_heading">{I18n.t('pricing.faq')}</h2>
+          <h2 className="faq_heading">{I18n.t('pricing.price4.faq')}</h2>
           <div className="container">
             <div className="row">
               <div className="col-md-6 col-xs-12">
                 <div className="faq">
                   
-                  <Collapsible trigger={I18n.t('pricing.can_i_cancel')}>
-                    <p>{I18n.t('pricing.our_goal')}</p>  
+                  <Collapsible trigger={I18n.t('pricing.price4.can_i_cancel')}>
+                    <p>{I18n.t('pricing.price4.our_goal')}</p>  
                   </Collapsible>
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="faq">
-                  <Collapsible trigger={I18n.t('pricing.payment_options')}>
-                    <p>{I18n.t('pricing.payments_made_via')}</p>  
+                  <Collapsible trigger={I18n.t('pricing.price4.payment_options')}>
+                    <p>{I18n.t('pricing.price4.payments_made_via')}</p>  
                   </Collapsible>
                 </div>
               </div>
@@ -138,15 +140,15 @@ class Pricing extends Component {
             <div className="row mt-3">
               <div className="col-md-6">
                 <div className="faq">
-                  <Collapsible trigger={I18n.t('pricing.data_protection')}>
-                    <p>{I18n.t('pricing.serious_secutiry')}</p>  
+                  <Collapsible trigger={I18n.t('pricing.price4.data_protection')}>
+                    <p>{I18n.t('pricing.price4.serious_secutiry')}</p>  
                   </Collapsible>
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="faq">
-                  <Collapsible trigger={I18n.t('pricing.more_ides')}>
-                    <p>{I18n.t('pricing.dont_worry')}</p>  
+                  <Collapsible trigger={I18n.t('pricing.price4.more_ides')}>
+                    <p>{I18n.t('pricing.price4.dont_worry')}</p>  
                   </Collapsible>
                 </div>
               </div>
@@ -158,8 +160,8 @@ class Pricing extends Component {
           <div className="row">
             <div className="col-md-12">
               <div className="stay_in_touch_div">
-                <h3 className="stay_in_touch">{I18n.t('pricing.stay_in_touch')}</h3> 
-                <button className="btn_contact">{I18n.t('pricing.contact_us')}</button>
+                <h3 className="stay_in_touch">{I18n.t('pricing.price4.stay_in_touch')}</h3> 
+                <button className="btn_contact">{I18n.t('pricing.price4.contact_us')}</button>
               </div>
             </div>
           </div>
