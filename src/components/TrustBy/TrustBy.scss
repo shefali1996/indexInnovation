@@ -30,7 +30,7 @@
     position: relative;
     display: grid;
     grid-column-gap: 10px;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     padding: 0 8%;
     .feedback-quote {
       color: white;
@@ -84,4 +84,28 @@
       margin-left: 30px;
     }
   }
+}
+@media screen and(max-width:600px) {
+ .trustby-wrapper{
+   .trusty-brand{
+     display: flex;
+     align-items: center;
+     flex-direction: column;
+     .trusty-brand-item{
+       width:100%;
+     }
+   }
+   .trusty-feedback{
+     grid-row-gap: 15%;
+     margin-top: 0;
+    grid-template-columns:auto;
+    .feedback-quote{
+      top:40%;
+      bottom: unset;
+    }
+   }
+   .trusty-feedback > div:nth-child(2){
+    margin-left: 0
+   }
+ }
 }

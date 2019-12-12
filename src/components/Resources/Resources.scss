@@ -82,3 +82,16 @@
 }
 
 .form-footer { display: flex; justify-content: center;}
+@media screen and(max-width:600px) {
+ .resource-wrapper{
+   height: 1400px;
+   margin-top: 150px;
+   p{
+     padding: 0 10%;
+   }
+   .trusty-articles{
+     grid-template-columns:auto;
+     grid-row-gap: 20px;
+   }
+ }
+ }

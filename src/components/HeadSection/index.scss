@@ -88,3 +88,17 @@
     }
   }
 }
+
+@media screen and(max-width:600px){
+  .head-section{
+    h2{
+      font-size: 30px;
+    }
+    .idex-player-container{
+      padding: 0 5%;
+    }
+    .head-notebook-img{
+      width:100%;
+    }
+  }
+}

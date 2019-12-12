@@ -26,16 +26,16 @@
         vertical-align: top;
         margin-left: 16px;
         max-width: 450px;
-        .description{
+        .description {
           display: flex;
-          img{
+          img {
             margin-right: 10px;
           }
         }
-        .content{
+        .content {
           margin-left: 35px;
-          color:grey;
-          font-size:15px;
+          color: grey;
+          font-size: 15px;
         }
         p {
           font-size: 28px;
@@ -82,7 +82,7 @@
   }
   .item-engage {
     background: #fafafa;
-    padding:75px 0;
+    padding: 75px 0;
     margin-top: 80px;
     position: relative;
     flex-direction: row-reverse;
@@ -100,6 +100,33 @@
   }
 }
 
-@media (max-width: 1500px) {
-  
+@media screen and(max-width:600px) {
+  .howworks-container {
+    .howworks-item {
+      flex-direction: column;
+      .howworks-text-wrapper {
+        margin-top: 0;
+        margin-bottom: 8%;
+      }
+      .sample-img-wrapper {
+        margin: 0 5%;
+      }
+    }
+    .howworks-item.align-left {
+      margin-left: 0;
+    }
+    .item-ideate {
+      margin-top: 50px;
+    }
+    .item-engage {
+      background-color: none;
+      padding: 0;
+      .vote-up-img {
+        display: none;
+      }
+    }
+    .item-evaluate {
+      margin-top: 10%;
+    }
+  }
 }

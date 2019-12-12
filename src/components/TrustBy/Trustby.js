@@ -6,6 +6,8 @@ import opennetImg from '../../assets/images/customer_logos/opennet.svg'
 import quoteImg from '../../assets/images/icons/quote.svg'
 import './TrustBy.scss'
 import {connect} from 'react-redux';
+import Apertum_logo from "../../assets/images/Apertum.svg"
+import OpenNet_logo from "../../assets/images/Opennet.svg"
 
 class TrustBy extends Component {
   state = {}
@@ -31,7 +33,7 @@ class TrustBy extends Component {
               <p>{I18n.t('trusty.identify')}</p>
             </div>
             <span>Sean Farmer, Position</span>
-            <label>Apertum Online</label>
+            <label><img src={Apertum_logo}/></label>
             <label className="feedback-quote"><img src={quoteImg} alt="..." /></label>
 
           </div>
@@ -40,7 +42,7 @@ class TrustBy extends Component {
               <p>{I18n.t('trusty.beforeIDEX')}</p>
             </div>
             <span>Ben James, Position</span>
-            <label>OpenNet</label>
+            <label><img src={OpenNet_logo}/></label>
           </div>
         </div>
       </div>

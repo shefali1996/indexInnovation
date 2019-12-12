@@ -65,3 +65,14 @@
     height: 98px;
   }
 }
+
+@media screen and(max-width:600px) {
+  .contact-wrapper{
+    padding: 0;
+    .contact-form-wrapper{
+      width:90%;
+      height:auto;
+      padding: 40px
+    }
+  }
+}
