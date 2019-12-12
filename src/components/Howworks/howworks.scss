@@ -34,6 +34,8 @@
         }
         .content{
           margin-left: 35px;
+          color:grey;
+          font-size:15px;
         }
         p {
           font-size: 28px;
@@ -50,10 +52,9 @@
     }
     .sample-img-wrapper {
       display: inline-block;
-      width: 803px;
-      height: 572px;
       background-color: #ffffff;
       box-shadow: #00000033 0px 10px 25px;
+      z-index: 10;
       img {
         width: 100%;
         height: 100%;

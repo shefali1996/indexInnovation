@@ -9,7 +9,7 @@
   grid-template-columns: auto auto auto auto auto auto;
   // background-color: #2196F3;
   padding: 10px;
-  padding: 0 10%;
+  padding: 0 13%;
   .benefits-item {
     // width: 272px;
     // height: 288px;
@@ -56,6 +56,8 @@
   //   margin-left: 5%;
   // }
   .side-arrow {
-    margin: 0 2%;
+    margin: 0 20px;
+    display: flex;
+    align-items: center
   }
 }

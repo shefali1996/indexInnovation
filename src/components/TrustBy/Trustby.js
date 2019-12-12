@@ -32,6 +32,8 @@ class TrustBy extends Component {
             </div>
             <span>Sean Farmer, Position</span>
             <label>Apertum Online</label>
+            <label className="feedback-quote"><img src={quoteImg} alt="..." /></label>
+
           </div>
           <div className="trusty-feedback-item">
             <div className="feedback-wrapper">
@@ -40,7 +42,6 @@ class TrustBy extends Component {
             <span>Ben James, Position</span>
             <label>OpenNet</label>
           </div>
-          <label className="feedback-quote"><img src={quoteImg} alt="..." /></label>
         </div>
       </div>
     )
