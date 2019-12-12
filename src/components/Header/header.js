@@ -7,21 +7,35 @@ import "./header.scss";
 import "react-flags-select/css/react-flags-select.css";
 import "react-flags-select/scss/react-flags-select.scss";
 import { connect } from "react-redux";
-// import ModalForm from '../ModalForm/ModalForm'
+import ModalForm from '../ModalForm/ModalForm'
 
 class Header extends Component {
   state = {
-    mobileHeader: false
+    mobileHeader: false,
+    show:false
   };
   handleClick = () => {
     this.setState(prevState => ({
       mobileHeader: !prevState.mobileHeader
     }));
   };
+
+  handelShowModal=()=>{    
+    this.setState(prevState => ({
+      show: true
+    }))
+  }
   render() {
     const { mobileHeader } = this.state;
     return (
       <>
+      <ModalForm show={this.state.show}
+      handleCloseModal={()=>{
+        this.setState({
+          show:false
+        })
+      }}
+      />
         <div className={(!mobileHeader && "hide-header ") + " header-wrapper"}>
           <div className="header-logo-wrapper">
             <i
@@ -72,7 +86,7 @@ class Header extends Component {
                 }}
               />
             </div>
-            <div className="trial-btn">{I18n.t("header.tryFree")}</div>
+            <div className="trial-btn" onClick={this.handelShowModal}>{I18n.t("header.tryFree")}</div>
           </div>
         </div>
           <div
@@ -88,7 +102,7 @@ class Header extends Component {
               ></i>
               <img src={logoImg} alt="IDEX Logo" />
             </div>
-            <div className="trial-btn-mobile">{I18n.t("header.tryFree")}</div>
+            <div className="trial-btn-mobile" onClick={this.handelShowModal}>{I18n.t("header.tryFree")}</div>
           </div>
       </>
     );

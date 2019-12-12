@@ -1,13 +1,24 @@
 import React, { Component } from 'react'
 import { I18n } from 'react-redux-i18n'
 import logoImage from '../../assets/images/footer/logo.png'
-
+import ModalForm from '../ModalForm/ModalForm'
 import './footer.scss'
 import {connect} from 'react-redux'
 
 class Footer extends Component {
   state = {
+    show:false
+  }
+  handleClick = () => {
+    this.setState(prevState => ({
+      mobileHeader: !prevState.mobileHeader
+    }));
+  };
 
+  handelShowModal=()=>{    
+    this.setState(prevState => ({
+      show: true
+    }))
   }
   socialMediaIcon=()=>{
 return <div className="icons">
@@ -25,6 +36,13 @@ return <div className="icons">
   render() {
     return (
       <div className="footer-wrapper">
+        <ModalForm show={this.state.show}
+          handleCloseModal={() => {
+            this.setState({
+              show: false
+            })
+          }}
+      />
         <div className="footer-content row">
           <div className="footer-address col-md-3 offset-md-1">
             <p>{I18n.t('footer.idex')}</p>
@@ -41,7 +59,7 @@ return <div className="icons">
           <div className="footer-fn col-md-3 offset-md-1">
             <p>{I18n.t('footer.turnIdea')}</p>
             <div className="footer-collect">{I18n.t('footer.startCollecting')}</div>
-            <div className="footer-start-btn">{I18n.t('footer.getStarted')}</div>
+            <div className="footer-start-btn" onClick={this.handelShowModal}>{I18n.t('footer.getStarted')}</div>
           </div>
         </div>
         <div className="footer-copyright">
