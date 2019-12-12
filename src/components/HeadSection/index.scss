@@ -86,6 +86,11 @@
     .player-btn:hover {
       background-color: white;
     }
+    .play-icon{
+      z-index: 10;
+      width: 10%;
+      cursor: pointer;
+    }
   }
 }
 

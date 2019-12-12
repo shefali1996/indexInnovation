@@ -9,10 +9,16 @@ import Eng_video from "../../assets/videos/video_english_normal_speed.mp4";
 import Chinese_video from "../../assets/videos/video_chinese_normal_speed.mp4";
 import logo from "../../assets/images/logo.png";
 import ReactPlayer from "react-player";
-
+import play_icon from "../../assets/images/icons/play-flat.svg";
 class HeadSection extends Component {
-  state = {};
-
+  state = {
+    play: false
+  };
+  handlePlayClick = () => {
+    this.setState((prevState)=>({
+      play:!prevState.play
+    }));
+  };
   render() {
     return (
       <div className="head-section">
@@ -27,15 +33,31 @@ class HeadSection extends Component {
         <p>{I18n.t("headSection.transform")}</p>
         <div className="exp-idex-btn">{I18n.t("headSection.expIDEX")}</div>
         <div className="idex-player-container">
-        <div className="idex-player">
-          <ReactPlayer
-            className="react-player"
-            url={this.props.locale === "GB" ? Eng_video : Chinese_video}
-            width="100%"
-            height="100%"
-            controls
-          />
-        </div>
+          <div className="idex-player">
+            <ReactPlayer
+              className="react-player"
+              url={this.props.locale === "GB" ? Eng_video : Chinese_video}
+              width="100%"
+              height="100%"
+              controls
+              config={{
+                file: {
+                  attributes: {
+                    controlsList: "nodownload"
+                  }
+                }
+              }}
+              playing={this.state.play}
+              onPause={this.handlePlayClick}
+            />
+            {!this.state.play && (
+              <img
+                src={play_icon}
+                className="play-icon"
+                onClick={this.handlePlayClick}
+              />
+            )}
+          </div>
         </div>
       </div>
     );

@@ -80,7 +80,11 @@ const translationObject = {
     trusty: {
       title: 'Trusted by',
       identify: 'IDEX helps us to identify ideas that deliver positive results whilst empowering our employees by showing them their ideas are being listened to and valued. This is an initiative that gets people excited.',
-      beforeIDEX: 'Before IDEX, we used email threads to exchange and manage ideas. Now our employees are able to easily submit their ideas in one platform. IDEX really helps us to increase efficiency in collecting ideas and selecting actionable ideas to implement.'
+      beforeIDEX: 'Before IDEX, we used email threads to exchange and manage ideas. Now our employees are able to easily submit their ideas in one platform. IDEX really helps us to increase efficiency in collecting ideas and selecting actionable ideas to implement.',
+      card1Name:"Rajat Chugh",
+      card1Position:"General Manager",
+      card2Name:"Jason Peterson",
+      card2Position:"Product Director"
     },
     resource: {
       title: 'Resources',
@@ -166,7 +170,11 @@ const translationObject = {
     trusty: {
       title: '我们的客户',
       identify: '畅意创新管理系统帮助我们发掘能为企业带来积极影响的创新想法。同时，员工因为自身的想法被聆听和重视而更有动力。这是一个让企业和员工都充满动力的项目。',
-      beforeIDEX: '在使用畅意创新系统之前，我们一直都在使用邮件交换和管理创新想法。现在我们的员工可以非常轻松地在一个平台上提交他们的想法。畅意平台确实帮我们在收集想法和选择可行的想法来实施上提高了不少效率。'
+      beforeIDEX: '在使用畅意创新系统之前，我们一直都在使用邮件交换和管理创新想法。现在我们的员工可以非常轻松地在一个平台上提交他们的想法。畅意平台确实帮我们在收集想法和选择可行的想法来实施上提高了不少效率。',
+      card1Name:"拉杰特·楚",
+      card1Position:"总经理",
+      card2Name:"杰森·彼得森",
+      card2Position:"产品总监"
     },
     resource: {
       title: '创新管理资源',
@@ -251,7 +259,11 @@ const translationObject = {
     trusty: {
       title: '我們的客戶',
       identify: '暢意創新管理系統幫助我們發掘能為企業帶來積極影響的創新想法。同時，員工因為自身的想法被聆聽和重視而更有動力。這是一個讓企業和員工都充滿動力的項目。',
-      beforeIDEX: '在使用暢意創新系統之前，我們一直都在使用電郵交換和管理創新想法。現在我們的員工可以非常輕鬆地在一個平台上提交他們的想法。暢意平台確實幫我們在收集想法和選擇可行的想法來實施上提高了不少效率。'
+      beforeIDEX: '在使用暢意創新系統之前，我們一直都在使用電郵交換和管理創新想法。現在我們的員工可以非常輕鬆地在一個平台上提交他們的想法。暢意平台確實幫我們在收集想法和選擇可行的想法來實施上提高了不少效率。',
+      card1Name:"拉傑特·楚",
+      card1Position:"總經理",
+      card2Name:"傑森·彼得森",
+      card2Position:"產品總監"
     },
     resource: {
       title: '創新管理資源',
