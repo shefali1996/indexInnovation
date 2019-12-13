@@ -8,11 +8,13 @@ import { connect } from "react-redux";
 import toArray from "lodash/toArray";
 import isEqual from "lodash/isEqual";
 import RecentArticles from "./RecentArticle";
-import {Link} from "react-router"
-import left_icon from "../../assets/images/icons/chevronb.svg"
+import { Link } from "react-router";
+import left_icon from "../../assets/images/icons/chevronb.svg";
 class Blog extends Component {
   state = {
-    blog: toArray(I18n.t("blog").articles).reverse()
+    blog: toArray(I18n.t("blog").articles).reverse(),
+    start: 0,
+    end: 3
   };
   componentDidUpdate(props) {
     if (!isEqual(this.state.blog, toArray(I18n.t("blog").articles).reverse())) {
@@ -25,16 +27,23 @@ class Blog extends Component {
     let blogRoute = route.split(" ").join("_");
     this.props.router.push(`/blog/${blogRoute}`);
   };
-
+  onNextClick = start => {
+    this.setState({
+      start: start + 3,
+      end: this.state.end + 3
+    },()=>{
+      window.scrollTo(0,0)
+    });
+  };
   render() {
-    const { blog } = this.state;
+    const { blog, start, end } = this.state;
     return (
       <div className="blog-wrapper blog-view">
         <div className="container blog">
           <div className="row">
             <div className="col-md-7 col-sm-12">
               <div className="blog-post">
-                {blog.map(val => {
+                {blog.slice(start, end).map(val => {
                   return (
                     <div className="blog-content">
                       <h2>{val.title}</h2>
@@ -53,18 +62,24 @@ class Blog extends Component {
                       </div>
                       <div className="content">
                         {ReactHtmlParser(val.excerpt)}{" "}
-                        <Link to={`/blog/${val.route.split(" ").join("_")}`}>{I18n.t("blog.read_more")}</Link>
+                        <Link to={`/blog/${val.route.split(" ").join("_")}`}>
+                          {I18n.t("blog.read_more")}
+                        </Link>
                       </div>
                     </div>
                   );
                 })}
-              <div className="previous_article">Previous Article <img src={left_icon}/></div>
+                <div className="previous_article">
+                 <span onClick={() => this.onNextClick(start)}> Previous Article <img src={left_icon} /></span>
+                </div>
               </div>
             </div>
             <div className="col-md-1 col-sm-12"></div>
 
             <div className="col-md-4 col-sm-12 recent-article">
-              <h3 className="mb-3">Recent articles</h3>
+              <h3 className="mb-3" >
+                Recent articles
+              </h3>
 
               {blog.map(val => (
                 <RecentArticles blog={val} />

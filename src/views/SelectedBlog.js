@@ -10,24 +10,9 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import isEqual from "lodash/isEqual";
 function SelectedBlog(props) {
-
   const [currentBlog, setCurrentBlog] = useState(null);
   const [blogs, setBlogs] = useState(null);
   const [currIndex, setCurrIndex] = useState(null);
-
-  // useEffect(() => {
-  //   let blogRoute = props.routeParams.route.split("_").join(" ");
-  //   let allBlogs = toArray(I18n.t("blog.articles")).reverse();
-  //   let filteredItem = filter(allBlogs, ["route", blogRoute]);
-  //   let index = allBlogs.findIndex(curr => {
-  //     return curr.title === filteredItem[0].title;
-  //   });
-  //   setCurrentBlog(filteredItem);
-  //   setBlogs(allBlogs.reverse());
-  //   setCurrIndex(index);
-  //   console.log('55555555566666666677777777',props);
-    
-  // }, []);
 
   useEffect(() => {
     let allBlogs = toArray(I18n.t("blog.articles")).reverse();
@@ -52,12 +37,29 @@ function SelectedBlog(props) {
     setCurrentBlog(filteredItem);
     setBlogs(allBlogs.reverse());
     setCurrIndex(index);
-    
-  }, [props.location.pathname])
+  }, [props.location.pathname]);
+
+  const handleNextClick = action => {    
+    if (action === "next") {
+      setCurrentBlog([blogs[currIndex + 1]])
+      setCurrIndex(currIndex + 1);
+    } else if (action === "prev") {
+      setCurrentBlog([blogs[currIndex - 1]])
+      setCurrIndex(currIndex - 1);
+    }
+    window.scrollTo(0,0)
+  };
+  console.log(currentBlog,'kkkkkkkk');
+  
   return (
     <div>
       <Header />
-      <Blog blog={currentBlog} blogs={blogs} />
+      <Blog
+        blog={currentBlog}
+        blogs={blogs}
+        handleNextClick={handleNextClick}
+        currIndex={currIndex}
+      />
       {/* <Footer /> */}
     </div>
   );

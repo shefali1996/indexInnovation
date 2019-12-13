@@ -4,7 +4,9 @@ import ReactHtmlParser from "react-html-parser";
 import toArray from "lodash/toArray";
 import RecentArticles from "../Blog/RecentArticle";
 import "./blog.scss";
-export default function Blog({ blog, blogs }) {
+import left_icon from "../../assets/images/icons/chevronb.svg";
+
+export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
   const socialIcons = () => {
     return (
       <div className="social-media-icon">
@@ -71,6 +73,7 @@ export default function Blog({ blog, blogs }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <div className="selected-blog">
       <div className="blog-wrapper">
@@ -99,6 +102,28 @@ export default function Blog({ blog, blogs }) {
                         <div className="content-social row">
                           <div className="full-content col-md-10">
                             <div>{ReactHtmlParser(val.content)} </div>
+                            <div className="prev-next">
+                              <span>
+                                {currIndex > 0 && (
+                                  <span onClick={() => handleNextClick("prev")}>
+                                    <img
+                                      src={left_icon}
+                                      style={{ transform: "rotate(180deg)" }}
+                                    />
+                                    <span>Previous article</span>
+                                  </span>
+                                )}
+                              </span>
+                              <span>
+                                {currIndex < blogs.length - 1 && (
+                                  <span onClick={() => handleNextClick("next")}>
+                                    <span>
+                                      Next article <img src={left_icon} />{" "}
+                                    </span>
+                                  </span>
+                                )}
+                              </span>
+                            </div>
                           </div>
                           <div className="col-md-1 col-sm-12"></div>
 

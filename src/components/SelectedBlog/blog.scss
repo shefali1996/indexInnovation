@@ -16,6 +16,21 @@
       ul {
         color: #a1aeb7;
       }
+      .prev-next{
+         img{
+          // all: unset !important
+          width:unset !important;
+          display: unset;
+        }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       span{
+         color: #63a7f5;
+         cursor: pointer;
+       }
+
+      }
     }
     .make-fixed{
         position: fixed;
