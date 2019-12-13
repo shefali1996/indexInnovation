@@ -1,12 +1,9 @@
 import React, { Component } from "react";
-import { I18n, setLocale } from "react-redux-i18n";
 import "./ModalForm.scss";
 import { connect } from "react-redux";
 import {
   Modal,
   Button,
-  Row,
-  Col,
   Form,
   InputGroup,
   Dropdown,
@@ -16,10 +13,15 @@ import {
 import EN from "../../assets/images/lang/en.svg";
 import CN from "../../assets/images/lang/cn.svg";
 import HK from "../../assets/images/lang/hk.svg";
-
+import { sendTryItDetail } from "../../actions/tryItFree";
 class ModalForm extends Component {
   state = {
-    selectedCountry: "EN"
+    selectedCountry: "EN",
+    name: "",
+    email: "",
+    password: "",
+    phone: "",
+    isError: false
   };
   handleSelectCountry = e => {
     this.setState({
@@ -27,6 +29,14 @@ class ModalForm extends Component {
     });
   };
   handleSubmitClick = e => {
+    const { name, email, password, phone } = this.state;
+    if (name && email && password && phone) {
+      this.props.sendTryItDetail({ name, email, password, phone: phone });
+    } else {
+      this.setState({
+        isError: true
+      });
+    }
     e.preventDefault();
   };
   handleChange = (e, value) => {
@@ -47,10 +57,14 @@ class ModalForm extends Component {
       data.icon = HK;
       data.code = "+77";
     }
-    return data
+    return data;
   };
   render() {
+    console.log(this.state, "uuuuuuuuuuuuuu");
+
     const { show, handleCloseModal } = this.props;
+    const { name, email, password, phone ,isError} = this.state;
+
     return (
       <>
         <Modal size={"lg"} show={show} className="modal-wrapper">
@@ -83,9 +97,10 @@ class ModalForm extends Component {
                   <Form.Control
                     type="text"
                     placeholder=""
-                    name="fullName"
+                    name="name"
                     onChange={this.handleChange}
                   />
+                  <Form.Label>{isError && !name && "* field is required"}</Form.Label>
                 </Form.Group>
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label>Email address</Form.Label>
@@ -95,6 +110,7 @@ class ModalForm extends Component {
                     name="email"
                     onChange={this.handleChange}
                   />
+                  <Form.Label>{isError && !email && "* field is required"}</Form.Label>
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
@@ -105,6 +121,7 @@ class ModalForm extends Component {
                     name="password"
                     onChange={this.handleChange}
                   />
+                  <Form.Label>{isError && !password && "* field is required"}</Form.Label>
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
@@ -118,7 +135,9 @@ class ModalForm extends Component {
                       title={
                         <span>
                           <img src={this.dropDownContent().icon} />
-                          <span className="code">{this.dropDownContent().code}</span>
+                          <span className="code">
+                            {this.dropDownContent().code}
+                          </span>
                         </span>
                       }
                       id="input-group-dropdown-1"
@@ -142,10 +161,11 @@ class ModalForm extends Component {
 
                     <FormControl
                       aria-describedby="basic-addon1"
-                      name="phoneNumber"
+                      name="phone"
                       onChange={this.handleChange}
                     />
                   </InputGroup>
+                  <Form.Label>{isError && !phone && "* field is required"}</Form.Label>
                 </Form.Group>
                 <div className="button-container">
                   <Button variant="primary" type="submit">
@@ -166,4 +186,10 @@ function mapStateToProps(state) {
     i18n: state.i18n
   };
 }
-export default connect(mapStateToProps)(ModalForm);
+const mapDispatchToProps = dispatch => ({
+  sendTryItDetail: data => dispatch(sendTryItDetail(data))
+});
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ModalForm);
