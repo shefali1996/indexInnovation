@@ -3,7 +3,6 @@
   box-shadow: 0px 4px 20px rgba(201, 206, 213, 0.25);
   padding-top: 6rem;
   .blog-post {
-    // width: 657px;
     .tag-user {
       display: flex;
       .tag {
@@ -42,9 +41,16 @@
     img {
       // height: 321px;
       width: 100% !important;
+
       display: block;
       margin: 24px 0;
       cursor: pointer;
+      height: unset !important;
+    }
+    img:before {
+      content: "";
+      display: block;
+      padding-top: 25%;
     }
     .tagsandauthor {
       display: flex;
@@ -68,7 +74,7 @@
     .readmore {
     }
     .blog-content {
-      margin-bottom: 10%;
+      // margin-bottom: 10%;
     }
     .content {
       margin-top: 5%;
@@ -87,6 +93,16 @@
     .readmore {
     }
   }
+  .previous_article {
+    color: #2d8dfc;
+    text-align: right;
+    margin-bottom: 10%;
+    cursor: pointer;
+    img {
+      width: unset !important;
+      display: unset;
+    }
+  }
 }
 .form-footer {
   display: flex;
@@ -102,7 +118,7 @@
     margin-bottom: 15px;
     padding: 20px 10px 10px;
     border-radius: 2px;
-    
+
     .date-by {
       margin-bottom: 10px;
       .date {
@@ -114,8 +130,7 @@
         margin-left: 10px;
         color: grey;
         font-size: 15px;
-        font-weight: bold
-        span {
+        font-weight: bold span {
           color: black;
           margin-left: 10px;
         }
@@ -141,18 +156,41 @@
     }
     .title {
       margin: 10px 0px;
-      font-weight: bold
+      font-weight: bold;
     }
   }
 }
-@media only screen and (max-width:600px){
-  .blog-wrapper {
-    .blog-post{
-      h2 {
-        font-size:25px;
-        font-weight: bold
-      };
+
+@media only screen and (min-width: 1200px) {
+  .blog-view {
+    .blog-content {
+      img {
+        width: 630px !important;
+        height: 300px !important;
+      }
     }
   }
-  
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 1000px) {
+  .blog-view {
+    .blog-content {
+      img {
+        width: 530px !important;
+        height: 250px !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .blog-wrapper {
+    .blog-post {
+      h2 {
+        font-size: 25px;
+        font-weight: bold;
+        letter-spacing: -1;
+      }
+    }
+  }
 }

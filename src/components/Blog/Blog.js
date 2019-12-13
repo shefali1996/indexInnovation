@@ -8,6 +8,8 @@ import { connect } from "react-redux";
 import toArray from "lodash/toArray";
 import isEqual from "lodash/isEqual";
 import RecentArticles from "./RecentArticle";
+import {Link} from "react-router"
+import left_icon from "../../assets/images/icons/chevronb.svg"
 class Blog extends Component {
   state = {
     blog: toArray(I18n.t("blog").articles).reverse()
@@ -27,7 +29,7 @@ class Blog extends Component {
   render() {
     const { blog } = this.state;
     return (
-      <div className="blog-wrapper">
+      <div className="blog-wrapper blog-view">
         <div className="container blog">
           <div className="row">
             <div className="col-md-7 col-sm-12">
@@ -51,11 +53,12 @@ class Blog extends Component {
                       </div>
                       <div className="content">
                         {ReactHtmlParser(val.excerpt)}{" "}
-                        <a href="#">{I18n.t("blog.read_more")}</a>
+                        <Link to={`/blog/${val.route.split(" ").join("_")}`}>{I18n.t("blog.read_more")}</Link>
                       </div>
                     </div>
                   );
                 })}
+              <div className="previous_article">Previous Article <img src={left_icon}/></div>
               </div>
             </div>
             <div className="col-md-1 col-sm-12"></div>

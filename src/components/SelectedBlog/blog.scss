@@ -1,66 +1,78 @@
-.selected-blog{
-    .by{
-        text-align: center;
-        color:grey;
-        span{
-            margin-right: 10px
-        }
-        .author{
-            color:black;
-            font-weight: bold
-        }
+.selected-blog {
+  .by {
+    text-align: center;
+    color: grey;
+    span {
+      margin-right: 10px;
     }
-    .content-social{
-        margin-top: 20px;
+    .author {
+      color: black;
+      // font-weight: bold
     }
-      .social-media-icon{
-        display: flex;
-        flex-direction: column;
-        width: fit-content;
-        background:#fafafa;
-        align-items: center;
-        padding: 10px 10px;
-        span:not(:first-child){
-            text-align: center;
-            margin: 4px 0px;
-            background-color: white;
-            border-radius: 50%;
-            font-size: 12px;
-            padding: 8px 12px;
-            width: fit-content;
-
-        }
+  }
+  .content-social {
+    margin-top: 20px;
+    .full-content {
+      ul {
+        color: #a1aeb7;
       }
-      
-    
-    .blog-wrapper{
-        .blog-post{
-            .blog-content{
-                padding: 0 7%;
-                margin-bottom: 5%
-            }
-        }
-        
     }
-    .mobile{
-        display: none
+    .make-fixed{
+        position: fixed;
+        top:100px;
+        right: 13%;
     }
+  }
+  .social-media-icon {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    background: #fafafa;
+    align-items: center;
+    padding: 10px 10px;
+    span:not(:first-child) {
+      text-align: center;
+      margin: 12px 0px;
+      font-size: 12px;
+      width: fit-content;
+      a {
+        background-color: white;
+        border-radius: 50%;
+        font-size: 12px;
+        padding: 10px 12px;
+      }
+    }
+  }
+
+  .blog-wrapper {
+    .blog-post {
+      .blog-content {
+        padding: 0 7%;
+        margin-bottom: 5%;
+      }
+      img {
+        cursor: unset;
+      }
+    }
+  }
+  .mobile {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .desktop{
-        display: none
+  .desktop {
+    display: none;
+  }
+  .selected-blog {
+    .mobile {
+      display: block;
+      margin-top: 20px;
+      .social-media-icon {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+      }
     }
-    .selected-blog{
-        .mobile{
-            display: block;
-            margin-top: 20px;
-            .social-media-icon{
-                flex-direction: row;
-                width:100%;
-                justify-content: space-between
-            }
-        }
-    }
-   
+  }
 }

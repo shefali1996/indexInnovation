@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { I18n } from "react-redux-i18n";
 import ReactHtmlParser from "react-html-parser";
 import toArray from "lodash/toArray";
@@ -48,6 +48,29 @@ export default function Blog({ blog, blogs }) {
       </div>
     );
   };
+  const [isScroll, setIsScroll] = useState(false);
+
+  const handleScroll = event => {
+    let top =
+      document.querySelector(".desktop") &&
+      document.querySelector(".desktop").getBoundingClientRect().top;
+    let parentTop =
+      document.querySelector(".desktop") &&
+      document.querySelector(".desktop-container").getBoundingClientRect().top;
+    if (top < 100) {
+      setIsScroll(true);
+    } else if (parentTop > 100) {
+      setIsScroll(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div className="selected-blog">
       <div className="blog-wrapper">
@@ -79,8 +102,14 @@ export default function Blog({ blog, blogs }) {
                           </div>
                           <div className="col-md-1 col-sm-12"></div>
 
-                          <div className="col-md-1 col-sm-12">
-                            <div className="desktop">{socialIcons()}</div>
+                          <div className="col-md-1 col-sm-12 desktop-container">
+                            <div
+                              className={
+                                "desktop " + (isScroll && "make-fixed")
+                              }
+                            >
+                              {socialIcons()}
+                            </div>
                           </div>
                         </div>
                       </div>

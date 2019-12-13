@@ -16,7 +16,7 @@ export default function RecentArticle({ blog }) {
         {toArray(blog.tags).map(tag => (
           <div className="tag">{tag}</div>
         ))}
-        <Link className="read">Read</Link>
+        <Link to={`/blog/${blog.route.split(" ").join("_")}`} className="read">Read</Link>
       </div>
     </div>
     </div>

@@ -10,10 +10,39 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import isEqual from "lodash/isEqual";
 function SelectedBlog(props) {
+
   const [currentBlog, setCurrentBlog] = useState(null);
   const [blogs, setBlogs] = useState(null);
   const [currIndex, setCurrIndex] = useState(null);
+
+  // useEffect(() => {
+  //   let blogRoute = props.routeParams.route.split("_").join(" ");
+  //   let allBlogs = toArray(I18n.t("blog.articles")).reverse();
+  //   let filteredItem = filter(allBlogs, ["route", blogRoute]);
+  //   let index = allBlogs.findIndex(curr => {
+  //     return curr.title === filteredItem[0].title;
+  //   });
+  //   setCurrentBlog(filteredItem);
+  //   setBlogs(allBlogs.reverse());
+  //   setCurrIndex(index);
+  //   console.log('55555555566666666677777777',props);
+    
+  // }, []);
+
   useEffect(() => {
+    let allBlogs = toArray(I18n.t("blog.articles")).reverse();
+    if (!isEqual(blogs, allBlogs)) setBlogs(allBlogs);
+  });
+
+  useEffect(() => {
+    let allBlogs = toArray(I18n.t("blog.articles"));
+    if (blogs && !isEqual(blogs, allBlogs)) {
+      setCurrentBlog([blogs[currIndex]]);
+    }
+  }, [blogs]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
     let blogRoute = props.routeParams.route.split("_").join(" ");
     let allBlogs = toArray(I18n.t("blog.articles")).reverse();
     let filteredItem = filter(allBlogs, ["route", blogRoute]);
@@ -23,23 +52,13 @@ function SelectedBlog(props) {
     setCurrentBlog(filteredItem);
     setBlogs(allBlogs.reverse());
     setCurrIndex(index);
-  }, []);
-
-  useEffect(() => {
-    let allBlogs = toArray(I18n.t("blog.articles")).reverse();
-    if (!isEqual(blogs, allBlogs)) setBlogs(allBlogs);
-  });
-  useEffect(() => {
-    let allBlogs = toArray(I18n.t("blog.articles"));
-    if (blogs && !isEqual(blogs, allBlogs)) {
-      setCurrentBlog([blogs[currIndex]]);
-    }
-  }, [blogs]);
+    
+  }, [props.location.pathname])
   return (
     <div>
       <Header />
       <Blog blog={currentBlog} blogs={blogs} />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
