@@ -15,9 +15,7 @@ class ContactForm extends Component {
   handleClick = () => {
     const { name, email, message, company } = this.state;
     if (name && email && message && company) {
-      this.props.sendContactDetail({ name, email, message, company }).then(()=>{
-        console.log('rrrrrrrrr');
-        
+      this.props.sendContactDetail({ name, email, message, company }).then(()=>{        
       })
     } else {
       this.setState({
@@ -34,7 +32,6 @@ class ContactForm extends Component {
     });
   };
   render() {
-    console.log(this.state, "kkkkkkkkkkkkkk", sendContactDetail);
     const { name, email, message, company, isError } = this.state;
 
     return (

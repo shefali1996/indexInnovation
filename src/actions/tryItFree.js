@@ -1,7 +1,6 @@
 import * as actions from "./index";
 import axios from "axios";
 export function sendTryItDetail(formData) {
-  console.log(actions, "mmmmmmmmmmm");
   return (dispatch, getState) => {
     return new Promise((resolve, reject) => {
       axios.post(

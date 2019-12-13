@@ -16,7 +16,6 @@ class Homepage extends Component {
 
   render() {
     const {locale}=this.props.i18n
-    console.log(this.props,'kkkkkkkkkk',locale);
     return (
       <div>
         <Header />

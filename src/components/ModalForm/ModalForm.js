@@ -14,6 +14,8 @@ import EN from "../../assets/images/lang/en.svg";
 import CN from "../../assets/images/lang/cn.svg";
 import HK from "../../assets/images/lang/hk.svg";
 import { sendTryItDetail } from "../../actions/tryItFree";
+import { I18n } from "react-redux-i18n";
+
 class ModalForm extends Component {
   state = {
     selectedCountry: "EN",
@@ -59,18 +61,17 @@ class ModalForm extends Component {
     }
     return data;
   };
+  
   render() {
-    console.log(this.state, "uuuuuuuuuuuuuu");
-
     const { show, handleCloseModal } = this.props;
-    const { name, email, password, phone ,isError} = this.state;
+    const { name, email, password, phone, isError } = this.state;
 
     return (
       <>
         <Modal size={"lg"} show={show} className="modal-wrapper">
           <Modal.Header>
             <Modal.Title>
-              Close
+              {I18n.t("modalForm.close")}
               <i
                 class="fa fa-times"
                 aria-hidden="true"
@@ -81,52 +82,55 @@ class ModalForm extends Component {
           <Modal.Body>
             <Form onSubmit={this.handleSubmitClick}>
               <div className="content">
-                <h2>Try IDEX for free</h2>
-                <div>
-                  To try IDEX Innovation Management Software for free,enter your
-                  details below.
-                </div>
-                <div>
-                  We will be in touch shortly with login details .Rest assure
-                  your data is secure with us.
-                </div>
+                <h2>{I18n.t("modalForm.try_free")}</h2>
+                <div>{I18n.t("modalForm.para1")}</div>
+                <div>{I18n.t("modalForm.para2")}</div>
               </div>
               <div className="form-content">
                 <Form.Group controlId="formBasicPassword">
-                  <Form.Label>Full Name</Form.Label>
+                  <Form.Label>{I18n.t("modalForm.fullName")}</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder=""
                     name="name"
                     onChange={this.handleChange}
                   />
-                  <Form.Label>{isError && !name && "* field is required"}</Form.Label>
+                  <Form.Label>
+                    {isError && !name && I18n.t("modalForm.required")}
+                  </Form.Label>
                 </Form.Group>
                 <Form.Group controlId="formBasicEmail">
-                  <Form.Label>Email address</Form.Label>
+                  <Form.Label>{I18n.t("modalForm.emailAddress")}</Form.Label>
                   <Form.Control
                     type="email"
                     placeholder=""
                     name="email"
                     onChange={this.handleChange}
                   />
-                  <Form.Label>{isError && !email && "* field is required"}</Form.Label>
+                  <Form.Label>
+                    {isError && !email && I18n.t("modalForm.required")}
+                  </Form.Label>
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
-                  <Form.Label>Company</Form.Label>
+                  <Form.Label>{I18n.t("modalForm.company")}</Form.Label>
                   <Form.Control
                     type="text"
                     placeholder=""
                     name="password"
                     onChange={this.handleChange}
                   />
-                  <Form.Label>{isError && !password && "* field is required"}</Form.Label>
+                  <Form.Label>
+                    {isError && !password && I18n.t("modalForm.required")}
+                  </Form.Label>
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
                   <Form.Label>
-                    Phone Number <span className="optional">(optional)</span>
+                    {I18n.t("modalForm.phoneNumber")}{" "}
+                    <span className="optional">
+                      ({I18n.t("modalForm.optional")})
+                    </span>
                   </Form.Label>
                   <InputGroup className="mb-3">
                     <DropdownButton
@@ -165,11 +169,13 @@ class ModalForm extends Component {
                       onChange={this.handleChange}
                     />
                   </InputGroup>
-                  <Form.Label>{isError && !phone && "* field is required"}</Form.Label>
+                  <Form.Label>
+                    {isError && !phone && I18n.t("modalForm.required")}
+                  </Form.Label>
                 </Form.Group>
                 <div className="button-container">
                   <Button variant="primary" type="submit">
-                    Submit
+                    {I18n.t("modalForm.submit")}
                   </Button>
                 </div>
               </div>

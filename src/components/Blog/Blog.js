@@ -28,12 +28,15 @@ class Blog extends Component {
     this.props.router.push(`/blog/${blogRoute}`);
   };
   onNextClick = start => {
-    this.setState({
-      start: start + 3,
-      end: this.state.end + 3
-    },()=>{
-      window.scrollTo(0,0)
-    });
+    this.setState(
+      {
+        start: start + 3,
+        end: this.state.end + 3
+      },
+      () => {
+        window.scrollTo(0, 0);
+      }
+    );
   };
   render() {
     const { blog, start, end } = this.state;
@@ -70,16 +73,18 @@ class Blog extends Component {
                   );
                 })}
                 <div className="previous_article">
-                 <span onClick={() => this.onNextClick(start)}> Previous Article <img src={left_icon} /></span>
+                  <span onClick={() => this.onNextClick(start)}>
+                    {" "}
+                    {I18n.t("blog.previous_articles")}
+                    <img src={left_icon} />
+                  </span>
                 </div>
               </div>
             </div>
             <div className="col-md-1 col-sm-12"></div>
 
             <div className="col-md-4 col-sm-12 recent-article">
-              <h3 className="mb-3" >
-                Recent articles
-              </h3>
+              <h3 className="mb-3"> {I18n.t("blog.recent_articles")}</h3>
 
               {blog.map(val => (
                 <RecentArticles blog={val} />

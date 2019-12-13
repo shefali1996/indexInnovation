@@ -110,7 +110,7 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
                                       src={left_icon}
                                       style={{ transform: "rotate(180deg)" }}
                                     />
-                                    <span>Previous article</span>
+                                    <span>{I18n.t('blog.previous_articles')}</span>
                                   </span>
                                 )}
                               </span>
@@ -118,7 +118,7 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
                                 {currIndex < blogs.length - 1 && (
                                   <span onClick={() => handleNextClick("next")}>
                                     <span>
-                                      Next article <img src={left_icon} />{" "}
+                                    {I18n.t('blog.next_article')} <img src={left_icon} />{" "}
                                     </span>
                                   </span>
                                 )}
@@ -144,7 +144,7 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
             </div>
 
             <div className="col-md-12 col-sm-12 recent-article">
-              <h3 className="mb-3">Recent articles</h3>
+              <h3 className="mb-3">{I18n.t('blog.recent_articles')}</h3>
               <div className="row">
                 {blogs &&
                   blogs.map(val => (

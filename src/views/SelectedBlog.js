@@ -48,9 +48,7 @@ function SelectedBlog(props) {
       setCurrIndex(currIndex - 1);
     }
     window.scrollTo(0,0)
-  };
-  console.log(currentBlog,'kkkkkkkk');
-  
+  };  
   return (
     <div>
       <Header />
