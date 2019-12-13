@@ -104,6 +104,7 @@
 
 @media screen and(max-width:600px) {
   .howworks-container {
+    margin-top: 15%;
     .howworks-item {
       flex-direction: column;
       .howworks-text-wrapper {
@@ -118,7 +119,7 @@
       margin-left: 0;
     }
     .item-ideate {
-      margin-top: 50px;
+      margin-top: 0px;
     }
     .item-engage {
       background-color: none;

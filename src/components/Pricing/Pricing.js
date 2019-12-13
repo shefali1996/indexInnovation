@@ -5,10 +5,14 @@ import checkIcon from '../../assets/images/icons/check-feature.svg'
 import './Pricing.scss' 
 import {connect} from 'react-redux'
 import Collapsible from 'react-collapsible';
-
+import ContacUsModal from "./ContactUsModal"
 class Pricing extends Component {
-  state = {}
-
+  state = {show:false}
+  handelShowModal=()=>{    
+    this.setState(prevState => ({
+      show: true
+    }))
+  }
   render() {    
     return (
       <div className="pricing-wrapper">
@@ -159,7 +163,17 @@ class Pricing extends Component {
             <div className="col-md-12">
               <div className="stay_in_touch_div">
                 <h3 className="stay_in_touch">{I18n.t('pricing.price4.stay_in_touch')}</h3> 
-                <button className="btn_contact">{I18n.t('pricing.price4.contact_us')}</button>
+              
+
+                  <ContacUsModal show={this.state.show}
+                  
+                    handleCloseModal={() => {
+                      this.setState({
+                        show: false
+                      })
+                    }}/>
+                
+                <button className="btn_contact"  onClick={this.handelShowModal}>{I18n.t('pricing.price4.contact_us')}</button>
               </div>
             </div>
           </div>
