@@ -8,23 +8,37 @@ import './TrustBy.scss'
 import {connect} from 'react-redux';
 import Apertum_logo from "../../assets/images/Apertum.svg"
 import OpenNet_logo from "../../assets/images/Opennet.svg"
+import apertumImg_colored from '../../assets/images/customer_logos/apertum_colored.png'
+// import sportyImg from '../../assets/images/customer_logos/sporty.png'
+import opennetImg_colored from '../../assets/images/customer_logos/OpenNet_colored.svg'
 
 class TrustBy extends Component {
   state = {}
+  handleHover=(e)=>{
+    this.setState({
+      [e.target.name]:true
+    })
+  }
 
+  handleLeave=(e)=>{
+    this.setState({
+      [e.target.name]:false
+    })
+  }
   render() {
+    const {apertum,open_net,sporty}=this.state
     return (
       <div className="trustby-wrapper">
         <h2>{I18n.t('trusty.title')}</h2>
         <div className="trusty-brand">
           <div className="trusty-brand-item apertum-img">
-            <img src={apertumImg} alt="Apertum" />
+            <img src={apertumImg} alt="Apertum" name="apertum" onMouseOver={this.handleHover} onMouseLeave={this.handleLeave}/>
           </div>
           <div className="trusty-brand-item opennet-img">
-            <img src={opennetImg} alt="Open Net"/>
+            <img src={opennetImg} alt="Open Net" name="open_net" onMouseOver={this.handleHover} onMouseLeave={this.handleLeave}/>
           </div>
           <div className="trusty-brand-item sporty-img">
-            <img src={sportyImg} alt="Sporty"/>
+            <img src={sportyImg} alt="Sporty" name="sporty" onMouseOver={this.handleHover} onMouseLeave={this.handleLeave}/>
           </div>
         </div>
         <div className="trusty-feedback">

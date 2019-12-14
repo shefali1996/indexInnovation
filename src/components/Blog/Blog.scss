@@ -5,12 +5,22 @@
   .blog-post {
     .tag-user {
       display: flex;
-      .tag {
+      .tag:first-child {
         background-color: #2d8dfc;
         margin-left: 10px;
         border-radius: 10px;
         padding: 2px 8px;
         color: white;
+        font-weight: bold;
+        font-size: 12px;
+      };
+      .tag:not(:first-child) {
+        // color: #2d8dfc;
+        margin-left: 10px;
+        border-radius: 10px;
+        padding: 2px 8px;
+        // color: white;
+        border:1px solid #2d8dfc;
         font-weight: bold;
         font-size: 12px;
       }
@@ -144,13 +154,23 @@
         text-decoration: underline;
         cursor: pointer;
       }
-      .tag {
+      .tag:first-child {
         background-color: #2d8dfc;
-        margin-right: 10px;
+        margin-left: 10px;
         border-radius: 10px;
         padding: 2px 8px;
         color: white;
-        // font-weight: bold;
+        font-weight: bold;
+        font-size: 12px;
+      };
+      .tag:not(:first-child) {
+        // color: #2d8dfc;
+        margin-left: 10px;
+        border-radius: 10px;
+        padding: 2px 8px;
+        // color: white;
+        border:1px solid #2d8dfc;
+        font-weight: bold;
         font-size: 12px;
       }
     }
