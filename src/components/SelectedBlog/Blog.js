@@ -51,7 +51,7 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
         </Tooltip>
           }
         >
-          <a rel="noopener noreferrer" target="_blank" style={{color:"blue"}}><i className="fab fa-weixin" ></i></a>
+          <a rel="noopener noreferrer" target="_blank" style={{color:"#007bff"}}><i className="fab fa-weixin" ></i></a>
         </OverlayTrigger>
         </span>
       </div>
