@@ -13,7 +13,9 @@ import Resources from '../components/Resources/Resources'
 class Homepage extends Component {
   state = {
   }
-
+  componentDidMount(){
+    window.scrollTo(0,0)
+  }
   render() {
     const {locale}=this.props.i18n
     return (

@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { I18n } from "react-redux-i18n";
 import { connect } from "react-redux";
-import {
-  Modal,
-} from "react-bootstrap";
-import ContactForm from "..//ContactForm/ContactForm"
+import { Modal } from "react-bootstrap";
+import ContactForm from "..//ContactForm/ContactForm";
 
 class ModalForm extends Component {
   state = {
@@ -23,19 +21,19 @@ class ModalForm extends Component {
     const { show, handleCloseModal } = this.props;
     return (
       <>
-        <Modal size={"lg"} show={show} className="modal-wrapper contactus-pricing">
+        <Modal
+          size={"lg"}
+          show={show}
+          className="modal-wrapper contactus-pricing"
+        >
           <Modal.Header>
-            <Modal.Title>
+            <Modal.Title onClick={handleCloseModal}>
               Close
-              <i
-                class="fa fa-times"
-                aria-hidden="true"
-                onClick={handleCloseModal}
-              ></i>
+              <i class="fa fa-times" aria-hidden="true"></i>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-         <ContactForm/>
+            <ContactForm />
           </Modal.Body>
         </Modal>
       </>

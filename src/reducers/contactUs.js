@@ -13,8 +13,10 @@ const initialState = {
 
 };
 
-const sendContactDetailRequest = (state, action) =>
-  update(state, {
+const sendContactDetailRequest = (state, action) =>{
+  console.log('44444444444444455555555');
+  
+ return  update(state, {
     contactData: {
       isLoading: { $set: true },
       isError: { $set: false },
@@ -22,9 +24,11 @@ const sendContactDetailRequest = (state, action) =>
       message: { $set: "" }
     }
   });
+}
+  
 const sendContactDetailSuccess = (state, action) =>
   update(state, {
-    metricsData: {
+    contactData: {
       data: { $set: action.payload },
       isLoading: { $set: false },
       isError: { $set: false },
@@ -35,7 +39,7 @@ const sendContactDetailSuccess = (state, action) =>
 
   const sendContactDetailError = (state, action) =>
   update(state, {
-    metricsData: {
+    contactData: {
       data: { $set: action.payload },
       isLoading: { $set: false },
       isError: { $set: false },

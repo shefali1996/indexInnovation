@@ -38,6 +38,7 @@ class Blog extends Component {
       }
     );
   };
+
   render() {
     const { blog, start, end } = this.state;
     return (
@@ -49,7 +50,7 @@ class Blog extends Component {
                 {blog.slice(start, end).map(val => {
                   return (
                     <div className="blog-content">
-                      <h2>{val.title}</h2>
+                      <h2 className="blog-title"onClick={()=>this.handleClick(val.route)}>{val.title}</h2>
                       <img
                         src={val.image}
                         alt="banner"

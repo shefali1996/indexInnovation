@@ -128,7 +128,7 @@ const translationObject = {
       para1:
         "To try IDEX Innovation Management Software for free,enter your details below.",
       para2:
-        "We will be in touch shortly with login details .Rest assure your data is secure with us.",
+        "We will be in touch shortly with login details.Rest assure, your data is secure with us.",
       fullName: "Full Name",
       emailAddress: "Email address",
       company: "Company",
@@ -239,16 +239,16 @@ const translationObject = {
       by: "通过"
     },
     modalForm: {
-      try_free: "免费试用IDEX",
-      para1: "要免费试用IDEX创新管理软件，请在下面输入您的详细信息。",
-      para2: "我们将尽快与您联系，以确保您的数据安全。",
-      fullName: "全名",
-      emailAddress: "电子邮件地址",
-      company: "公司",
-      phoneNumber: "电话号码",
-      optional: "可选的",
-      submit:"提交 ",
-      close:"关",
+      try_free: "免费体验畅意系统",
+      para1: "填写下方表格，提交后即可免费体验畅意创新管理系统。",
+      para2: "我们将尽快与您联系为您提供登录信息。请放心，您的信息是绝对安全的。",
+      fullName: "姓名",
+      emailAddress: "工作邮箱",
+      company: "公司名称",
+      phoneNumber: "联系电话",
+      optional: "可选",
+      submit:"提交",
+      close:"关闭",
       required:"*为必填项"
     }
   },
@@ -352,16 +352,16 @@ const translationObject = {
       by: "通過"
     },
     modalForm: {
-      try_free: "免費試用IDEX",
-      para1: "要免費試用IDEX創新管理軟件，請在下面輸入您的詳細信息",
-      para2: "我們將盡快與您聯繫，以確保您的數據安全。",
-      fullName: "全名",
-      emailAddress: "電子郵件地址",
-      company: "公司",
-      phoneNumber: "電話號碼",
-      optional: "可選的",
+      try_free: "免費體驗暢意系統",
+      para1: "填寫下方表格，提交後即可免費體驗暢意創新管理系統。",
+      para2: "我們將盡快與您聯絡為您提供登入信息。請放心，您的信息是絕對安全的。",
+      fullName: "姓名",
+      emailAddress: "工作電郵",
+      company: "公司名稱",
+      phoneNumber: "聯絡電話",
+      optional: "可選",
       submit:"提交",
-      close:"關",
+      close:"關閉",
       required:"*必填項"
 
     }

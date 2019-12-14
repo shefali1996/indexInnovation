@@ -68,14 +68,13 @@ class ModalForm extends Component {
 
     return (
       <>
-        <Modal size={"lg"} show={show} className="modal-wrapper">
+        <Modal size={"lg"} show={show} className="modal-wrapper try-free-modal">
           <Modal.Header>
-            <Modal.Title>
-              {I18n.t("modalForm.close")}
+            <Modal.Title onClick={handleCloseModal}>
+              <span >{I18n.t("modalForm.close")}</span>
               <i
                 class="fa fa-times"
                 aria-hidden="true"
-                onClick={handleCloseModal}
               ></i>
             </Modal.Title>
           </Modal.Header>
@@ -95,9 +94,9 @@ class ModalForm extends Component {
                     name="name"
                     onChange={this.handleChange}
                   />
-                  <Form.Label>
+                  {/* <Form.Label>
                     {isError && !name && I18n.t("modalForm.required")}
-                  </Form.Label>
+                  </Form.Label> */}
                 </Form.Group>
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label>{I18n.t("modalForm.emailAddress")}</Form.Label>
@@ -107,9 +106,9 @@ class ModalForm extends Component {
                     name="email"
                     onChange={this.handleChange}
                   />
-                  <Form.Label>
+                  {/* <Form.Label>
                     {isError && !email && I18n.t("modalForm.required")}
-                  </Form.Label>
+                  </Form.Label> */}
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
@@ -120,9 +119,9 @@ class ModalForm extends Component {
                     name="password"
                     onChange={this.handleChange}
                   />
-                  <Form.Label>
+                  {/* <Form.Label>
                     {isError && !password && I18n.t("modalForm.required")}
-                  </Form.Label>
+                  </Form.Label> */}
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">

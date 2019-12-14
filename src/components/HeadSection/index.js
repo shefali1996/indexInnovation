@@ -10,9 +10,18 @@ import Chinese_video from "../../assets/videos/video_chinese_normal_speed.mp4";
 import logo from "../../assets/images/logo.png";
 import ReactPlayer from "react-player";
 import play_icon from "../../assets/images/icons/play-flat.svg";
+import ModalForm from "../ModalForm/ModalForm";
+
 class HeadSection extends Component {
   state = {
-    play: false
+    play: false,
+    show: false
+
+  };
+  handelShowModal = () => {
+    this.setState(prevState => ({
+      show: true
+    }));
   };
   handlePlayClick = () => {
     this.setState((prevState)=>({
@@ -22,6 +31,15 @@ class HeadSection extends Component {
   render() {
     return (
       <div className="head-section">
+              <ModalForm
+          show={this.state.show}
+          handleCloseModal={() => {
+            this.setState({
+              show: false
+            });
+          }}
+        />
+
         <img className="head-circle-img" src={bgImage} alt="head-circle-img" />
         <img
           className="head-notebook-img"
@@ -31,7 +49,7 @@ class HeadSection extends Component {
         <div className="linear-bg"></div>
         <h2>{I18n.t("headSection.moveForward")}</h2>
         <p>{I18n.t("headSection.transform")}</p>
-        <div className="exp-idex-btn">{I18n.t("headSection.expIDEX")}</div>
+        <div className="exp-idex-btn" onClick={this.handelShowModal}>{I18n.t("headSection.expIDEX")}</div>
         <div className="idex-player-container">
           <div className="idex-player">
             <ReactPlayer

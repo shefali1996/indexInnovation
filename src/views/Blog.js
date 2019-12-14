@@ -8,7 +8,9 @@ import Blog from '../components/Blog/Blog'
 
 export default class BlogPage extends Component {
   
-
+  componentDidMount(){
+    window.scrollTo(0,0)
+  }
   render() {
     return (
       <div>

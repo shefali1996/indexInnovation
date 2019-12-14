@@ -46,7 +46,7 @@ class TrustBy extends Component {
             <div className="feedback-wrapper">
               <p>{I18n.t('trusty.identify')}</p>
             </div>
-            <span>{I18n.t('trusty.card1Name')}{" "},{" "}{I18n.t('trusty.card1Position')}</span>
+            <span>Rajat Chugh,{" "}General Manager</span>
             <label><img src={Apertum_logo}/></label>
             <label className="feedback-quote"><img src={quoteImg} alt="..." /></label>
 
@@ -55,7 +55,7 @@ class TrustBy extends Component {
             <div className="feedback-wrapper">
               <p>{I18n.t('trusty.beforeIDEX')}</p>
             </div>
-            <span>{I18n.t('trusty.card2Name')}{" "},{" "}{I18n.t('trusty.card2Position')}</span>
+            <span>Jason Peterson{" "},{" "}Product Director</span>
             <label><img src={OpenNet_logo}/></label>
           </div>
         </div>
