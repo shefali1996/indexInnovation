@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactFlagsSelect from "react-flags-select";
 import logoImg from "../../assets/images/logo.png";
 import { I18n, setLocale } from "react-redux-i18n";
-import { Link } from "react-router";
+import { Link,withRouter } from "react-router";
 import "./header.scss";
 import "react-flags-select/css/react-flags-select.css";
 import "react-flags-select/scss/react-flags-select.scss";
@@ -25,6 +25,14 @@ class Header extends Component {
       show: true
     }))
   }
+  handleLogoClick=()=>{
+    if(window.location.pathname==="/"){
+      window.scrollTo(0,0)
+    }
+    else{
+      this.props.router.push("/")      
+    }
+  }
   render() {
     const { mobileHeader } = this.state;
     return (
@@ -37,14 +45,14 @@ class Header extends Component {
       }}
       />
         <div className={(!mobileHeader && "hide-header ") + " header-wrapper"}>
-          <div className="header-logo-wrapper">
+          <div className="header-logo-wrapper" >
             <i
               className="fa fa-times-thin fa-2x"
               aria-hidden="true"
               onClick={this.handleClick}
             ></i>
 
-            <img src={logoImg} alt="IDEX Logo" />
+            <img src={logoImg} onClick={this.handleLogoClick} alt="IDEX Logo" />
           </div>
           <div className="menu">
             <div className="menu-group">
@@ -114,4 +122,4 @@ function mapStateToProps(state) {
     i18n: state.i18n
   };
 }
-export default connect(mapStateToProps)(Header);
+export default withRouter(connect(mapStateToProps)(Header));

@@ -5,6 +5,8 @@ import toArray from "lodash/toArray";
 import RecentArticles from "../Blog/RecentArticle";
 import "./blog.scss";
 import left_icon from "../../assets/images/icons/chevronb.svg";
+import {OverlayTrigger,Tooltip} from "react-bootstrap"
+import QrCode from "../../assets/images/customer_logos/qrcode.jpg"
 
 export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
   const socialIcons = () => {
@@ -34,18 +36,23 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
             href="https://twitter.com/idex_ideas"
             rel="noopener noreferrer"
             target="_blank"
+           
           >
             <i className="fab fa-twitter"></i>
           </a>
         </span>
         <span>
-          <a
-            href="https://wechat.com"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <i className="fab fa-weixin"></i>
-          </a>
+        <OverlayTrigger
+          key={'top'}
+          placement={'top'}
+          overlay={
+            <Tooltip id={`tooltip-top`}>
+              <img src={QrCode} width="150px" height="150px" />
+        </Tooltip>
+          }
+        >
+          <a rel="noopener noreferrer" target="_blank" style={{color:"blue"}}><i className="fab fa-weixin" ></i></a>
+        </OverlayTrigger>
         </span>
       </div>
     );
