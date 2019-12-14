@@ -91,6 +91,15 @@
       width: 10%;
       cursor: pointer;
     }
+    .react-player{
+      video{
+        button{
+          .play-pause{
+            display:none;
+          }
+        }
+      }
+    }
   }
 }
 
