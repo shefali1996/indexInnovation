@@ -10,13 +10,9 @@ export function sendContactDetail(formData) {
         {
           ...formData
         }
-      ).then((data)=>{
-        console.log('333333',data);
-        
+      ).then((data)=>{        
         dispatch(actions.sendContactDetailSuccess(data));
-      }).catch((data)=>{
-        console.log(data,'8888888888');
-        
+      }).catch((data)=>{        
         dispatch(actions.sendContactDetailError('ERROR OCCURS'));
       })
     });

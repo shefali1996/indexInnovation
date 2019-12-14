@@ -7,13 +7,22 @@ import {connect} from 'react-redux'
 import Collapsible from 'react-collapsible';
 import ContacUsModal from "./ContactUsModal"
 class Pricing extends Component {
-  state = {show:false}
-  handelShowModal=()=>{    
+  state = {show:false,
+  subject:""
+  }
+  handelShowModal=(sub)=>{ 
+    let subject =""
+    if(sub==="plan"){
+      subject='Plans & Pricing Enquiry'
+    }   else{
+      subject=" Enterprise Pricing Enquiry "
+    }
     this.setState(prevState => ({
-      show: true
+      show: true,
+      subject
     }))
   }
-  render() {    
+  render() {        
     return (
       <div className="pricing-wrapper">
         <h2>{I18n.t('pricing.price1.plans_pricing')}</h2>
@@ -39,7 +48,7 @@ class Pricing extends Component {
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price1.single_sign_on')}</li>
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price1.dedicated_manager')}</li>
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price1.sla_tech')}</li>
-                  <button>{I18n.t('pricing.price1.try_for_free')}</button>
+                  <button onClick={this.handelShowModal}>{I18n.t('pricing.price1.try_for_free')}</button>
                 </ul>  
               </div>  
             </div>
@@ -66,7 +75,7 @@ class Pricing extends Component {
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price2.single_sign_on')}</li>
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price2.dedicated_manager')}</li>
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price2.sla_tech')}</li>
-                  <button className="inverse">{I18n.t('pricing.price2.try_for_free')}</button>
+                  <button className="inverse" onClick={this.handelShowModal}>{I18n.t('pricing.price2.try_for_free')}</button>
                 </ul> 
               </div>
             </div>
@@ -89,7 +98,7 @@ class Pricing extends Component {
                   <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price3.single_sign_on')}</li>
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price3.dedicated_manager')}</li>
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price3.sla_tech')}</li>
-                  <button>{I18n.t('pricing.price3.try_for_free')}</button>
+                  <button onClick={this.handelShowModal}>{I18n.t('pricing.price3.try_for_free')}</button>
                 </ul>  
               </div>  
             </div>
@@ -111,7 +120,7 @@ class Pricing extends Component {
                   <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price4.single_sign_on')}</li>
                   <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price4.dedicated_manager')}</li>
                   <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price4.sla_tech')}</li>
-                  <button>{I18n.t('pricing.price4.try_for_free')}</button>
+                  <button onClick={this.handelShowModal}>{I18n.t('pricing.price4.try_for_free')}</button>
                 </ul>  
               </div>  
             </div>
@@ -163,17 +172,17 @@ class Pricing extends Component {
             <div className="col-md-12">
               <div className="stay_in_touch_div">
                 <h3 className="stay_in_touch">{I18n.t('pricing.price4.stay_in_touch')}</h3> 
-              
+              }
 
                   <ContacUsModal show={this.state.show}
-                  
+                  subject={this.state.subject}
                     handleCloseModal={() => {
                       this.setState({
                         show: false
                       })
                     }}/>
                 
-                <button className="btn_contact"  onClick={this.handelShowModal}>{I18n.t('pricing.price4.contact_us')}</button>
+                <button className="btn_contact"  onClick={()=>this.handelShowModal('plan')}>{I18n.t('pricing.price4.contact_us')}</button>
               </div>
             </div>
           </div>

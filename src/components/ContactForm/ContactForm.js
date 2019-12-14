@@ -16,8 +16,9 @@ class ContactForm extends Component {
 
   handleClick = () => {
     const { name, email, message, company } = this.state;
+   const {subject}= this.props   
     if (name && email && message && company) {
-    this.props.sendContactDetail({ name, email, message, company });
+    this.props.sendContactDetail({ name, email, message, company,subject });
     }
     else {
       this.setState({
@@ -46,7 +47,7 @@ class ContactForm extends Component {
   };
   render() {
     const { name, email, message, company, isError } = this.state;
-    const { contactData } = this.props;
+    const { contactData,subject } = this.props;
     return (
       <div className="contact-wrapper">
         {/* <div className="contact-wrapper-bg"></div> */}
@@ -112,8 +113,6 @@ class ContactForm extends Component {
   }
 }
 const mapStateToProps = state => {
-  console.log(state, "mmmmmmmm999999999677777777777");
-
   return {
     contactData: state.contactUs.contactData
   };

@@ -13,9 +13,7 @@ const initialState = {
 
 };
 
-const sendContactDetailRequest = (state, action) =>{
-  console.log('44444444444444455555555');
-  
+const sendContactDetailRequest = (state, action) =>{  
  return  update(state, {
     contactData: {
       isLoading: { $set: true },

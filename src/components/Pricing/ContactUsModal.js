@@ -18,7 +18,7 @@ class ModalForm extends Component {
   };
 
   render() {
-    const { show, handleCloseModal } = this.props;
+    const { show, handleCloseModal,subject } = this.props;    
     return (
       <>
         <Modal
@@ -33,7 +33,7 @@ class ModalForm extends Component {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <ContactForm />
+            <ContactForm subject={ subject} />
           </Modal.Body>
         </Modal>
       </>
