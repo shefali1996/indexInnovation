@@ -7,7 +7,7 @@ import {connect} from 'react-redux'
 class Resources extends Component {
   state = {}
 
-  render() {
+  render() {    
     return (
       <div className="resource-wrapper">
         <h2>{I18n.t('resource.title')}</h2>

@@ -14,16 +14,16 @@ export default class Routes extends Component {
       <>
         <BrowserRouter>
         <RouteComponent>
-        {/* <Switch> */}
-        <div>
+        <Switch>
+        {/* <div> */}
           {/* <Route component={Header} /> */}
           <Route exact path="/" component={Homepage} />
           <Route exact path="/pricing" component={PricingPage} />
           <Route exact path="/blog" component={BlogPage} />
           <Route exact path="/blog/:route" component={SelectedBlog} />
           <Route  path="*" component={Homepage} />
-          {/* </Switch> */}
-          </div>
+          </Switch>
+          {/* </div> */}
           </RouteComponent>
         </BrowserRouter>
       </>

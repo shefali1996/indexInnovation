@@ -5,6 +5,7 @@ import "./ContactForm.scss";
 import { Spinner, Alert } from "react-bootstrap";
 import { connect } from "react-redux";
 import isEqual from "lodash/isEqual";
+import { log } from "util";
 class ContactForm extends Component {
   state = {
     name: "",
@@ -27,6 +28,8 @@ class ContactForm extends Component {
     }
   };
   componentDidUpdate(prevProps) {
+    console.log('444444444');
+    
     if (!isEqual(prevProps, this.props) && this.props.contactData.isSuccess) {
       this.setState({
         name: "",
@@ -48,6 +51,7 @@ class ContactForm extends Component {
   render() {
     const { name, email, message, company, isError } = this.state;
     const { contactData,subject } = this.props;
+    
     return (
       <div className="contact-wrapper">
         {/* <div className="contact-wrapper-bg"></div> */}
@@ -114,7 +118,9 @@ class ContactForm extends Component {
 }
 const mapStateToProps = state => {
   return {
-    contactData: state.contactUs.contactData
+    contactData: state.contactUs.contactData,
+    i18n : state.i18n
+
   };
 };
 

@@ -31,7 +31,7 @@ class Pricing extends Component {
           <div className="row">
             <div className="col-md-3">
               <div className="pricing-card">
-                <h5 className="pricing-card-title">{I18n.t('pricing.price1.STARTER')}</h5>
+                <h5 className="pricing-card-title">{I18n.t('pricing.price1.starter')}</h5>
                 <div  className="pricing-details">
                   <span className="price">${I18n.t('pricing.price1.99')}</span>
                   <span className="pricing-unit">{I18n.t('pricing.price1.usd')} / {I18n.t('pricing.price1.month')}</span>
@@ -55,7 +55,7 @@ class Pricing extends Component {
             <div className="col-md-3">
               <div className="pricing-card most-popular">
               <div className="popular"><span>
-              {I18n.t('pricing.price2.MOST POPULAR')}
+              {I18n.t('pricing.price2.most_popular')}
                 </span></div>
 
               <h5 className="pricing-card-title">{I18n.t('pricing.price2.professional')}</h5>
