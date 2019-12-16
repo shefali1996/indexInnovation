@@ -137,7 +137,7 @@ class Header extends Component {
               aria-hidden="true"
               onClick={this.handleClick}
             ></i>
-            <img src={logoImg} alt="IDEX Logo" />
+            <img src={logoImg} alt="IDEX Logo" onClick={this.handleLogoClick} />
           </div>
           <div className="trial-btn-mobile" onClick={this.handelShowModal}>
             {I18n.t("header.tryFree")}

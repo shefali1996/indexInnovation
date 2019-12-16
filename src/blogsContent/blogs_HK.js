@@ -1,4 +1,4 @@
-import Banner1 from "../assets/images/blog/banner-1.jpg";
+import Banner1 from "../assets/images/blog/banner_cropped.jpg";
 import Banner2 from "../assets/images/blog/banner-2.jpg";
 import Banner3 from "../assets/images/blog/banner-3.jpg";
 export default [
