@@ -12,24 +12,32 @@ class ContactForm extends Component {
     email: "",
     message: "",
     company: "",
-    isError: false
+    isError: false,
+    email_error: false
   };
 
   handleClick = () => {
     const { name, email, message, company } = this.state;
-   const {subject}= this.props   
-    if (name && email && message && company) {
-    this.props.sendContactDetail({ name, email, message, company,subject });
+    var re = /\S+@\S+\.\S+/;
+    let email_verify = re.test(email);
+    if (!email_verify) {
+      this.setState({
+        email_error: true
+      });
     }
-    else {
+    const { subject } = this.props;
+    if (name && email_verify && message && company) {
+      this.props.sendContactDetail({ name, email, message, company, subject });
+      this.setState({
+        email_error: false
+      });
+    } else {
       this.setState({
         isError: true
       });
     }
   };
   componentDidUpdate(prevProps) {
-    console.log('444444444');
-    
     if (!isEqual(prevProps, this.props) && this.props.contactData.isSuccess) {
       this.setState({
         name: "",
@@ -43,22 +51,27 @@ class ContactForm extends Component {
 
   handleChange = e => {
     const name = e.target.name;
-    const value = e.target.value;
+    const value = e.target.value.trim();
     this.setState({
       [name]: value
     });
   };
   render() {
-    const { name, email, message, company, isError } = this.state;
-    const { contactData,subject } = this.props;
-    
+    const { name, email, message, company, isError, email_error } = this.state;
+    const { contactData, subject } = this.props;
+    console.log(email_error,'mmmmmmmmmmm');
+
     return (
       <div className="contact-wrapper">
         {/* <div className="contact-wrapper-bg"></div> */}
         <h2>{I18n.t("contact.keepTouch")}</h2>
         <p>{I18n.t("contact.connect")}</p>
         <div className="contact-form-wrapper">
-          {/* { contactData.isSuccess && <Alert variant={"success"}>Thanks.We will contact Soon</Alert>} */}
+          {contactData.isSuccess && (
+            <Alert variant={"success"}>
+              {I18n.t("contact.message_sent_successfull")}
+            </Alert>
+          )}
           <div className="form-group">
             <label>{I18n.t("contact.name")}</label>
             <input
@@ -69,6 +82,9 @@ class ContactForm extends Component {
               value={name}
             />
             {/* <label> {isError && !name && "*field required"}</label> */}
+            {isError && !name && (
+              <label className="error"> {I18n.t("contact.empty_all")}</label>
+            )}
           </div>
           <div className="form-group">
             <label>{I18n.t("contact.company")}</label>
@@ -80,17 +96,28 @@ class ContactForm extends Component {
               value={company}
             />
             {/* <label> {isError && !company && "*field required"}</label> */}
+            {isError && !company && (
+              <label className="error"> {I18n.t("contact.empty_all")} </label>
+            )}
           </div>
           <div className="form-group">
             <label>{I18n.t("contact.workEmail")}</label>
             <input
-              type="text"
+              type="email"
               className="form-control"
               name="email"
               onChange={this.handleChange}
               value={email}
+              required
             />
-            {/* <label> {isError && !email && "*field required"}</label> */}
+            {console.log(isError && !email,email_error,'yyyyyyyyyyy')}
+            {((isError && !email) ||
+              email_error) && 
+                <label className="error">
+                  {" "}
+                  {I18n.t("contact.emply_email")}
+                </label>
+              }
           </div>
           <div className="form-group">
             <label>{I18n.t("contact.message")}</label>
@@ -100,7 +127,9 @@ class ContactForm extends Component {
               onChange={this.handleChange}
               value={message}
             ></textarea>
-            {/* <label> {isError && !message && "*field required"}</label> */}
+            {isError && !message && (
+              <label className="error"> {I18n.t("contact.empty_all")}</label>
+            )}
           </div>
           <div className="form-group form-footer">
             <div className="submit-btn" onClick={this.handleClick}>
@@ -119,8 +148,7 @@ class ContactForm extends Component {
 const mapStateToProps = state => {
   return {
     contactData: state.contactUs.contactData,
-    i18n : state.i18n
-
+    i18n: state.i18n
   };
 };
 

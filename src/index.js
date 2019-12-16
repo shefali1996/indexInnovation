@@ -108,7 +108,10 @@ const translationObject = {
       company: "Company",
       workEmail: "Work email",
       message: "Message",
-      submit: "Submit"
+      submit: "Submit",
+      empty_all:"Please provide your details to proceed",
+      emply_email:'Please enter a valid email address',
+      message_sent_successfull:"Message successfully sent. We will be in touch soon"
     },
     pricing: pricing_content.GB,
 
@@ -224,7 +227,10 @@ const translationObject = {
       company: "公司名称",
       workEmail: "工作邮箱",
       message: "信息",
-      submit: "提交"
+      submit: "提交",
+      empty_all:"请提交您的信息之后再提交。",
+      emply_email:'请提交有效的邮箱。',
+      message_sent_successfull:"消息已成功发送，我们将尽快联系您"
     },
     pricing: pricing_content.CN,
     blog: {
@@ -336,7 +342,10 @@ const translationObject = {
       company: "公司名稱",
       workEmail: "工作電郵",
       message: "訊息",
-      submit: "提交"
+      submit: "提交",
+      empty_all:"請提供您的資料之後再提交。",
+      emply_email:'請提交有效的電郵。',
+      message_sent_successfull:"訊息已成功發送，我們將儘快聯絡您。"
     },
     pricing: pricing_content.HK,
 

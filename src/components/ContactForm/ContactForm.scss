@@ -18,7 +18,7 @@
   }
   .contact-form-wrapper {
     width: 754px;
-    height: 508px;
+    height: 570px;
     border-radius: 4px;
     box-shadow: 0 4px 50px 0 rgba(28, 88, 158, 0.15), 0 0 50px 0 rgba(28, 88, 158, 0.15);
     padding: 40px 127px;
@@ -36,6 +36,16 @@
     }
     input {
       width: 100%;
+    }
+    .form-group{
+      .error{
+        // line-height: 1rem;
+        color:red;
+        margin-bottom: 0
+      }
+      label{
+        margin-bottom: 0
+      }
     }
   }
   .form-footer {

@@ -15,6 +15,7 @@ import CN from "../../assets/images/lang/cn.svg";
 import HK from "../../assets/images/lang/hk.svg";
 import { sendTryItDetail } from "../../actions/tryItFree";
 import { I18n } from "react-redux-i18n";
+import { Spinner, Alert } from "react-bootstrap";
 
 class ModalForm extends Component {
   state = {
@@ -23,7 +24,8 @@ class ModalForm extends Component {
     email: "",
     password: "",
     phone: "",
-    isError: false
+    isError: false,
+    email_error: false
   };
   handleSelectCountry = e => {
     this.setState({
@@ -32,7 +34,17 @@ class ModalForm extends Component {
   };
   handleSubmitClick = e => {
     const { name, email, password, phone } = this.state;
-    if (name && email && password && phone) {
+    var re = /\S+@\S+\.\S+/;
+    let email_verify = re.test(email);
+    if (!email_verify) {
+      this.setState({
+        email_error: true
+      });
+    }
+    if (name && email_verify && password && phone) {
+      this.setState({
+        email_error: false
+      });
       this.props.sendTryItDetail({ name, email, password, phone: phone });
     } else {
       this.setState({
@@ -61,21 +73,19 @@ class ModalForm extends Component {
     }
     return data;
   };
-  
+
   render() {
-    const { show, handleCloseModal } = this.props;
-    const { name, email, password, phone, isError } = this.state;
+    const { show, handleCloseModal, tryIt } = this.props;
+    const { name, email, password, phone, isError, email_error } = this.state;
+    console.log(this.props, "666666vvvvvvvvv");
 
     return (
       <>
         <Modal size={"lg"} show={show} className="modal-wrapper try-free-modal">
           <Modal.Header>
             <Modal.Title onClick={handleCloseModal}>
-              <span >{I18n.t("modalForm.close")}</span>
-              <i
-                class="fa fa-times"
-                aria-hidden="true"
-              ></i>
+              <span>{I18n.t("modalForm.close")}</span>
+              <i class="fa fa-times" aria-hidden="true"></i>
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
@@ -84,6 +94,11 @@ class ModalForm extends Component {
                 <h2>{I18n.t("modalForm.try_free")}</h2>
                 <div>{I18n.t("modalForm.para1")}</div>
                 <div>{I18n.t("modalForm.para2")}</div>
+                {tryIt.isSuccess && (
+                  <Alert variant={"success"}>
+                    {I18n.t("contact.message_sent_successfull")}
+                  </Alert>
+                )}
               </div>
               <div className="form-content">
                 <Form.Group controlId="formBasicPassword">
@@ -94,21 +109,26 @@ class ModalForm extends Component {
                     name="name"
                     onChange={this.handleChange}
                   />
-                  {/* <Form.Label>
-                    {isError && !name && I18n.t("modalForm.required")}
-                  </Form.Label> */}
+                  {isError && !name && (
+                    <Form.Label className="error">
+                      {I18n.t("contact.empty_all")}
+                    </Form.Label>
+                  )}
                 </Form.Group>
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label>{I18n.t("modalForm.emailAddress")}</Form.Label>
                   <Form.Control
-                    type="email"
+                    type="text"
                     placeholder=""
                     name="email"
                     onChange={this.handleChange}
                   />
-                  {/* <Form.Label>
-                    {isError && !email && I18n.t("modalForm.required")}
-                  </Form.Label> */}
+                  {((isError && !email) ||
+                    email_error) && 
+                      <Form.Label className="error">
+                        {I18n.t("contact.emply_email")}
+                      </Form.Label>
+                    }
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
@@ -119,9 +139,11 @@ class ModalForm extends Component {
                     name="password"
                     onChange={this.handleChange}
                   />
-                  {/* <Form.Label>
-                    {isError && !password && I18n.t("modalForm.required")}
-                  </Form.Label> */}
+                  {isError && !password && (
+                    <Form.Label className="error">
+                      {I18n.t("contact.empty_all")}
+                    </Form.Label>
+                  )}
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
@@ -168,13 +190,15 @@ class ModalForm extends Component {
                       onChange={this.handleChange}
                     />
                   </InputGroup>
-                  <Form.Label>
-                    {isError && !phone && I18n.t("modalForm.required")}
-                  </Form.Label>
+                  {isError && !phone && (
+                    <Form.Label className="error">
+                      {I18n.t("contact.empty_all")}
+                    </Form.Label>
+                  )}
                 </Form.Group>
                 <div className="button-container">
                   <Button variant="primary" type="submit">
-                    {I18n.t("modalForm.submit")}
+                    {tryIt.isLoading?<Spinner animation="border" />:I18n.t("modalForm.submit")}
                   </Button>
                 </div>
               </div>
@@ -188,7 +212,8 @@ class ModalForm extends Component {
 
 function mapStateToProps(state) {
   return {
-    i18n: state.i18n
+    i18n: state.i18n,
+    tryIt: state.tryItFree.tryItData
   };
 }
 const mapDispatchToProps = dispatch => ({

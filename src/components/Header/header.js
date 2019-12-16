@@ -162,6 +162,6 @@ emitter.addPlayListener("Test-Addl-Info", function(experimentName, variantName) 
   });
   // The win listener is only called when the Win condition is met, in this instance, when the Learn More button is pressed.
   emitter.addWinListener("Test-Addl-Info", function(experimentName, variantName) {
-    console.log(`Variant ${variantName} of experiment ${experimentName} was clicked`);
+    console.log(`Variant ${variantName} of experiment ${experimentName} was clicked`,'99999999999');
     // Perform any necessary operations to send experiment data to server or analytics provider.
   });
