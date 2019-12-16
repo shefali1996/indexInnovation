@@ -11,7 +11,7 @@ import logo from "../../assets/images/logo.png";
 import ReactPlayer from "react-player";
 import play_icon from "../../assets/images/icons/play-flat.svg";
 import ModalForm from "../ModalForm/ModalForm";
-
+import thumbnail from "../../assets/images/background/videoThumbnail.png"
 class HeadSection extends Component {
   state = {
     play: false,
@@ -67,9 +67,20 @@ class HeadSection extends Component {
               }}
               playing={this.state.play}
               onPause={this.handlePlayClick}
+              // light={thumbnail}
+
             />
             {!this.state.play && (
               <img
+              style={{width:"100%",height:"100%"}}
+                src={thumbnail}
+                className="play-icon"
+                onClick={this.handlePlayClick}
+              />
+            )}
+            {!this.state.play && (
+              <img
+              style={{position:"absolute"}}
                 src={play_icon}
                 className="play-icon"
                 onClick={this.handlePlayClick}
