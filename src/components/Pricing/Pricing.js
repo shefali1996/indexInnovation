@@ -6,9 +6,12 @@ import './Pricing.scss'
 import {connect} from 'react-redux'
 import Collapsible from 'react-collapsible';
 import ContacUsModal from "./ContactUsModal"
+import ModalForm from "../ModalForm/ModalForm"
 class Pricing extends Component {
-  state = {show:false,
-  subject:""
+  state = {
+  show:false,
+  subject:"",
+  showtryModal:false
   }
   handelShowModal=(sub)=>{ 
     let subject =""
@@ -22,9 +25,21 @@ class Pricing extends Component {
       subject
     }))
   }
+  handeShowTryModal=()=>{
+this.setState({
+  showtryModal:true
+})
+  }
   render() {        
     return (
       <div className="pricing-wrapper">
+      <ModalForm show={this.state.showtryModal}
+      handleCloseModal={() => {
+        this.setState({
+          showtryModal: false
+        })
+      }}
+      />
         <h2>{I18n.t('pricing.price1.plans_pricing')}</h2>
         <p>{I18n.t('pricing.price1.choose_plan')}</p>
         <div className="container pricing-plans">
@@ -48,7 +63,7 @@ class Pricing extends Component {
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price1.single_sign_on')}</li>
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price1.dedicated_manager')}</li>
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price1.sla_tech')}</li>
-                  <button onClick={this.handelShowModal}>{I18n.t('pricing.price1.try_for_free')}</button>
+                  <button onClick={this.handeShowTryModal}>{I18n.t('pricing.price1.try_for_free')}</button>
                 </ul>  
               </div>  
             </div>
@@ -75,7 +90,7 @@ class Pricing extends Component {
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price2.single_sign_on')}</li>
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price2.dedicated_manager')}</li>
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price2.sla_tech')}</li>
-                  <button className="inverse" onClick={this.handelShowModal}>{I18n.t('pricing.price2.try_for_free')}</button>
+                  <button className="inverse" onClick={this.handeShowTryModal}>{I18n.t('pricing.price2.try_for_free')}</button>
                 </ul> 
               </div>
             </div>
@@ -98,7 +113,7 @@ class Pricing extends Component {
                   <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price3.single_sign_on')}</li>
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price3.dedicated_manager')}</li>
                   <li className="feature-na"><img src={checkIcon} alt="..." />{I18n.t('pricing.price3.sla_tech')}</li>
-                  <button onClick={this.handelShowModal}>{I18n.t('pricing.price3.try_for_free')}</button>
+                  <button onClick={this.handeShowTryModal}>{I18n.t('pricing.price3.try_for_free')}</button>
                 </ul>  
               </div>  
             </div>
@@ -120,7 +135,7 @@ class Pricing extends Component {
                   <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price4.single_sign_on')}</li>
                   <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price4.dedicated_manager')}</li>
                   <li><img src={checkIcon} alt="..." />{I18n.t('pricing.price4.sla_tech')}</li>
-                  <button onClick={this.handelShowModal}>{I18n.t('pricing.price4.try_for_free')}</button>
+                  <button onClick={this.handelShowModal}>{I18n.t('pricing.price4.contact_us')}</button>
                 </ul>  
               </div>  
             </div>
