@@ -76,7 +76,9 @@ class Blog extends Component {
                   );
                 })}
                 <div className="previous_article">
-                  <span onClick={() => this.onNextClick(start)}>
+                  <span 
+                  // onClick={() => this.onNextClick(start)}
+                  >
                     {" "}
                     {I18n.t("blog.previous_articles")}
                     <img src={left_icon} />

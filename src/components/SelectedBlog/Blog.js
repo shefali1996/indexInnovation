@@ -112,7 +112,9 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
                             <div className="prev-next">
                               <span>
                                 {currIndex > 0 && (
-                                  <span onClick={() => handleNextClick("prev")}>
+                                  <span 
+                                  onClick={() => handleNextClick("prev")}
+                                  >
                                     <img
                                       src={left_icon}
                                       style={{ transform: "rotate(180deg)" }}
