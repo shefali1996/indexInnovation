@@ -7,7 +7,7 @@ import toArray from "lodash/toArray";
 import Header from "../components/Header/header";
 import Footer from "../components/Footer/footer";
 import { connect } from "react-redux";
-import { withRouter } from "react-router";
+import { withRouter } from "react-router-dom";
 import isEqual from "lodash/isEqual";
 function SelectedBlog(props) {
   const [currentBlog, setCurrentBlog] = useState(null);
@@ -27,8 +27,8 @@ function SelectedBlog(props) {
   }, [blogs]);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    let blogRoute = props.routeParams.route.split("_").join(" ");
+    window.scrollTo(0, 0);    
+    let blogRoute = props.match.params.route.split("_").join(" ");
     let allBlogs = toArray(I18n.t("blog.articles")).reverse();
     let filteredItem = filter(allBlogs, ["route", blogRoute]);
     let index = allBlogs.findIndex(curr => {
@@ -51,7 +51,7 @@ function SelectedBlog(props) {
   };  
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Blog
         blog={currentBlog}
         blogs={blogs}

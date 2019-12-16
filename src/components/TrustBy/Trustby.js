@@ -55,7 +55,7 @@ class TrustBy extends Component {
             <div className="feedback-wrapper">
               <p>{I18n.t('trusty.beforeIDEX')}</p>
             </div>
-            <span>Jason Peterson{" "},{" "}Product Director</span>
+            <span>Jason Peterson,{" "}Product Director</span>
             <label><img src={OpenNet_logo}/></label>
           </div>
         </div>

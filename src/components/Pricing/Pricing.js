@@ -172,7 +172,7 @@ class Pricing extends Component {
             <div className="col-md-12">
               <div className="stay_in_touch_div">
                 <h3 className="stay_in_touch">{I18n.t('pricing.price4.stay_in_touch')}</h3> 
-              }
+              
 
                   <ContacUsModal show={this.state.show}
                   subject={this.state.subject}

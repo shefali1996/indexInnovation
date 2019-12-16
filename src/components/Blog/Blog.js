@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { I18n } from "react-redux-i18n";
 // import checkIcon from '../../assets/images/icons/check-feature.svg'
 import ReactHtmlParser from "react-html-parser";
-import { withRouter } from "react-router";
+import { withRouter } from "react-router-dom";
 import "./Blog.scss";
 import { connect } from "react-redux";
 import toArray from "lodash/toArray";
 import isEqual from "lodash/isEqual";
 import RecentArticles from "./RecentArticle";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import left_icon from "../../assets/images/icons/chevronb.svg";
 class Blog extends Component {
   state = {
@@ -24,8 +24,10 @@ class Blog extends Component {
     }
   }
   handleClick = route => {
+    console.log(this.props,'5555555555555');
+    
     let blogRoute = route.split(" ").join("_");
-    this.props.router.push(`/blog/${blogRoute}`);
+    this.props.history.push(`/blog/${blogRoute}`);
   };
   onNextClick = start => {
     this.setState(

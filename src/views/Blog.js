@@ -14,7 +14,7 @@ export default class BlogPage extends Component {
   render() {
     return (
       <div>
-        <Header />
+        {/* <Header /> */}
         <Blog />
         <Footer />
       </div>

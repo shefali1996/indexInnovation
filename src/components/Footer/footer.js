@@ -4,7 +4,7 @@ import logoImage from '../../assets/images/footer/logo.png'
 import ModalForm from '../ModalForm/ModalForm'
 import './footer.scss'
 import {connect} from 'react-redux'
-import {Link} from "react-router"
+import {Link} from "react-router-dom"
 import {OverlayTrigger,Tooltip} from "react-bootstrap"
 import QrCode from "../../assets/images/customer_logos/qrcode.jpg"
 class Footer extends Component {

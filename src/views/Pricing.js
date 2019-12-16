@@ -16,7 +16,7 @@ componentDidMount(){
   render() {
     return (
       <div>
-        <Header />
+        {/* <Header /> */}
         <Pricing />
         <Footer />
       </div>

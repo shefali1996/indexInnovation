@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactFlagsSelect from "react-flags-select";
 import logoImg from "../../assets/images/logo.png";
 import { I18n, setLocale } from "react-redux-i18n";
-import { Link, withRouter } from "react-router";
+import { Link, withRouter } from "react-router-dom";
 import "./header.scss";
 import "react-flags-select/css/react-flags-select.css";
 import "react-flags-select/scss/react-flags-select.scss";
@@ -38,15 +38,17 @@ class Header extends Component {
     }));
   };
   handleLogoClick = () => {
+    console.log('44444444444');
+    
     if (window.location.pathname === "/") {
       window.scrollTo(0, 0);
     } else {
-      this.props.router.push("/");
+      this.props.history.push("/");
     }
   };
   render() {
     const { mobileHeader } = this.state;
-    console.log(emitter.getActiveVariant("Test-Addl-Info'"),'dddddddddddddd')
+    console.log(111111111111111,emitter.getActiveVariant("Test-Addl-Info'"),'dddddddddddddd')
     return (
       <>
         <ModalForm

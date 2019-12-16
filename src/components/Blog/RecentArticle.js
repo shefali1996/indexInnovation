@@ -1,7 +1,7 @@
 import React from "react";
 import { validate } from "@babel/types";
 import toArray from "lodash/toArray";
-import {Link} from "react-router"
+import {Link} from "react-router-dom"
 import { I18n } from "react-redux-i18n";
 
 export default function RecentArticle({ blog }) {

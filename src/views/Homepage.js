@@ -20,7 +20,7 @@ class Homepage extends Component {
     const {locale}=this.props.i18n
     return (
       <div>
-        <Header />
+        {/* <Header /> */}
         <HeadSection locale={locale}/>
         <Benefits />
         <Howworks />
