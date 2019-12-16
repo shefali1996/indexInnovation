@@ -6,7 +6,7 @@ export default [
     by: "zijjin",
     date: "27 oct 2018",
     image: Banner1,
-    tags: ["idea", "innovation"],
+    tags: ["ideas", "innovations"],
     title:
       "Innovation Management Essential - Series 1: Definition, Key Aspects, and Approaches",
     route:
@@ -21,7 +21,7 @@ export default [
     by: "zijjin",
     date: "27 oct 2018",
     image: Banner2,
-    tags: ["idea", "innovation"],
+    tags: ["ideas", "innovations"],
     title:
       "Innovation Management Essentials - Serial 2: Common Models of Innovation Management",
     route:
@@ -36,7 +36,7 @@ export default [
     by: "zijjin",
     date: "27 oct 2018",
     image: Banner3,
-    tags: ["idea", "innovation"],
+    tags: ["ideas", "innovations"],
     title: "Innovation Management Essentials: Series 3 - Innovation Metrics",
     route: "Innovation Management Essentials: Series 3 - Innovation Metrics",
     excerpt:

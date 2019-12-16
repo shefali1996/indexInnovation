@@ -8,21 +8,27 @@
       .tag:first-child {
         background-color: #2d8dfc;
         margin-left: 10px;
-        border-radius: 10px;
+        border-radius: 12px;
         padding: 2px 8px;
         color: white;
-        font-weight: bold;
+        // font-weight: bold;
         font-size: 12px;
+        display: flex;;
+        align-items: center;
+        justify-content: center;
       };
       .tag:not(:first-child) {
         // color: #2d8dfc;
         margin-left: 10px;
-        border-radius: 10px;
+        border-radius: 12px;
         padding: 2px 8px;
         // color: white;
         border:1px solid #2d8dfc;
         font-weight: bold;
         font-size: 12px;
+        display: flex;;
+        align-items: center;
+        justify-content: center;
       }
       .by {
         margin-left: auto;
@@ -84,13 +90,19 @@
     .readmore {
     }
     .blog-content {
-      // margin-bottom: 10%;
+      margin-bottom: 7%;
       .blog-title{
         cursor: pointer;
       }
     }
     .content {
       margin-top: 5%;
+      p{
+        display: inline;
+      }
+      a{
+        text-decoration: underline
+      }
     }
   }
 
@@ -160,21 +172,22 @@
       .tag:first-child {
         background-color: #2d8dfc;
         margin-left: 10px;
-        border-radius: 10px;
+        border-radius: 12px;
         padding: 2px 8px;
         color: white;
-        font-weight: bold;
+        display: flex;
+        align-items: center;
         font-size: 12px;
       };
       .tag:not(:first-child) {
-        // color: #2d8dfc;
         margin-left: 10px;
         border-radius: 10px;
         padding: 2px 8px;
-        // color: white;
         border:1px solid #2d8dfc;
         font-weight: bold;
         font-size: 12px;
+        display: flex;
+        align-items: center
       }
     }
     .title {
