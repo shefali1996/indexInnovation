@@ -61,8 +61,6 @@ class ContactForm extends Component {
   render() {
     const { name, email, message, company, isError, email_error } = this.state;
     const { contactData, subject } = this.props;
-    console.log(email_error, "mmmmmmmmmmm");
-
     return (
       <div className="contact-wrapper">
         {/* <div className="contact-wrapper-bg"></div> */}
@@ -112,7 +110,6 @@ class ContactForm extends Component {
               value={email}
               required
             />
-            {console.log(isError && !email, email_error, "yyyyyyyyyyy")}
             {((isError && !email) || email_error) && (
               <label className="error"> {I18n.t("contact.emply_email")}</label>
             )}

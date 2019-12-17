@@ -12,8 +12,6 @@ import SelectedBlog from "./views/SelectedBlog"
 
 export default class RouteComponent extends Component {
   render() {
-    console.log("4444444444444999999",this.props.children);
-
     return (
       <div>
         <Header/>

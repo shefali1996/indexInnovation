@@ -23,9 +23,7 @@ class Blog extends Component {
       });
     }
   }
-  handleClick = route => {
-    console.log(this.props,'5555555555555');
-    
+  handleClick = route => {    
     let blogRoute = route.split(" ").join("_");
     this.props.history.push(`/blog/${blogRoute}`);
   };

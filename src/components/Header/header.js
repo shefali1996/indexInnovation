@@ -14,8 +14,15 @@ import {
   emitter,
   experimentDebugger
 } from "@marvelapp/react-ab-test";
+
+import Mixpanel from "mixpanel"
 experimentDebugger.enable();
-emitter.defineVariants('Test-Addl-Info',['tryFree','expIDEX','getStarted'],  [33,33,33])
+emitter.defineVariants(
+  "Test-Addl-Info",
+  ["tryFree", "expIDEX", "getStarted"],
+  [33, 33, 33]
+  );
+  var mixpanel=Mixpanel.init("e3547c5407fd5dbe484a8a3261b0b8f7")
 class Header extends Component {
   state = {
     mobileHeader: false,
@@ -26,20 +33,16 @@ class Header extends Component {
       mobileHeader: !prevState.mobileHeader
     }));
   };
-  onclick (e) {
-    console.log(emitter.getActiveVariant("Test-Addl-Info'"),'dddddddddddddd')
-    emitter.emitWin('Test-Addl-Info')
-
+  onclick(e) {
+    emitter.emitWin("Test-Addl-Info");
   }
   handelShowModal = () => {
-    this.onclick()
+    this.onclick();
     this.setState(prevState => ({
       show: true
     }));
   };
   handleLogoClick = () => {
-    console.log('44444444444');
-    
     if (window.location.pathname === "/") {
       window.scrollTo(0, 0);
     } else {
@@ -48,7 +51,6 @@ class Header extends Component {
   };
   render() {
     const { mobileHeader } = this.state;
-    console.log(111111111111111,emitter.getActiveVariant("Test-Addl-Info'"),'dddddddddddddd')
     return (
       <>
         <ModalForm
@@ -156,12 +158,24 @@ function mapStateToProps(state) {
 export default withRouter(connect(mapStateToProps)(Header));
 
 // We want to add a 'play listener to record every instance a user sees a variant.
-emitter.addPlayListener("Test-Addl-Info", function(experimentName, variantName) {
-  console.log(`Displaying experiment ${experimentName} variant   ${variantName}`);
+emitter.addPlayListener("Test-Addl-Info", function(
+  experimentName,
+  variantName
+) {
+  console.log(
+    `Displaying experiment ${experimentName} variant   ${variantName}`
+  );
   // Perform any necessary operations to send experiment data to server or analytics provider.
-  });
-  // The win listener is only called when the Win condition is met, in this instance, when the Learn More button is pressed.
-  emitter.addWinListener("Test-Addl-Info", function(experimentName, variantName) {
-    console.log(`Variant ${variantName} of experiment ${experimentName} was clicked`,'99999999999');
-    // Perform any necessary operations to send experiment data to server or analytics provider.
-  });
+});
+// The win listener is only called when the Win condition is met, in this instance, when the Learn More button is pressed.
+emitter.addWinListener("Test-Addl-Info", function(experimentName, variantName) {
+  console.log(
+    `Variant ${variantName} of experiment ${experimentName} was clicked`,
+    "99999999999"
+  );
+  mixpanel.track(experimentName+ "  " +variantName,{
+    name:experimentName,
+    variant:variantName
+  })
+  // Perform any necessary operations to send experiment data to server or analytics provider.
+});

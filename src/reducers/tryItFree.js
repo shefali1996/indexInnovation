@@ -14,7 +14,6 @@ const initialState = {
 };
 
 const sendTryItDetailRequest = (state, action) =>{  
-  console.log('tttttttttttttrrrrrrrr');
   return update(state, {
     tryItData: {
       isLoading: { $set: true },
@@ -36,9 +35,7 @@ const sendTryItDetailSuccess = (state, action) =>
     }
   });
 
-  const sendTryItDetailError = (state, action) =>{  
-    console.log(action.payloa,'jjjjjjjjjjjj');
-      
+  const sendTryItDetailError = (state, action) =>{        
    return update(state, {
       tryItData: {
         data: { $set: action.payload },

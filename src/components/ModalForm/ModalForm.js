@@ -77,8 +77,6 @@ class ModalForm extends Component {
   render() {
     const { show, handleCloseModal, tryIt } = this.props;
     const { name, email, password, phone, isError, email_error } = this.state;
-    console.log(this.props, "666666vvvvvvvvv");
-
     return (
       <>
         <Modal size={"lg"} show={show} className="modal-wrapper try-free-modal">

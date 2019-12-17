@@ -3,9 +3,7 @@ import * as actions from "./index";
 import axios from "axios";
 export function sendTryItDetail(formData) {
   return (dispatch, getState) => {
-    dispatch(actions.sendTryItDetailRequest())
-    console.log('44444444444');
-    
+    dispatch(actions.sendTryItDetailRequest())    
     return new Promise((resolve, reject) => {
       axios.post(
         "https://0pkdsk7a88.execute-api.ap-southeast-1.amazonaws.com/prod/launch-trial",{
@@ -13,9 +11,7 @@ export function sendTryItDetail(formData) {
         }
       ).then(()=>{
         dispatch(actions.sendTryItDetailSuccess());
-      }).catch(()=>{
-        console.log('444444444vvvvvvvbbbbbbb');
-        
+      }).catch(()=>{        
         dispatch(actions.sendTryItDetailError('Error Occurs'));
       });
     });
