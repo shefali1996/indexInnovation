@@ -80,12 +80,10 @@
     cursor: pointer;
   }
 }
-@media screen and(max-width:1000px) and (min-width:601px) {
-  .resource-wrapper{
-    height: 1000px;
 
-  }
-  }
+.resource-wrapper-error{
+  height: 1050px;
+}
 
 .form-footer { display: flex; justify-content: center;}
 @media screen and(max-width:600px) {

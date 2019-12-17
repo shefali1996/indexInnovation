@@ -11,12 +11,12 @@ import logo from "../../assets/images/logo.png";
 import ReactPlayer from "react-player";
 import play_icon from "../../assets/images/icons/play-flat.svg";
 import ModalForm from "../ModalForm/ModalForm";
-import thumbnail from "../../assets/images/background/videoThumbnail.png"
+import thumbnail from "../../assets/images/background/videoThumbnail.jpg"
 class HeadSection extends Component {
   state = {
     play: false,
-    show: false
-
+    show: false,
+   showThubnail:true,
   };
   handelShowModal = () => {
     this.setState(prevState => ({
@@ -25,7 +25,8 @@ class HeadSection extends Component {
   };
   handlePlayClick = () => {
     this.setState((prevState)=>({
-      play:!prevState.play
+      play:!prevState.play,
+      showThubnail:false
     }));
   };
   render() {
@@ -70,7 +71,7 @@ class HeadSection extends Component {
               // light={thumbnail}
 
             />
-            {!this.state.play && (
+            {this.state.showThubnail && (
               <img
               style={{width:"100%",height:"100%"}}
                 src={thumbnail}

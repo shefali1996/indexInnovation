@@ -34,6 +34,8 @@ class ContactForm extends Component {
     } else {
       this.setState({
         isError: true
+      },()=>{
+        this.props.sendDataToChild(this.state.isError)
       });
     }
   };
@@ -59,7 +61,7 @@ class ContactForm extends Component {
   render() {
     const { name, email, message, company, isError, email_error } = this.state;
     const { contactData, subject } = this.props;
-    console.log(email_error,'mmmmmmmmmmm');
+    console.log(email_error, "mmmmmmmmmmm");
 
     return (
       <div className="contact-wrapper">
@@ -110,14 +112,10 @@ class ContactForm extends Component {
               value={email}
               required
             />
-            {console.log(isError && !email,email_error,'yyyyyyyyyyy')}
-            {((isError && !email) ||
-              email_error) && 
-                <label className="error">
-                  {" "}
-                  {I18n.t("contact.emply_email")}
-                </label>
-              }
+            {console.log(isError && !email, email_error, "yyyyyyyyyyy")}
+            {((isError && !email) || email_error) && (
+              <label className="error"> {I18n.t("contact.emply_email")}</label>
+            )}
           </div>
           <div className="form-group">
             <label>{I18n.t("contact.message")}</label>
@@ -133,11 +131,7 @@ class ContactForm extends Component {
           </div>
           <div className="form-group form-footer">
             <div className="submit-btn" onClick={this.handleClick}>
-              {contactData.isLoading ? (
-                <Spinner animation="border" />
-              ) : (
-                I18n.t("contact.submit")
-              )}
+              {I18n.t("contact.submit")}
             </div>
           </div>
         </div>

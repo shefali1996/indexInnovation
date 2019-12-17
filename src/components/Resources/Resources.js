@@ -5,11 +5,15 @@ import './Resources.scss'
 import {connect} from 'react-redux'
 
 class Resources extends Component {
-  state = {}
-
+  state = {isError:false}
+  sendDataToChild=(data)=>{
+this.setState({
+  isError:data
+})
+  }
   render() {    
     return (
-      <div className="resource-wrapper">
+      <div className={"resource-wrapper " +(this.state.isError && "resource-wrapper-error")}>
         <h2>{I18n.t('resource.title')}</h2>
         <p>{I18n.t('resource.learn')}</p>
         <div className="trusty-articles">
@@ -45,7 +49,7 @@ class Resources extends Component {
           </div>
         </div>
         <div className="all-article-btn">{I18n.t('resource.articles')}</div>
-        <ContactForm />
+        <ContactForm sendDataToChild={this.sendDataToChild}/>
       </div>
     )
   }
