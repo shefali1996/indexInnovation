@@ -24,7 +24,7 @@ var mixpanel=Mixpanel.init("e3547c5407fd5dbe484a8a3261b0b8f7")
 experimentDebugger.enable();
 emitter.defineVariants(
   "Middle-test",
-  ["tryFree", "expIDEX", "getStarted"],
+  ["Try-It-For-Free", "Experience-IDEX", "Get-Started"],
   [33, 33, 33]
   );
 class HeadSection extends Component {

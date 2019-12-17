@@ -19,7 +19,7 @@ import Mixpanel from "mixpanel"
 experimentDebugger.enable();
 emitter.defineVariants(
   "Header-test",
-  ["tryFree", "expIDEX", "getStarted"],
+  ["Try-It-For-Free", "Experience-IDEX", "Get-Started"],
   [33, 33, 33]
   );
   var mixpanel=Mixpanel.init("e3547c5407fd5dbe484a8a3261b0b8f7")
@@ -112,17 +112,17 @@ class Header extends Component {
               />
             </div>
             <Experiment ref="ab-more-info" name="Header-test">
-              <Variant name="tryFree">
+              <Variant name="Try-It-For-Free">
                 <div className="trial-btn" onClick={this.handelShowModal}>
                   {I18n.t("header.tryFree")}
                 </div>
               </Variant>
-              <Variant name="expIDEX">
+              <Variant name="Experience-IDEX">
                 <div className="trial-btn" onClick={this.handelShowModal}>
                   {I18n.t("headSection.expIDEX")}
                 </div>
               </Variant>
-              <Variant name="getStarted">
+              <Variant name="Get-Started">
                 <div className="trial-btn" onClick={this.handelShowModal}>
                   {I18n.t("footer.getStarted")}
                 </div>

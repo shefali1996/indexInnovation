@@ -1,19 +1,18 @@
 export let variantArr = [
   {
-    name: "tryFree",
+    name: "Try-It-For-Free",
     content: "header.tryFree"
   },
   {
-    name: "expIDEX",
+    name: "Experience-IDEX",
     content: "headSection.expIDEX"
   },
   {
-    name: "getStarted",
+    name: "Get-Started",
     content: "footer.getStarted"
   }
 ];
 export default function d() {
-  console.log('mmmmmmmmmm');
   let locatStoregeItem = { ...localStorage };
   let finalArray = [];
   variantArr.forEach((value, i) => {
