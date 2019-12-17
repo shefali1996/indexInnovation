@@ -28,7 +28,7 @@ class ModalForm extends Component {
         >
           <Modal.Header>
             <Modal.Title onClick={handleCloseModal}>
-              Close
+            {I18n.t("modalForm.close")}
               <i class="fa fa-times" aria-hidden="true"></i>
             </Modal.Title>
           </Modal.Header>

@@ -34,7 +34,7 @@ const translationObject = {
     },
     modal: {
       try: `Try IDEX for free`,
-      totry: `To try IDEX Innovation Management Software for free, enter your details below. We will be in touch shortly with your login details. Rest assured, your data is secure with us. `,
+      totry: `To try IDEX Innovation Management Software for free, enter your details below.${" "} We will be in touch shortly with your login details. Rest assured, your data is secure with us. `,
       fullname: `Full Name`,
       workemail: `Work Email`,
       company: `Company`,
