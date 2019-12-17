@@ -13,7 +13,7 @@ export default function RecentArticle({ blog }) {
         <span>|</span>
         <span className="by">{I18n.t('blog.by')} {" "}{blog.by}</span>
       </div>
-      <div className="title">{blog.title}</div>
+      <Link to={`/blog/${blog.route.split(" ").join("_")}`} className="title-recent"><div className="title">{blog.title}</div></Link>
       <div className="tag-read">
         {toArray(blog.tags).map(tag => (
           <div className="tag">{tag}</div>
