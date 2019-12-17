@@ -63,7 +63,7 @@ class Blog extends Component {
                           <div className="tag">{tag}</div>
                         ))}
                         <div className="by">
-                          By: <span>{val.by}</span>
+                          By: {" "}{val.by}
                         </div>
                       </div>
                       <div className="content">

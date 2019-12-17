@@ -50,7 +50,7 @@ function SelectedBlog(props) {
     window.scrollTo(0,0)
   };  
   return (
-    <div>
+    <div className="selectedblog-wrapper">
       {/* <Header /> */}
       <Blog
         blog={currentBlog}
@@ -58,7 +58,7 @@ function SelectedBlog(props) {
         handleNextClick={handleNextClick}
         currIndex={currIndex}
       />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

@@ -94,7 +94,7 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
                       <div className="blog-content">
                         <h2>{val.title}</h2>
                         <div className="by">
-                          <span> By:</span>{" "}
+                           By:{" "}
                           <span className="author">{val.by}</span>
                           <span>|</span>
                           <span>{val.date}</span>

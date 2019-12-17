@@ -11,7 +11,7 @@ export default function RecentArticle({ blog }) {
       <div className="date-by">
         <span className="date">{blog.date}</span>
         <span>|</span>
-        <span className="by">{I18n.t('blog.by')} <span>{blog.by}</span></span>
+        <span className="by">{I18n.t('blog.by')} {" "}{blog.by}</span>
       </div>
       <div className="title">{blog.title}</div>
       <div className="tag-read">
