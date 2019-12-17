@@ -18,7 +18,7 @@ import Mixpanel from "mixpanel"
 
 experimentDebugger.enable();
 emitter.defineVariants(
-  "Test-Addl3-Info",
+  "Footer-test",
   ["tryFree", "expIDEX", "getStarted"],
   [33, 33, 33]
 );
@@ -40,15 +40,13 @@ class Footer extends Component {
       show: true
     }));
   };
-  onclick(e) {
-    console.log('4444444444444mmmmmmmmmmmm');
-    
-    emitter.emitWin("Test-Addl3-Info");
+  onclick(e) {    
+    emitter.emitWin("Footer-test");
   }
   componentWillMount(){
  
-    if(!localStorage.getItem('PUSHTELL-Test-Addl3-Info')){
-    emitter.setActiveVariant('Test-Addl3-Info', availableBtn()[0].name)
+    if(!localStorage.getItem('PUSHTELL-Footer-test')){
+    emitter.setActiveVariant('Footer-test', availableBtn()[0].name)
     }
   }
   socialMediaIcon = () => {
@@ -134,7 +132,7 @@ class Footer extends Component {
               {I18n.t("footer.startCollecting")}
             </div>
             {/* <div className="footer-start-btn" onClick={this.handelShowModal}>{I18n.t('footer.getStarted')}</div> */}
-            <Experiment ref="ab-more-info" name="Test-Addl3-Info">
+            <Experiment ref="ab-more-info" name="Footer-test">
               {variantArr.map(val => {
                 return (
                   <Variant name={val.name}>
@@ -174,7 +172,7 @@ emitter.addPlayListener("Test-Addl-Info", function(
   // Perform any necessary operations to send experiment data to server or analytics provider.
 });
 // The win listener is only called when the Win condition is met, in this instance, when the Learn More button is pressed.
-emitter.addWinListener("Test-Addl3-Info", function(experimentName, variantName) {
+emitter.addWinListener("Footer-test", function(experimentName, variantName) {
   console.log(
     `Variant ${variantName} of experiment ${experimentName} was clicked`,
     "99999999999"

@@ -23,7 +23,7 @@ import Mixpanel from "mixpanel"
 var mixpanel=Mixpanel.init("e3547c5407fd5dbe484a8a3261b0b8f7")
 experimentDebugger.enable();
 emitter.defineVariants(
-  "Test-Addl2-Info",
+  "Middle-test",
   ["tryFree", "expIDEX", "getStarted"],
   [33, 33, 33]
   );
@@ -40,7 +40,7 @@ class HeadSection extends Component {
     }));
   };
   onclick(e) {
-    emitter.emitWin("Test-Addl2-Info");
+    emitter.emitWin("Middle-test");
   }
   handlePlayClick = () => {
     this.setState(prevState => ({
@@ -49,8 +49,8 @@ class HeadSection extends Component {
     }));
   };
   componentWillMount() {
-    if (!localStorage.getItem('PUSHTELL-Test-Addl2-Info')) {            
-      emitter.setActiveVariant("Test-Addl2-Info", availableBtn()[0].name);
+    if (!localStorage.getItem('PUSHTELL-Middle-test')) {            
+      emitter.setActiveVariant("Middle-test", availableBtn()[0].name);
     }
   }
   render() {    
@@ -74,7 +74,7 @@ class HeadSection extends Component {
         <div className="linear-bg"></div>
         <h2>{I18n.t("headSection.moveForward")}</h2>
         <p>{I18n.t("headSection.transform")}</p>
-        <Experiment ref="ab-more-info" name="Test-Addl2-Info">
+        <Experiment ref="ab-more-info" name="Middle-test">
           {variantArr.map(val => {
             return (
               <Variant name={val.name}>
@@ -144,7 +144,7 @@ emitter.addPlayListener("Test-Addl-Info", function(
   // Perform any necessary operations to send experiment data to server or analytics provider.
 });
 // The win listener is only called when the Win condition is met, in this instance, when the Learn More button is pressed.
-emitter.addWinListener("Test-Addl2-Info", function(experimentName, variantName) {
+emitter.addWinListener("Middle-test", function(experimentName, variantName) {
   console.log(
     `Variant ${variantName} of experiment ${experimentName} was clicked`,
     "99999999999"

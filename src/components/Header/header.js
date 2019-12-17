@@ -18,7 +18,7 @@ import {
 import Mixpanel from "mixpanel"
 experimentDebugger.enable();
 emitter.defineVariants(
-  "Test-Addl-Info",
+  "Header-test",
   ["tryFree", "expIDEX", "getStarted"],
   [33, 33, 33]
   );
@@ -34,7 +34,7 @@ class Header extends Component {
     }));
   };
   onclick(e) {
-    emitter.emitWin("Test-Addl-Info");
+    emitter.emitWin("Header-test");
   }
   handelShowModal = () => {
     this.onclick();
@@ -111,7 +111,7 @@ class Header extends Component {
                 }}
               />
             </div>
-            <Experiment ref="ab-more-info" name="Test-Addl-Info">
+            <Experiment ref="ab-more-info" name="Header-test">
               <Variant name="tryFree">
                 <div className="trial-btn" onClick={this.handelShowModal}>
                   {I18n.t("header.tryFree")}
@@ -158,7 +158,7 @@ function mapStateToProps(state) {
 export default withRouter(connect(mapStateToProps)(Header));
 
 // We want to add a 'play listener to record every instance a user sees a variant.
-emitter.addPlayListener("Test-Addl-Info", function(
+emitter.addPlayListener("Header-test", function(
   experimentName,
   variantName
 ) {
@@ -168,7 +168,7 @@ emitter.addPlayListener("Test-Addl-Info", function(
   // Perform any necessary operations to send experiment data to server or analytics provider.
 });
 // The win listener is only called when the Win condition is met, in this instance, when the Learn More button is pressed.
-emitter.addWinListener("Test-Addl-Info", function(experimentName, variantName) {
+emitter.addWinListener("Header-test", function(experimentName, variantName) {
   console.log(
     `Variant ${variantName} of experiment ${experimentName} was clicked`,
     "99999999999"
