@@ -28,7 +28,7 @@ export default function RecentArticle({ blog }) {
             <>
             
               <div className="tag">{toArray(blog.tags)[0]}</div>
-              <div className="tag">+{toArray(blog.tags).length - 1} more </div>
+              <div className="tag">{toArray(blog.tags).length - 1}{" "} + </div>
             </>
           )}
           <Link
