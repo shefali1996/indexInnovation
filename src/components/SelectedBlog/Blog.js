@@ -112,7 +112,7 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
                               <span>
                                 {currIndex > 0 && (
                                   <span 
-                                  onClick={() => handleNextClick("prev")}
+                                  // onClick={() => handleNextClick("prev")}
                                   >
                                     <img
                                       src={left_icon}
@@ -124,7 +124,9 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
                               </span>
                               <span>
                                 {currIndex < blogs.length - 1 && (
-                                  <span onClick={() => handleNextClick("next")}>
+                                  <span
+                                  //  onClick={() => handleNextClick("next")}
+                                   >
                                     <span>
                                     {I18n.t('blog.next_article')} <img src={left_icon} />{" "}
                                     </span>

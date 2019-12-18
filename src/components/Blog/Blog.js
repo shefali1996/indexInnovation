@@ -48,7 +48,8 @@ class Blog extends Component {
           <div className="row">
             <div className="col-md-7 col-sm-12">
               <div className="blog-post">
-                {blog.slice(start, end).map(val => {
+                {/* {blog.slice(start, end).map(val => { */}
+                  {blog.map(val => {
                   return (
                     <div className="blog-content">
                       <h2 className="blog-title"onClick={()=>this.handleClick(val.route)}>{val.title}</h2>
