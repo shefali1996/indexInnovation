@@ -128,6 +128,19 @@
       display: unset;
     }
   }
+  .see-all-container{
+    padding: 5% 5%;
+    .see-all{
+      border: 1px solid #2d8dfc;
+      border-radius: 4px;
+      padding: 10px 20px;
+      background: transparent;
+      color:#2d8dfc;
+      font-weight: bold;
+      width: 100%
+    }
+  }
+
 }
 .form-footer {
   display: flex;

@@ -2,15 +2,15 @@ import React, { Component } from 'react'
 import { I18n } from 'react-redux-i18n'
 import apertumImg from '../../assets/images/customer_logos/apertum.png'
 import sportyImg from '../../assets/images/customer_logos/sporty.png'
-import opennetImg from '../../assets/images/customer_logos/opennet.svg'
+import opennetImg from '../../assets/images/customer_logos/OpenNet .png'
 import quoteImg from '../../assets/images/icons/quote.svg'
 import './TrustBy.scss'
 import {connect} from 'react-redux';
 import Apertum_logo from "../../assets/images/Apertum.svg"
 import OpenNet_logo from "../../assets/images/Opennet.svg"
-import apertumImg_colored from '../../assets/images/customer_logos/apertum_colored.png'
+// import apertumImg_colored from '../../assets/images/customer_logos/apertum_colored.png'
 // import sportyImg from '../../assets/images/customer_logos/sporty.png'
-import opennetImg_colored from '../../assets/images/customer_logos/OpenNet_colored.svg'
+// import opennetImg_colored from '../../assets/images/customer_logos/OpenNet_colored.svg'
 
 class TrustBy extends Component {
   state = {}

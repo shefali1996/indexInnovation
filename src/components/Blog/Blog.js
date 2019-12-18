@@ -10,6 +10,7 @@ import isEqual from "lodash/isEqual";
 import RecentArticles from "./RecentArticle";
 import { Link } from "react-router-dom";
 import left_icon from "../../assets/images/icons/chevronb.svg";
+import{Button} from "react-bootstrap"
 class Blog extends Component {
   state = {
     blog: toArray(I18n.t("blog").articles).reverse(),
@@ -92,6 +93,8 @@ class Blog extends Component {
               {blog.map(val => (
                 <RecentArticles blog={val} />
               ))}
+                {/* <div className="see-all-container"><button className="see-all">SEE ALL ARTICLES</button></div> */}
+
             </div>
           </div>
         </div>
