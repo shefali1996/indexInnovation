@@ -20,9 +20,7 @@ function SelectedBlog(props) {
   });
 
   useEffect(() => {
-    let allBlogs = toArray(I18n.t("blog.articles"));
-    console.log(allBlogs,'9999999998888888888');
-    
+    let allBlogs = toArray(I18n.t("blog.articles"));    
     if (blogs && !isEqual(blogs, allBlogs)) {
       setCurrentBlog([blogs[currIndex]]);
     }
@@ -50,12 +48,9 @@ function SelectedBlog(props) {
       setCurrIndex(currIndex - 1);
     }
     window.scrollTo(0,0)
-  };  
-  console.log(props,'9999999999');
-  
+  };    
   return (
     <div className="selectedblog-wrapper">
-      {/* <Header /> */}
       <Blog
         blog={currentBlog}
         blogs={blogs}

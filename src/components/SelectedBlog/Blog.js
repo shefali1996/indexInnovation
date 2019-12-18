@@ -80,8 +80,6 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-console.log(blog,'llllllllll');
-
   return (
     <div className="selected-blog">
       <div className="blog-wrapper">

@@ -92,11 +92,11 @@ class ModalForm extends Component {
                 <h2>{I18n.t("modalForm.try_free")}</h2>
                 <div>{I18n.t("modalForm.para1")}</div>
                 <div>{I18n.t("modalForm.para2")}</div>
-                {tryIt.isSuccess && (
+                {/* {tryIt.isSuccess && (
                   <Alert variant={"success"}>
                     {I18n.t("contact.message_sent_successfull")}
                   </Alert>
-                )}
+                )} */}
               </div>
               <div className="form-content">
                 <Form.Group controlId="formBasicPassword">
@@ -196,7 +196,7 @@ class ModalForm extends Component {
                 </Form.Group>
                 <div className="button-container">
                   <Button variant="primary" type="submit">
-                    {tryIt.isLoading?<Spinner animation="border" />:I18n.t("modalForm.submit")}
+                    {I18n.t("modalForm.submit")}
                   </Button>
                 </div>
               </div>

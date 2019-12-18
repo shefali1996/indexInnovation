@@ -63,15 +63,14 @@ class ContactForm extends Component {
     const { contactData, subject } = this.props;
     return (
       <div className="contact-wrapper">
-        {/* <div className="contact-wrapper-bg"></div> */}
         <h2>{I18n.t("contact.keepTouch")}</h2>
         <p>{I18n.t("contact.connect")}</p>
         <div className="contact-form-wrapper">
-          {contactData.isSuccess && (
+          {/* {contactData.isSuccess && (
             <Alert variant={"success"}>
               {I18n.t("contact.message_sent_successfull")}
             </Alert>
-          )}
+          )} */}
           <div className="form-group">
             <label>{I18n.t("contact.name")}</label>
             <input
