@@ -63,7 +63,7 @@ class Blog extends Component {
                           <div className="tag">{tag}</div>
                         ))}
                         <div className="by">
-                          By: {" "}{val.by}
+                       {I18n.t('blog.by')}  {" "}{val.by}
                         </div>
                       </div>
                       <div className="content">
