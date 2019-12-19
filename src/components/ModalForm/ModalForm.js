@@ -16,6 +16,8 @@ import HK from "../../assets/images/lang/hk.svg";
 import { sendTryItDetail } from "../../actions/tryItFree";
 import { I18n } from "react-redux-i18n";
 import { Spinner, Alert } from "react-bootstrap";
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
 
 class ModalForm extends Component {
   state = {
@@ -164,44 +166,12 @@ this.setState({
                       ({I18n.t("modalForm.optional")})
                     </span>
                   </Form.Label>
-                  <InputGroup className="mb-3" type="number">
-                    <DropdownButton
-                      as={InputGroup.Prepend}
-                      variant="outline-secondary"
-                      title={
-                        <span>
-                          <img src={this.dropDownContent().icon} />
-                          <span className="code">
-                            {this.dropDownContent().code}
-                          </span>
-                        </span>
-                      }
-                      id="input-group-dropdown-1"
-                      onSelect={this.handleSelectCountry}
-                    >
-                      <Dropdown.Item eventKey="EN" href="#">
-                        <div name="en">
-                          <img src={EN} />
-                          <span>+44</span>
-                        </div>
-                      </Dropdown.Item>
-                      <Dropdown.Item eventKey="CN" href="#">
-                        <img src={CN} />
-                        <span>+86</span>
-                      </Dropdown.Item>
-                      <Dropdown.Item eventKey="HK" href="#">
-                        <img src={HK} />
-                        <span>+852</span>
-                      </Dropdown.Item>
-                    </DropdownButton>
-
-                    <FormControl
-                      aria-describedby="basic-addon1"
-                      name="phone"
-                      onChange={this.handleChange}
-                      type="number"
-                    />
-                  </InputGroup>
+                
+                  <PhoneInput
+  country={'us'}
+  value={this.state.phone}
+  onChange={phone => this.setState({ phone })}
+/>
                 
                 </Form.Group>
                 <div className="button-container">
