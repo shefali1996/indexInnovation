@@ -60,7 +60,7 @@
     position: relative;
     margin: 0 auto;
     margin-top: 102px;
-    height: 400px;
+    // height: 400px;
     // width: 60%;
     background-color: white;
     box-shadow: #00000033 0px 10px 25px;
@@ -96,6 +96,14 @@
 /* But it does not work with newer browsers, the below doesn't hide the play button parent div */
   }
 }
+@media screen and(min-width:601px) and (max-width:900px){
+  .head-section{
+    .idex-player-container{
+      padding: 10% 15%;
+    }
+  }
+
+}
 
 @media screen and(max-width:600px){
   .head-section{
@@ -109,7 +117,7 @@
       width:100%;
     }
     .idex-player{
-      height: 200px;
+      // height: 200px;
       margin-top: 250px
     }
     .head-notebook-img{

@@ -85,7 +85,7 @@ class Header extends Component {
               <Link
                 to="/blog"
                 className={
-                  (window.location.pathname === "/blog" && "active ") +
+                  (window.location.pathname.includes("/blog") && "active ") +
                   " menu-item"
                 }
               >

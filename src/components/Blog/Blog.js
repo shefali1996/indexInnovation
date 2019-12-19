@@ -91,7 +91,7 @@ class Blog extends Component {
             <div className="col-md-4 col-sm-12 recent-article">
               <h3 className="mb-3"> {I18n.t("blog.recent_articles")}</h3>
 
-              {blog.map(val => (
+              {blog.slice(0,3).map(val => (
                 <RecentArticles blog={val} />
               ))}
                 {/* <div className="see-all-container"><button className="see-all">SEE ALL ARTICLES</button></div> */}

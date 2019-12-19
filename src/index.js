@@ -120,9 +120,9 @@ const translationObject = {
       recent_articles: `Recent Articles`,
       read: `Read`,
       read_more: `Read More`,
-      previous_articles: `Previous Articles`,
+      previous_articles: `Previous Article`,
       articles: blog_GB,
-      next_article: "Next Articles",
+      next_article: "Next Article",
       previous: "Previous",
       by: "By"
     },
@@ -242,7 +242,7 @@ const translationObject = {
       articles: blog_CN,
       next_article: "下一篇文章",
       previous: "以前",
-      by: "通过"
+      by: "作者"
     },
     modalForm: {
       try_free: "免费体验畅意系统",
@@ -358,7 +358,7 @@ const translationObject = {
       articles: blog_HK,
       next_article: "下一篇文章",
       previous: "以前",
-      by: "通過"
+      by: "作者"
     },
     modalForm: {
       try_free: "免費體驗暢意系統",

@@ -41,7 +41,7 @@ class ModalForm extends Component {
         email_error: true
       });
     }
-    if (name && email_verify && password && phone) {
+    if (name && email_verify && password ) {
       this.setState({
         email_error: false
       });
@@ -58,6 +58,7 @@ class ModalForm extends Component {
       [e.currentTarget.name]: e.currentTarget.value
     });
   };
+
   dropDownContent = () => {
     const data = {};
     const { selectedCountry } = this.state;
@@ -73,7 +74,19 @@ class ModalForm extends Component {
     }
     return data;
   };
-
+componentDidUpdate(prevProps){
+  if((this.props.show !==prevProps.show) && !this.props.show){
+this.setState({
+  selectedCountry: "EN",
+  name: "",
+  email: "",
+  password: "",
+  phone: "",
+  isError: false,
+  email_error: false
+})
+  }
+}
   render() {
     const { show, handleCloseModal, tryIt } = this.props;
     const { name, email, password, phone, isError, email_error } = this.state;
@@ -151,7 +164,7 @@ class ModalForm extends Component {
                       ({I18n.t("modalForm.optional")})
                     </span>
                   </Form.Label>
-                  <InputGroup className="mb-3">
+                  <InputGroup className="mb-3" type="number">
                     <DropdownButton
                       as={InputGroup.Prepend}
                       variant="outline-secondary"
@@ -186,13 +199,10 @@ class ModalForm extends Component {
                       aria-describedby="basic-addon1"
                       name="phone"
                       onChange={this.handleChange}
+                      type="number"
                     />
                   </InputGroup>
-                  {isError && !phone && (
-                    <Form.Label className="error">
-                      {I18n.t("contact.empty_all")}
-                    </Form.Label>
-                  )}
+                
                 </Form.Group>
                 <div className="button-container">
                   <Button variant="primary" type="submit">

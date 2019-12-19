@@ -9,7 +9,7 @@ import Banner7 from "../assets/images/blog/banner-7.jpg";
 export default [
   {
     by: "Xuan",
-    date: "12 sep 2018",
+    date: "12 Sep 2018",
     image: Banner1,
     tags: ["basics", "innovationmanagement", "innovation"],
     title:
@@ -24,7 +24,7 @@ export default [
   },
   {
     by: "Xuan",
-    date: "23 oct 2018",
+    date: "23 Oct 2018",
     image: Banner2,
     tags: ["models", "innovationmanagement", "innovation"],
     title:
@@ -39,7 +39,7 @@ export default [
   },
   {
     by: "Zijin",
-    date: "2 oct 2019",
+    date: "2 Oct 2019",
     image: Banner3,
     tags: ["ideas", "innovations"],
     title: "Innovation Management Essentials: Series 3 - Innovation Metrics",
@@ -51,7 +51,7 @@ export default [
   },
   {
     by: "Peter",
-    date: "23 oct 2019",
+    date: "23 Oct 2019",
     image: Banner4,
     tags: ["benefits", "innovationmanagement", "innovation"],
     title:
@@ -63,7 +63,7 @@ export default [
   },
   {
     by: "Zijin",
-    date: "14 oct 2019",
+    date: "14 Oct 2019",
     image: Banner5,
     tags: ["innovation", "stages"],
     title: "Five Stages of Innovation",

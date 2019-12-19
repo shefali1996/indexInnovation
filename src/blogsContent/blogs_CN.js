@@ -9,7 +9,7 @@ export default [
   
   
   {
-    by: "轩",
+    by: "Xuan",
     date: "2018年9月12日",
     tags: ["基本", "创新管理","创新"],
     image:Banner1,

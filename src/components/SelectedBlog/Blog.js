@@ -112,7 +112,7 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
                               <span>
                                 {currIndex > 0 && (
                                   <span 
-                                  // onClick={() => handleNextClick("prev")}
+                                  onClick={() => handleNextClick("prev")}
                                   >
                                     <img
                                       src={left_icon}
@@ -125,7 +125,7 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
                               <span>
                                 {currIndex < blogs.length - 1 && (
                                   <span
-                                  //  onClick={() => handleNextClick("next")}
+                                   onClick={() => handleNextClick("next")}
                                    >
                                     <span>
                                     {I18n.t('blog.next_article')} <img src={left_icon} />{" "}
@@ -157,7 +157,7 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
               <h3 className="mb-3">{I18n.t('blog.recent_articles')}</h3>
               <div className="row">
                 {blogs &&
-                  blogs.map(val => (
+                  blogs.slice(0,3).map(val => (
                     <div className="col-md-4 col-sm-12">
                       <RecentArticles blog={val} />
                     </div>
