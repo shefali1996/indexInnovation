@@ -63,13 +63,13 @@ class ModalForm extends Component {
     const { selectedCountry } = this.state;
     if (selectedCountry === "EN") {
       data.icon = EN;
-      data.code = "+87";
+      data.code = "+44";
     } else if (selectedCountry === "CN") {
       data.icon = CN;
-      data.code = "+81";
+      data.code = "+86";
     } else {
       data.icon = HK;
-      data.code = "+77";
+      data.code = "+852";
     }
     return data;
   };
@@ -169,16 +169,16 @@ class ModalForm extends Component {
                       <Dropdown.Item eventKey="EN" href="#">
                         <div name="en">
                           <img src={EN} />
-                          <span>+87</span>
+                          <span>+44</span>
                         </div>
                       </Dropdown.Item>
                       <Dropdown.Item eventKey="CN" href="#">
                         <img src={CN} />
-                        <span>+81</span>
+                        <span>+86</span>
                       </Dropdown.Item>
                       <Dropdown.Item eventKey="HK" href="#">
                         <img src={HK} />
-                        <span>+77</span>
+                        <span>+852</span>
                       </Dropdown.Item>
                     </DropdownButton>
 

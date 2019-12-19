@@ -17,7 +17,7 @@ import blog_GB from "./blogsContent/blogs_GB";
 import blog_CN from "./blogsContent/blogs_CN";
 import blog_HK from "./blogsContent/blogs_HK";
 import pricing_content from "./blogsContent/pricing";
-
+let space=" "
 const isProduction = process.env.NODE_ENV === "production";
 let store = null;
 const translationObject = {
@@ -34,7 +34,7 @@ const translationObject = {
     },
     modal: {
       try: `Try IDEX for free`,
-      totry: `To try IDEX Innovation Management Software for free, enter your details below.${" "} We will be in touch shortly with your login details. Rest assured, your data is secure with us. `,
+      totry: `To try IDEX Innovation Management Software for free, enter your details below.${" "} We will be in touch shortly with your login details ${" "}. llllll Rest assured, your data is secure with us. `,
       fullname: `Full Name`,
       workemail: `Work Email`,
       company: `Company`,
@@ -131,7 +131,7 @@ const translationObject = {
       para1:
         "To try IDEX Innovation Management Software for free,enter your details below.",
       para2:
-        "We will be in touch shortly with login details.Rest assure, your data is secure with us.",
+        "We will be in touch shortly with login details. Rest assure, your data is secure with us.",
       fullName: "Full Name",
       emailAddress: "Email address",
       company: "Company",
