@@ -92,8 +92,14 @@
       width: 10%;
       cursor: pointer;
     }
+    .image-hide{
+      opacity: 0
+    }
    /* This used to work for the parent element of button divs */
 /* But it does not work with newer browsers, the below doesn't hide the play button parent div */
+// .react-player{
+//   position: unset;
+// }
   }
 }
 @media screen and(min-width:601px) and (max-width:900px){

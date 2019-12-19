@@ -12,7 +12,7 @@ class VideoPlayer extends Component {
           className='react-player'
           url='https://www.youtube.com/watch?v=ysz5S6PUM-U'
           width='100%'
-          height='100%'
+          // height='auto'
         />
       </div>
   }
