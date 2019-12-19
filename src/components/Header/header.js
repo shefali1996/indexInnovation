@@ -14,15 +14,17 @@ import {
   emitter,
   experimentDebugger
 } from "@marvelapp/react-ab-test";
+import ReactGA from 'react-ga';
+let trackingId="UA-154780234-1"
+ReactGA.initialize(trackingId);
+ReactGA.set({ dimension14: "Sports" });
 
-import Mixpanel from "mixpanel"
 experimentDebugger.enable();
 emitter.defineVariants(
   "Header-test",
   ["Try-It-For-Free", "Experience-IDEX", "Get-Started"],
   [33, 33, 33]
   );
-  var mixpanel=Mixpanel.init("e3547c5407fd5dbe484a8a3261b0b8f7")
 class Header extends Component {
   state = {
     mobileHeader: false,
@@ -169,13 +171,10 @@ emitter.addPlayListener("Header-test", function(
 });
 // The win listener is only called when the Win condition is met, in this instance, when the Learn More button is pressed.
 emitter.addWinListener("Header-test", function(experimentName, variantName) {
-  console.log(
-    `Variant ${variantName} of experiment ${experimentName} was clicked`,
-    "99999999999"
-  );
-  mixpanel.track(experimentName+ "  " +variantName,{
-    name:experimentName,
-    variant:variantName
-  })
+
+  ReactGA.event({
+    category:variantName ,
+    action: experimentName,
+  });
   // Perform any necessary operations to send experiment data to server or analytics provider.
 });
