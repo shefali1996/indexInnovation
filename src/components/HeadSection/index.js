@@ -22,7 +22,7 @@ import availableBtn, { variantArr } from "../../utils";
 import ReactGA from 'react-ga';
 
 
-let trackingId="UA-154780234-1"
+let trackingId="UA-137478659-1"
 ReactGA.initialize(trackingId);
 ReactGA.set({ dimension14: "Sports" });
 

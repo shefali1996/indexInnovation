@@ -8,6 +8,9 @@ import "react-flags-select/css/react-flags-select.css";
 import "react-flags-select/scss/react-flags-select.scss";
 import { connect } from "react-redux";
 import ModalForm from "../ModalForm/ModalForm";
+import EN from "../../assets/images/lang/en.svg"
+import CN from "../../assets/images/lang/cn.svg"
+import HK from "../../assets/images/lang/hk.svg"
 import {
   Experiment,
   Variant,
@@ -15,7 +18,8 @@ import {
   experimentDebugger
 } from "@marvelapp/react-ab-test";
 import ReactGA from 'react-ga';
-let trackingId="UA-154780234-1"
+import {Form } from "react-bootstrap"
+let trackingId="UA-137478659-1"
 ReactGA.initialize(trackingId);
 ReactGA.set({ dimension14: "Sports" });
 
@@ -112,6 +116,7 @@ class Header extends Component {
                   this.props.dispatch(setLocale(val));
                 }}
               />
+           
             </div>
             <Experiment ref="ab-more-info" name="Header-test">
               <Variant name="Try-It-For-Free">

@@ -12,7 +12,7 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
   const socialIcons = () => {
     return (
       <div className="social-media-icon">
-        <span style={{ fontSize: "12px" }}>Share:</span>
+        <span style={{ fontSize: "12px" }}>{I18n.t('blog.share')}:</span>
         <span>
           <a
             href="https://www.facebook.com/idexinnovation"

@@ -124,7 +124,8 @@ const translationObject = {
       articles: blog_GB,
       next_article: "Next Article",
       previous: "Previous",
-      by: "By"
+      by: "By",
+      share:"Share"
     },
     modalForm: {
       try_free: "Try IDEX for free",
@@ -242,7 +243,8 @@ const translationObject = {
       articles: blog_CN,
       next_article: "下一篇文章",
       previous: "以前",
-      by: "作者"
+      by: "作者",
+      share:" 分享"
     },
     modalForm: {
       try_free: "免费体验畅意系统",
@@ -358,7 +360,8 @@ const translationObject = {
       articles: blog_HK,
       next_article: "下一篇文章",
       previous: "以前",
-      by: "作者"
+      by: "作者",
+      share:"分享"
     },
     modalForm: {
       try_free: "免費體驗暢意系統",
