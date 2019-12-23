@@ -15,7 +15,7 @@
         font-size: 12px;
         font-style: italic;
         color:grey;
-        margin-left: 10px;
+        margin-left: 2px;
     }
   }
   .form-label {
@@ -60,6 +60,11 @@
 }
 .modal-backdrop {
   z-index: 10000 !important;
+}
+.react-tel-input{
+  #phone-form-control{
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width:600px){
