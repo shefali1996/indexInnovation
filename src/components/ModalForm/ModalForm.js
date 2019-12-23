@@ -16,8 +16,8 @@ import HK from "../../assets/images/lang/hk.svg";
 import { sendTryItDetail } from "../../actions/tryItFree";
 import { I18n } from "react-redux-i18n";
 import { Spinner, Alert } from "react-bootstrap";
-import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/style.css'
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 class ModalForm extends Component {
   state = {
@@ -43,7 +43,7 @@ class ModalForm extends Component {
         email_error: true
       });
     }
-    if (name && email_verify && password ) {
+    if (name && email_verify && password) {
       this.setState({
         email_error: false
       });
@@ -76,19 +76,19 @@ class ModalForm extends Component {
     }
     return data;
   };
-componentDidUpdate(prevProps){
-  if((this.props.show !==prevProps.show) && !this.props.show){
-this.setState({
-  selectedCountry: "EN",
-  name: "",
-  email: "",
-  password: "",
-  phone: "",
-  isError: false,
-  email_error: false
-})
+  componentDidUpdate(prevProps) {
+    if (this.props.show !== prevProps.show && !this.props.show) {
+      this.setState({
+        selectedCountry: "EN",
+        name: "",
+        email: "",
+        password: "",
+        phone: "",
+        isError: false,
+        email_error: false
+      });
+    }
   }
-}
   render() {
     const { show, handleCloseModal, tryIt } = this.props;
     const { name, email, password, phone, isError, email_error } = this.state;
@@ -136,12 +136,11 @@ this.setState({
                     name="email"
                     onChange={this.handleChange}
                   />
-                  {((isError && !email) ||
-                    email_error) && 
-                      <Form.Label className="error">
-                        {I18n.t("contact.emply_email")}
-                      </Form.Label>
-                    }
+                  {((isError && !email) || email_error) && (
+                    <Form.Label className="error">
+                      {I18n.t("contact.emply_email")}
+                    </Form.Label>
+                  )}
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
@@ -166,13 +165,12 @@ this.setState({
                       ({I18n.t("modalForm.optional")})
                     </span>
                   </Form.Label>
-                
+
                   <PhoneInput
-  country={'us'}
-  value={this.state.phone}
-  onChange={phone => this.setState({ phone })}
-/>
-                
+                    country={"us"}
+                    value={this.state.phone}
+                    onChange={phone => this.setState({ phone })}
+                  />
                 </Form.Group>
                 <div className="button-container">
                   <Button variant="primary" type="submit">
