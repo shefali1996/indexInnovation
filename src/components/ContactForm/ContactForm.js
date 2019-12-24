@@ -54,6 +54,15 @@ class ContactForm extends Component {
   handleChange = e => {
     const name = e.target.name;
     const value = e.target.value;
+    if(e.currentTarget.name==="email"){
+      var re = /\S+@\S+\.\S+/;
+      let email_verify = re.test(e.currentTarget.value);
+      if(email_verify){
+        this.setState({
+          email_error:false
+        })
+      }
+    }
     this.setState({
       [name]:  value.replace(/  +/g, ' ')
     });

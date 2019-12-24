@@ -56,6 +56,15 @@ class ModalForm extends Component {
     e.preventDefault();
   };
   handleChange = (e, value) => {
+    if(e.currentTarget.name==="email"){
+      var re = /\S+@\S+\.\S+/;
+      let email_verify = re.test(e.currentTarget.value);
+      if(email_verify){
+        this.setState({
+          email_error:false
+        })
+      }
+    }
     this.setState({
       [e.currentTarget.name]: e.currentTarget.value
     });
@@ -136,6 +145,7 @@ class ModalForm extends Component {
                     name="email"
                     onChange={this.handleChange}
                   />
+
                   {((isError && !email) || email_error) && (
                     <Form.Label className="error">
                       {I18n.t("contact.emply_email")}
