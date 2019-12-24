@@ -49,14 +49,14 @@ class Header extends Component {
     }));
   };
   handleLogoClick = () => {
-    if (window.location.pathname === "/") {
+    if (this.props.location.pathname === "/") {
       window.scrollTo(0, 0);
     } else {
       this.props.history.push("/");
     }
   };
   render() {
-    const { mobileHeader } = this.state;
+    const { mobileHeader } = this.state;    
     return (
       <>
         <ModalForm
@@ -82,7 +82,7 @@ class Header extends Component {
               <Link
                 to="/"
                 className={
-                  (window.location.pathname === "/" && "active ") + " menu-item"
+                  (this.props.location.pathname === "/" && "active ") + " menu-item"
                 }
               >
                 {I18n.t("header.home")}
@@ -91,7 +91,7 @@ class Header extends Component {
               <Link
                 to="/blog"
                 className={
-                  (window.location.pathname.includes("/blog") && "active ") +
+                  (this.props.location.pathname.includes("/blog") && "active ") +
                   " menu-item"
                 }
               >
@@ -100,7 +100,7 @@ class Header extends Component {
               <Link
                 to="/pricing"
                 className={
-                  (window.location.pathname === "/pricing" && "active ") +
+                  (this.props.location.pathname === "/pricing" && "active ") +
                   " menu-item"
                 }
               >
