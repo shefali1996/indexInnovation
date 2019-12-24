@@ -53,9 +53,9 @@ class ContactForm extends Component {
 
   handleChange = e => {
     const name = e.target.name;
-    const value = e.target.value.trim();
+    const value = e.target.value;
     this.setState({
-      [name]: value
+      [name]:  value.replace(/  +/g, ' ')
     });
   };
   render() {

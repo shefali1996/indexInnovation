@@ -15,7 +15,7 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
         <span style={{ fontSize: "12px" }}>{I18n.t('blog.share')}:</span>
         <span>
           <a
-            href="https://www.facebook.com/idexinnovation"
+            href="https://www.facebook.com/idexinnovation/"
             rel="noopener noreferrer"
             target="_blank"
           >
@@ -78,7 +78,7 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
       document.querySelector(".desktop-container").getBoundingClientRect().top;
     if (bottom < 250) {
       setIsScroll(false);
-    } else if (top < 100) {
+    } else if (top < 99) {
       setIsScroll(true);
     } else if (parentTop > 100) {
       setIsScroll(false);

@@ -5,6 +5,11 @@ import { Modal } from "react-bootstrap";
 import ContactForm from "..//ContactForm/ContactForm";
 
 class ModalForm extends Component {
+  sendDataToChild = data => {
+    this.setState({
+      isError: data
+    });
+  };
   state = {
     selectedCountry: "EN"
   };
@@ -33,7 +38,7 @@ class ModalForm extends Component {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <ContactForm subject={ subject} />
+            <ContactForm subject={ subject} sendDataToChild={this.sendDataToChild}/>
           </Modal.Body>
         </Modal>
       </>

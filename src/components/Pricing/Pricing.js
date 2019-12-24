@@ -48,7 +48,7 @@ this.setState({
               <div className="pricing-card">
                 <h5 className="pricing-card-title">{I18n.t('pricing.price1.starter')}</h5>
                 <div  className="pricing-details">
-                  <span className="price">${I18n.t('pricing.price1.99')}</span>
+                  <span className="price">{I18n.t('pricing.price1.currency')}{I18n.t('pricing.price1.99')}</span>
                   <span className="pricing-unit">{I18n.t('pricing.price1.usd')} / {I18n.t('pricing.price1.month')}</span>
                 </div>
                 <ul className="plan-features">
@@ -75,7 +75,7 @@ this.setState({
 
               <h5 className="pricing-card-title">{I18n.t('pricing.price2.professional')}</h5>
                 <div  className="pricing-details">
-                  <span className="price">${I18n.t('pricing.price2.499')}</span>
+                  <span className="price">{I18n.t('pricing.price1.currency')}{I18n.t('pricing.price2.499')}</span>
                   <span className="pricing-unit">{I18n.t('pricing.price2.usd')} / {I18n.t('pricing.price2.month')}</span>
                 </div>
                 <ul className="plan-features">
@@ -98,7 +98,7 @@ this.setState({
               <div className="pricing-card">
                 <h5 className="pricing-card-title">{I18n.t('pricing.price3.business')}</h5>
                 <div  className="pricing-details">
-                  <span className="price">${I18n.t('pricing.price3.999')}</span>
+                  <span className="price">{I18n.t('pricing.price1.currency')}{I18n.t('pricing.price3.999')}</span>
                   <span className="pricing-unit">{I18n.t('pricing.price3.usd')} / {I18n.t('pricing.price3.month')}</span>
                 </div>
                 <ul className="plan-features">
