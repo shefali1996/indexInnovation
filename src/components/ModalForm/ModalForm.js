@@ -24,7 +24,7 @@ class ModalForm extends Component {
     selectedCountry: "EN",
     name: "",
     email: "",
-    password: "",
+    company: "",
     phone: "",
     isError: false,
     email_error: false
@@ -35,7 +35,7 @@ class ModalForm extends Component {
     });
   };
   handleSubmitClick = e => {
-    const { name, email, password, phone } = this.state;
+    const { name, email, company, phone } = this.state;
     var re = /\S+@\S+\.\S+/;
     let email_verify = re.test(email);
     if (!email_verify) {
@@ -43,11 +43,11 @@ class ModalForm extends Component {
         email_error: true
       });
     }
-    if (name && email_verify && password) {
+    if (name && email_verify && company) {
       this.setState({
         email_error: false
       });
-      this.props.sendTryItDetail({ name, email, password, phone: phone });
+      this.props.sendTryItDetail({ name, email, company, phone: phone });
     } else {
       this.setState({
         isError: true
@@ -91,7 +91,7 @@ class ModalForm extends Component {
         selectedCountry: "EN",
         name: "",
         email: "",
-        password: "",
+        company: "",
         phone: "",
         isError: false,
         email_error: false
@@ -100,7 +100,7 @@ class ModalForm extends Component {
   }
   render() {
     const { show, handleCloseModal, tryIt } = this.props;
-    const { name, email, password, phone, isError, email_error } = this.state;
+    const { name, email, company, phone, isError, email_error } = this.state;
     return (
       <>
         <Modal size={"lg"} show={show} className="modal-wrapper try-free-modal">
@@ -158,10 +158,10 @@ class ModalForm extends Component {
                   <Form.Control
                     type="text"
                     placeholder=""
-                    name="password"
+                    name="company"
                     onChange={this.handleChange}
                   />
-                  {isError && !password && (
+                  {isError && !company && (
                     <Form.Label className="error">
                       {I18n.t("contact.empty_all")}
                     </Form.Label>
