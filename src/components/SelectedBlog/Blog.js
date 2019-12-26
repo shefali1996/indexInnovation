@@ -7,38 +7,43 @@ import "./blog.scss";
 import left_icon from "../../assets/images/icons/chevronb.svg";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import QrCode from "../../assets/images/customer_logos/qrcode.jpg";
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+
+} from "react-share";
+import { Helmet } from "react-helmet";
 
 export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
   const socialIcons = () => {
     return (
       <div className="social-media-icon">
-        <span style={{ fontSize: "12px" }}>{I18n.t('blog.share')}:</span>
+        <span style={{ fontSize: "12px" }}>{I18n.t("blog.share")}:</span>
         <span>
-          <a
-            href="https://www.facebook.com/idexinnovation/"
-            rel="noopener noreferrer"
-            target="_blank"
+          <FacebookShareButton
+            url={window.location.href}
+            quote={blog[0].title}
+            // picture={blog[0].image}
           >
-            <i className="fab fa-facebook-f"></i>
-          </a>
+            <a>
+              <i className="fab fa-facebook-f" style={{color:"blue"}}></i>
+            </a>
+          </FacebookShareButton>
         </span>
         <span>
-          <a
-            href="https://www.linkedin.com/company/idex-innovation"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <i className="fab fa-linkedin-in"></i>
-          </a>
+          <LinkedinShareButton url={window.location.href} title={blog[0].title}>
+            <a href="#" rel="noopener noreferrer">
+              <i className="fab fa-linkedin-in"></i>
+            </a>
+          </LinkedinShareButton>
         </span>
         <span>
-          <a
-            href="https://twitter.com/idex_ideas"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <i className="fab fa-twitter"></i>
-          </a>
+          <TwitterShareButton title={blog[0].title} url={window.location.href}>
+            <a href="#" rel="noopener noreferrer" >
+              <i className="fab fa-twitter"></i>
+            </a>
+          </TwitterShareButton>
         </span>
         <span>
           <OverlayTrigger
@@ -92,8 +97,21 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <div className="selected-blog">
+      {blog && (
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>{blog[0].title}</title>
+          {/* <link rel="canonical" href="https://silly-goldwasser-40964e.netlify.com" /> */}
+          <meta property="og:image" content={"PUBLIC_URL%" + blog[0].image} />
+          <meta
+            property="og:image:secure_url"
+            content={"PUBLIC_URL%" + blog[0].image}
+          />
+        </Helmet>
+      )}
       <div className="blog-wrapper">
         <div className="container blog">
           <div className="row">

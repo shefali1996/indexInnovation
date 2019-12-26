@@ -51,12 +51,14 @@ function SelectedBlog(props) {
   };    
   return (
     <div className="selectedblog-wrapper">
+
       <Blog
         blog={currentBlog}
         blogs={blogs}
         handleNextClick={handleNextClick}
         currIndex={currIndex}
       />
+    
       <Footer />
     </div>
   );
