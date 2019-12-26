@@ -130,7 +130,7 @@ const translationObject = {
     modalForm: {
       try_free: "Try IDEX for free",
       para1:
-        "To try IDEX Innovation Management Software for free,enter your details below.",
+        "To try IDEX Innovation Management Software for free, enter your details below.",
       para2:
         "We will be in touch shortly with login details. Rest assure, your data is secure with us.",
       fullName: "Full Name",

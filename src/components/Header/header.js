@@ -34,13 +34,24 @@ class Header extends Component {
     mobileHeader: false,
     show: false
   };
+  myRef = React.createRef();
   handleClick = () => {
     this.setState(prevState => ({
       mobileHeader: !prevState.mobileHeader
     }));
   };
+  setWrapperRef=(node)=> {
+    this.wrapperRef = node;
+  }
   onclick(e) {
     emitter.emitWin("Header-test");
+  }
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
   }
   handelShowModal = () => {
     this.onclick();
@@ -55,10 +66,22 @@ class Header extends Component {
       this.props.history.push("/");
     }
   };
+
+  handleClickOutside=(event)=> {
+    console.log(3333333333);
+    
+    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+      this.setState({
+        mobileHeader:false
+      })
+    }
+  }
+
+ 
   render() {
     const { mobileHeader } = this.state;    
     return (
-      <>
+      <div id="foo" >
         <ModalForm
           show={this.state.show}
           handleCloseModal={() => {
@@ -67,7 +90,8 @@ class Header extends Component {
             });
           }}
         />
-        <div className={(!mobileHeader && "hide-header ") + " header-wrapper"}>
+        <div ref={this.setWrapperRef}>
+        <div className={(!mobileHeader && "hide-header ") + " header-wrapper"}  ref={this.setWrapperRef} >
           <div className="header-logo-wrapper">
             <i
               className="fa fa-times-thin fa-2x"
@@ -152,7 +176,8 @@ class Header extends Component {
             {I18n.t("header.tryFree")}
           </div>
         </div>
-      </>
+        </div>
+      </div>
     );
   }
 }

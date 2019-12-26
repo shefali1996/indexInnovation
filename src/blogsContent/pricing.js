@@ -163,7 +163,7 @@ export default {
         plans_pricing:`价格方案`,
         choose_plan:`选择最适合企业需求的方案。如果您不知道该选择哪一个方案，请随时联系我们。`,
         starter:`基础版`,
-        usd:` ¥`,
+        usd:`元`,
         currency:"¥",
 
         99:`699`,
@@ -204,7 +204,7 @@ export default {
         choose_plan:`选择最适合企业需求的方案。如果您不知道该选择哪一个方案，请随时联系我们。`,
         starter:`基础版`,
         most_popular:"最受欢迎",
-        usd:`¥`,
+        usd:`元`,
         currency:"¥",
 
         99:`699`,
@@ -244,7 +244,7 @@ export default {
         plans_pricing:`价格方案`,
         choose_plan:`选择最适合企业需求的方案。如果您不知道该选择哪一个方案，请随时联系我们。`,
         starter:`基础版`,
-        usd:`¥`,
+        usd:`元`,
         currency:"¥",
 
         99:`699`,
@@ -284,7 +284,7 @@ export default {
         plans_pricing:`价格方案`,
         choose_plan:`选择最适合企业需求的方案。如果您不知道该选择哪一个方案，请随时联系我们。`,
         starter:`基础版`,
-        usd:`¥`,
+        usd:`元`,
         currency:"¥",
 
         99:`699`,
