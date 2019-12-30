@@ -105,7 +105,7 @@ class ModalForm extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.show !== prevProps.show && !this.props.show) {
       this.setState({
-        selectedCountry: "EN",
+        // selectedCountry: "EN",
         name: "",
         email: "",
         company: "",
@@ -193,7 +193,7 @@ class ModalForm extends Component {
                       ({I18n.t("modalForm.optional")})
                     </span>
                   </Form.Label>
-
+{console.log(this.state.selectedCountry,'4444444444444')}
                   <InputGroup className="mb-3">
                     <DropdownButton
                       as={InputGroup.Prepend}
