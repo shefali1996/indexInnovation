@@ -96,7 +96,7 @@ class HeadSection extends Component {
             <ReactPlayer
               className="react-player"
               url={this.props.locale === "GB" ? Eng_video : Chinese_video}
-              width="100%"
+              width={this.state.showThubnail?"0":"100%"}
               height="100%"
               controls
               config={{

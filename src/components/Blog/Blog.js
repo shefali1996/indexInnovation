@@ -59,9 +59,11 @@ class Blog extends Component {
                         onClick={() => this.handleClick(val.route)}
                       />
                       <div className="tag-user">
+                      <div className="tag-container">
                         {toArray(val.tags).map(tag => (
-                          <div className="tag">{tag}</div>
+                          <span className="tag">{tag}</span>
                         ))}
+                        </div>
                         <div className="by">
                        {I18n.t('blog.by')}  {" "}{val.by}
                         </div>

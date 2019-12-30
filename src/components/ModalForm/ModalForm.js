@@ -18,10 +18,23 @@ import { I18n } from "react-redux-i18n";
 import { Spinner, Alert } from "react-bootstrap";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import country from "./country";
+  // import  flag from "./flags"
 
 class ModalForm extends Component {
   state = {
-    selectedCountry: "EN",
+    selectedCountry:   {
+      "iso2": "GB",
+      "name": "United Kingdom",
+      "iso3": "GBR",
+      "unicode": "🇬🇧",
+      "dial": "+44",
+      "currency": "GBP",
+      "capital": "London",
+      "continent": "EU",
+      "traditional_cn": "英國",
+      "simplified_cn": "英国"
+    },
     name: "",
     email: "",
     company: "",
@@ -30,8 +43,11 @@ class ModalForm extends Component {
     email_error: false
   };
   handleSelectCountry = e => {
+    let selectedCountryObject = country.find(curr => {
+      return curr.dial === e;
+    });
     this.setState({
-      selectedCountry: e
+      selectedCountry: selectedCountryObject
     });
   };
   handleSubmitClick = e => {
@@ -43,11 +59,12 @@ class ModalForm extends Component {
         email_error: true
       });
     }
+    let phoneCountry=this.state.selectedCountry.dial + phone
     if (name && email_verify && company) {
       this.setState({
         email_error: false
       });
-      this.props.sendTryItDetail({ name, email, company, phone: phone });
+      this.props.sendTryItDetail({ name, email, company, phone: phoneCountry });
     } else {
       this.setState({
         isError: true
@@ -56,13 +73,13 @@ class ModalForm extends Component {
     e.preventDefault();
   };
   handleChange = (e, value) => {
-    if(e.currentTarget.name==="email"){
+    if (e.currentTarget.name === "email") {
       var re = /\S+@\S+\.\S+/;
       let email_verify = re.test(e.currentTarget.value);
-      if(email_verify){
+      if (email_verify) {
         this.setState({
-          email_error:false
-        })
+          email_error: false
+        });
       }
     }
     this.setState({
@@ -70,21 +87,21 @@ class ModalForm extends Component {
     });
   };
 
-  dropDownContent = () => {
-    const data = {};
-    const { selectedCountry } = this.state;
-    if (selectedCountry === "EN") {
-      data.icon = EN;
-      data.code = "+44";
-    } else if (selectedCountry === "CN") {
-      data.icon = CN;
-      data.code = "+86";
-    } else {
-      data.icon = HK;
-      data.code = "+852";
-    }
-    return data;
-  };
+  // dropDownContent = () => {
+  //   const data = {};
+  //   const { selectedCountry } = this.state;
+  //   if (selectedCountry === "EN") {
+  //     data.icon = EN;
+  //     data.code = "+44";
+  //   } else if (selectedCountry === "CN") {
+  //     data.icon = CN;
+  //     data.code = "+86";
+  //   } else {
+  //     data.icon = HK;
+  //     data.code = "+852";
+  //   }
+  //   return data;
+  // };
   componentDidUpdate(prevProps) {
     if (this.props.show !== prevProps.show && !this.props.show) {
       this.setState({
@@ -99,6 +116,7 @@ class ModalForm extends Component {
     }
   }
   render() {
+    const {locale}=this.props.i18n
     const { show, handleCloseModal, tryIt } = this.props;
     const { name, email, company, phone, isError, email_error } = this.state;
     return (
@@ -176,11 +194,42 @@ class ModalForm extends Component {
                     </span>
                   </Form.Label>
 
-                  <PhoneInput
-                    country={"us"}
-                    value={this.state.phone}
-                    onChange={phone => this.setState({ phone })}
-                  />
+                  <InputGroup className="mb-3">
+                    <DropdownButton
+                      as={InputGroup.Prepend}
+                      variant="outline-secondary"
+                      title={
+                        <span>
+                          <span className="code">
+
+                            { this.state.selectedCountry.iso2 &&  React.createElement('img', { src: require('./flags/' + this.state.selectedCountry.iso2.toLowerCase() + '.svg'),className:"country-flag" })}
+
+                            {this.state.selectedCountry.dial}
+                          </span>
+                        </span>
+                      }
+                      id="input-group-dropdown-1"
+                      onSelect={this.handleSelectCountry}
+                    >
+                      {country.map(val => {
+                        return (
+                          <Dropdown.Item eventKey={val.dial} href="#">
+                            <span name="en"> 
+                            { React.createElement('img', { src: require('./flags/' + val.iso2.toLowerCase() + '.svg'),className:"country-flag" })}
+                            <span>{locale==="GB"?val.name:locale==="CN"?val.simplified_cn:val.traditional_cn}</span> <span>{val.dial}</span>
+                            </span>
+                          </Dropdown.Item>
+                        );
+                      })}
+                    </DropdownButton>
+
+                    <FormControl
+                      aria-describedby="basic-addon1"
+                      name="phone"
+                      onChange={this.handleChange}
+                      type="number"
+                    />
+                  </InputGroup>
                 </Form.Group>
                 <div className="button-container">
                   <Button variant="primary" type="submit">

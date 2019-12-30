@@ -27,7 +27,7 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
             // picture={blog[0].image}
           >
             <a>
-              <i className="fab fa-facebook-f" style={{color:"blue"}}></i>
+              <i className="fab fa-facebook-f" style={{color:"#007bff"}}></i>
             </a>
           </FacebookShareButton>
         </span>
