@@ -82,6 +82,13 @@ class ModalForm extends Component {
         });
       }
     }
+    else if(e.currentTarget.name === "phone"){
+      const re = /^$|[0-9\b]+$/;
+      if(!re.test(e.currentTarget.value )){
+        return;
+      }
+    }
+   
     this.setState({
       [e.currentTarget.name]: e.currentTarget.value
     });
@@ -193,7 +200,6 @@ class ModalForm extends Component {
                       ({I18n.t("modalForm.optional")})
                     </span>
                   </Form.Label>
-{console.log(this.state.selectedCountry,'4444444444444')}
                   <InputGroup className="mb-3">
                     <DropdownButton
                       as={InputGroup.Prepend}
@@ -227,7 +233,8 @@ class ModalForm extends Component {
                       aria-describedby="basic-addon1"
                       name="phone"
                       onChange={this.handleChange}
-                      type="number"
+                      value={this.state.phone}
+                      type="text"
                     />
                   </InputGroup>
                 </Form.Group>

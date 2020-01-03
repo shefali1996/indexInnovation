@@ -26,7 +26,7 @@ export default function Blog({ blog, blogs, handleNextClick, currIndex }) {
             quote={blog[0].title}
             // picture={blog[0].image}
           >
-            <a>
+             <a href="#" rel="noopener noreferrer">
               <i className="fab fa-facebook-f" style={{color:"#007bff"}}></i>
             </a>
           </FacebookShareButton>

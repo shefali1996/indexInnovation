@@ -7,11 +7,17 @@ import {connect} from 'react-redux'
 import Collapsible from 'react-collapsible';
 import ContacUsModal from "./ContactUsModal"
 import ModalForm from "../ModalForm/ModalForm"
+import arrowUp from "../../assets/images/icons/chevronb.svg"
+import arrowDown from "../../assets/images/icons/chevronr.svg"
 class Pricing extends Component {
   state = {
   show:false,
   subject:"",
-  showtryModal:false
+  showtryModal:false,
+  first:false,
+  second:false,
+  third:false,
+  fourth:false
   }
   handelShowModal=(sub)=>{ 
     let subject =""
@@ -30,7 +36,14 @@ this.setState({
   showtryModal:true
 })
   }
-  render() {        
+
+  toggle=(toggle)=>{
+    this.setState({
+      [toggle]:!this.state[toggle]
+    })
+  }
+  render() {  
+    let tgg=document.getElementsByClassName("arrow")      
     return (
       <div className="pricing-wrapper">
       <ModalForm show={this.state.showtryModal}
@@ -43,8 +56,8 @@ this.setState({
         <h2>{I18n.t('pricing.price1.plans_pricing')}</h2>
         <p>{I18n.t('pricing.price1.choose_plan')}</p>
         <div className="container pricing-plans">
-          <div className="row">
-            <div className="col-md-3">
+          {/* <div className="row"> */}
+            {/* <div className="col-md-3"> */}
               <div className="pricing-card">
                 <h5 className="pricing-card-title">{I18n.t('pricing.price1.starter')}</h5>
                 <div  className="pricing-details">
@@ -66,8 +79,8 @@ this.setState({
                   <button onClick={this.handeShowTryModal}>{I18n.t('pricing.price1.try_for_free')}</button>
                 </ul>  
               </div>  
-            </div>
-            <div className="col-md-3">
+            {/* </div> */}
+            {/* <div className="col-md-3"> */}
               <div className="pricing-card most-popular">
               <div className="popular"><span>
               {I18n.t('pricing.price2.most_popular')}
@@ -93,8 +106,8 @@ this.setState({
                   <button className="inverse" onClick={this.handeShowTryModal}>{I18n.t('pricing.price2.try_for_free')}</button>
                 </ul> 
               </div>
-            </div>
-            <div className="col-md-3">
+            {/* </div> */}
+            {/* <div className="col-md-3"> */}
               <div className="pricing-card">
                 <h5 className="pricing-card-title">{I18n.t('pricing.price3.business')}</h5>
                 <div  className="pricing-details">
@@ -116,8 +129,8 @@ this.setState({
                   <button onClick={this.handeShowTryModal}>{I18n.t('pricing.price3.try_for_free')}</button>
                 </ul>  
               </div>  
-            </div>
-            <div className="col-md-3">
+            {/* </div> */}
+            {/* <div className="col-md-3"> */}
               <div className="pricing-card">
                 <h5 className="pricing-card-title">{I18n.t('pricing.price4.enterprise')}</h5>
                 <div  className="pricing-details-enterprise">
@@ -138,9 +151,9 @@ this.setState({
                   <button onClick={this.handelShowModal}>{I18n.t('pricing.price4.contact_us')}</button>
                 </ul>  
               </div>  
-            </div>
+            {/* </div> */}
            
-          </div>  
+          {/* </div>   */}
         </div>
         
         <div className="faq-wrapper">
@@ -149,33 +162,36 @@ this.setState({
             <div className="row">
               <div className="col-md-6 col-xs-12">
                 <div className="faq">
-                  
-                  <Collapsible trigger={I18n.t('pricing.price4.can_i_cancel')}>
+                  <Collapsible trigger={I18n.t('pricing.price4.can_i_cancel')} onOpen={()=>this.toggle("first")} onClose={()=>{this.toggle("first")}}>
                     <p>{I18n.t('pricing.price4.our_goal')}</p>  
                   </Collapsible>
+                  <img src={this.state.first?arrowDown:arrowUp}/>
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="faq">
-                  <Collapsible trigger={I18n.t('pricing.price4.payment_options')}>
+                  <Collapsible trigger={I18n.t('pricing.price4.payment_options')} onOpen={()=>this.toggle("second")} onClose={()=>{this.toggle("second")}}>
                     <p>{I18n.t('pricing.price4.payments_made_via')}</p>  
                   </Collapsible>
+                  <img src={this.state.second?arrowDown:arrowUp} />
                 </div>
               </div>
             </div>
             <div className="row mt-3">
               <div className="col-md-6">
                 <div className="faq">
-                  <Collapsible trigger={I18n.t('pricing.price4.data_protection')}>
+                  <Collapsible trigger={I18n.t('pricing.price4.data_protection')} onOpen={()=>this.toggle("third")} onClose={()=>{this.toggle("third")}}>
                     <p>{I18n.t('pricing.price4.serious_secutiry')}</p>  
                   </Collapsible>
+                  <img src={this.state.third?arrowDown:arrowUp} />
                 </div>
               </div>
               <div className="col-md-6">
                 <div className="faq">
-                  <Collapsible trigger={I18n.t('pricing.price4.more_ides')}>
-                    <p>{I18n.t('pricing.price4.dont_worry')}</p>  
+                  <Collapsible trigger={I18n.t('pricing.price4.more_ides')} onOpen={()=>this.toggle("fourth")} onClose={()=>{this.toggle("fourth")}} >
+                    <p >{I18n.t('pricing.price4.dont_worry')}</p>
                   </Collapsible>
+                  <img src={this.state.fourth?arrowDown:arrowUp} className="arrow"/>
                 </div>
               </div>
             </div>

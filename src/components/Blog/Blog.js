@@ -77,7 +77,7 @@ class Blog extends Component {
                     </div>
                   );
                 })}
-                <div className="previous_article">
+                {/* <div className="previous_article">
                   <span 
                   // onClick={() => this.onNextClick(start)}
                   >
@@ -85,7 +85,7 @@ class Blog extends Component {
                     {I18n.t("blog.previous_articles")}
                     <img src={left_icon} />
                   </span>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="col-md-1 col-sm-12"></div>

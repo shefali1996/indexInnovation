@@ -73,10 +73,10 @@ class Header extends Component {
 
   handleClickOutside = event => {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      this.setState({
-        //change later
-        mobileHeader: true
-      });
+      // this.setState({
+      //   //change later
+      //   mobileHeader: true
+      // });
     }
   };
   handleSelect = val => {
