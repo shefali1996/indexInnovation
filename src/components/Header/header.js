@@ -49,6 +49,7 @@ class Header extends Component {
   componentDidMount() {
     if (localStorage.getItem("lang")) {
       this.props.dispatch(setLocale(localStorage.getItem("lang")));
+      document.title = I18n.t("title");
     }
 
     document.addEventListener("mousedown", this.handleClickOutside);
@@ -81,6 +82,7 @@ class Header extends Component {
   };
   handleSelect = val => {
     localStorage.setItem("lang", val);
+    document.title = I18n.t("title");
   };
 
   render() {
