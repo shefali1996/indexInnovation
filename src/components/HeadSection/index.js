@@ -58,6 +58,11 @@ class HeadSection extends Component {
       emitter.setActiveVariant("Middle-test", availableBtn()[0].name);
     }
   }
+  handlepl=()=>{
+    this.setState({
+      play:true
+    })
+  }
   render() {    
     return (
       <div className="head-section">
@@ -108,6 +113,7 @@ class HeadSection extends Component {
               }}
               playing={this.state.play}
               onPause={this.handlePlayClick}
+              onPlay={this.handlepl}
               // light={thumbnail}
             />
             {this.state.showThubnail && (
