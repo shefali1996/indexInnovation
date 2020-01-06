@@ -82,7 +82,7 @@ grid-column-gap: 20px;
           text-align: left;
           font-style: normal;
           font-weight: normal;
-          font-size: 14px;
+          font-size: 13px;
           line-height: 21px;
           color: rgba(51, 51, 51, 0.6);
           display: flex;
@@ -278,10 +278,10 @@ grid-column-gap: 20px;
     .pricing-card{
       .pricing-details{
         .price{
-          font-size: 28px;
+          font-size: 22px;
         }
         .pricing-unit{
-          font-size: 13px;
+          font-size: 12px;
         }
       }
     }
@@ -297,16 +297,16 @@ grid-column-gap: 20px;
         padding: 0 5px;
       }
       .pricing-card {
-        padding: 40px 10px;
+        padding: 40px 5px;
         .price{
-          font-size: 26px
+          font-size: 22px
         }
         .pricing-unit{
           font-size: 12px;
         }
         .pricing-details-enterprise{
           span{
-            font-size:15px
+            font-size:14px
           }
         }
       }
